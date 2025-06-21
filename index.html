@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法律ニュース総合RSS - 完全無料版</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        .rss-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .rss-link {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        .rss-link:hover {
+            background-color: #2980b9;
+        }
+        .info-box {
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .update-info {
+            background-color: #d5f4e6;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #7f8c8d;
+        }
+        .github-link {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .github-link:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📰 法律ニュース総合RSS</h1>
+        <p class="subtitle">複数の法律関連サイトから最新ニュースを取得し、統合RSSフィードとして配信<br>
+        <strong>完全無料・GitHub Pages版</strong></p>
+
+        <div class="info-box">
+            <h3>🎯 このサービスについて</h3>
+            <p>このRSSフィードは、以下の法律関連サイトから最新ニュースを自動取得し、統合して配信しています：</p>
+            <ul>
+                <li><strong>弁護士ドットコム</strong> - 日本最大級の法律相談サイト</li>
+                <li><strong>企業法務ナビ</strong> - 企業法務に特化した情報サイト</li>
+                <li><strong>弁護士JPニュース</strong> - 法律関連の最新ニュースサイト</li>
+            </ul>
+        </div>
+
+        <div class="rss-section">
+            <h2>📡 RSSフィード</h2>
+            <p>以下のURLをRSSリーダーに登録してご利用ください：</p>
+            <div>
+                <a href="./rss/combined.xml" class="rss-link">📰 統合RSSフィード</a>
+                <a href="./rss/bengo4.xml" class="rss-link">⚖️ 弁護士ドットコム</a>
+                <a href="./rss/corporate_legal.xml" class="rss-link">🏢 企業法務ナビ</a>
+                <a href="./rss/ben54.xml" class="rss-link">📚 弁護士JPニュース</a>
+            </div>
+        </div>
+
+        <div class="update-info">
+            <h3>🔄 更新情報</h3>
+            <p><strong>最終更新:</strong> <span id="last-update">読み込み中...</span></p>
+            <p><strong>次回更新予定:</strong> 6時間後（GitHub Actionsにより自動実行）</p>
+            <p><strong>更新頻度:</strong> 1日4回（6時間間隔）</p>
+        </div>
+
+        <div class="stats" id="stats-container">
+            <div class="stat-item">
+                <div class="stat-value" id="total-articles">-</div>
+                <div class="stat-label">総記事数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="total-sources">3</div>
+                <div class="stat-label">対応サイト数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="update-frequency">4</div>
+                <div class="stat-label">1日の更新回数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">無料</div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>✨ 特徴</h3>
+            <ul>
+                <li><strong>完全無料</strong>: GitHub Pagesを使用したコストゼロ運用</li>
+                <li><strong>自動更新</strong>: GitHub Actionsによる定期的な自動更新</li>
+                <li><strong>重複除去</strong>: 同一記事の自動除去機能</li>
+                <li><strong>カテゴリ分類</strong>: 法律分野別の自動分類</li>
+                <li><strong>高い可用性</strong>: GitHub Pagesの安定したインフラ</li>
+                <li><strong>RSS 2.0準拠</strong>: 標準的なRSSリーダーで利用可能</li>
+            </ul>
+        </div>
+
+        <div class="rss-section">
+            <h2>🔧 技術仕様</h2>
+            <ul>
+                <li><strong>ホスティング</strong>: GitHub Pages（無料）</li>
+                <li><strong>自動化</strong>: GitHub Actions（無料枠内）</li>
+                <li><strong>データ取得</strong>: Python + BeautifulSoup4</li>
+                <li><strong>RSS生成</strong>: RSS 2.0仕様準拠</li>
+                <li><strong>更新頻度</strong>: 6時間間隔（1日4回）</li>
+                <li><strong>運用コスト</strong>: 完全無料</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>このプロジェクトはオープンソースです</p>
+            <a href="https://github.com/your-username/static-legal-rss" class="github-link">
+                📁 GitHubで見る
+            </a>
+            <a href="https://github.com/your-username/static-legal-rss/issues" class="github-link">
+                🐛 問題を報告
+            </a>
+            <p>最終更新: <span id="footer-update">読み込み中...</span></p>
+        </div>
+    </div>
+
+    <script>
+        // 統計情報とメタデータを読み込み
+        async function loadMetadata() {
+            try {
+                const response = await fetch('./metadata.json');
+                const data = await response.json();
+                
+                // 統計情報を更新
+                document.getElementById('total-articles').textContent = data.total_articles || '-';
+                
+                // 更新時刻を表示
+                const lastUpdate = new Date(data.last_updated);
+                const updateText = lastUpdate.toLocaleString('ja-JP');
+                document.getElementById('last-update').textContent = updateText;
+                document.getElementById('footer-update').textContent = updateText;
+                
+            } catch (error) {
+                console.error('メタデータの読み込みに失敗しました:', error);
+                document.getElementById('last-update').textContent = '不明';
+                document.getElementById('footer-update').textContent = '不明';
+            }
+        }
+
+        // ページ読み込み時にメタデータを取得
+        document.addEventListener('DOMContentLoaded', loadMetadata);
+    </script>
+</body>
+</html>
+
