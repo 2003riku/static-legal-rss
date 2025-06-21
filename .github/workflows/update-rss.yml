@@ -29,15 +29,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests beautifulsoup4
         
-    - name: Run scraper
+    - name: Run update_all script
       run: |
-        cd scripts
-        python scraper.py
-        
-    - name: Generate RSS feeds
-      run: |
-        cd scripts
-        python rss_generator.py
+        python scripts/update_all.py
         
     - name: Configure Git
       run: |
@@ -50,7 +44,7 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Auto-update RSS feeds - $(date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "Auto-update RSS feeds - $(date "+%Y-%m-%d %H:%M:%S")"
           git push
         fi
         
@@ -75,4 +69,3 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-
