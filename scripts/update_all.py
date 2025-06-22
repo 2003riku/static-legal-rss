@@ -5,16 +5,17 @@ import sys
 import subprocess
 import logging
 from datetime import datetime
+from typing import List
 
 # ログ設定
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-def run_command(command, description):
+def run_command(command: List[str], description: str) -> bool:
     """コマンドを実行し、結果をログ出力"""
     logger.info(f"開始: {description}")
     try:
-        # shell=Trueを避け、コマンドをリストで渡すことでセキュリティを向上
+        # shell=Trueを避け、コマンドをリストで渡すことでセキュリティと安定性を向上
         result = subprocess.run(command, check=True, capture_output=True, text=True, encoding='utf-8')
         logger.info(f"完了: {description}")
         if result.stdout:
@@ -32,8 +33,7 @@ def main():
     logger.info("=== 法律ニュースRSS更新開始 ===")
     start_time = datetime.now()
     
-    # --- ★ 修正箇所 ★ ---
-    # os.chdirを削除。このスクリプトはリポジトリのルートから実行されることを想定。
+    # このスクリプトはリポジトリのルートから実行されることを想定
     
     # 1. スクレイピング実行
     if not run_command([sys.executable, "scripts/scraper.py"], "ニュース記事のスクレイピング"):
@@ -51,7 +51,6 @@ def main():
     logger.info(f"=== 法律ニュースRSS更新完了 ===")
     logger.info(f"実行時間: {duration.total_seconds():.2f}秒")
     
-    # --- ★ 修正箇所 ★ ---
     # メタデータファイルのパスをルートからの相対パスに修正
     try:
         import json
