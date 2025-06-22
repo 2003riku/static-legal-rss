@@ -1,190 +1,168 @@
-# scripts/rss_generator.py
+# scripts/scraper.py
 
+import requests
+from bs4 import BeautifulSoup
 import json
-import os
-from datetime import datetime, timezone, timedelta
-from xml.etree.ElementTree import Element, SubElement, tostring
-from xml.dom import minidom
-import logging
+import time
+from datetime import datetime
 from typing import List, Dict
+import logging
+import os
+import re
 
 # ログ設定
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-class StaticRSSGenerator:
-    """GitHub Pages用の静的RSS生成器"""
+class StaticLegalScraper:
+    """GitHub Pages用の静的RSS生成のためのスクレイパー"""
     
     def __init__(self):
-        # --- ★ 修正箇所 ★ ---
-        # チャンネルのリンクを正しいURLに修正
-        self.channel_info = {
-            'title': '法律ニュース総合RSS',
-            'link': 'https://2003riku.github.io/static-legal-rss/',
-            'description': '複数の法律関連サイトから取得した最新ニュースを統合配信',
-            'language': 'ja',
-            'generator': 'Static Legal RSS Tool'
-        }
-    
-    def categorize_article(self, title: str, content: str) -> str:
-        """記事のカテゴリを自動判定"""
-        title_lower = title.lower()
-        content_lower = content.lower()
-        text = f"{title_lower} {content_lower}"
+        self.session = requests.Session()
+        self.session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        })
         
-        categories = {
-            '刑事法': ['刑事', '逮捕', '起訴', '判決', '裁判', '犯罪', '容疑', '検察', '警察'],
-            '民事法': ['民事', '損害賠償', '契約', '不法行為', '債権', '債務', '相続', '離婚'],
-            '企業法': ['企業', '会社法', '株主', '取締役', 'コンプライアンス', 'M&A', '株式'],
-            '労働法': ['労働', '雇用', '解雇', '残業', 'ハラスメント', '労災', '賃金'],
-            '憲法': ['憲法', '人権', '表現の自由', '選挙', '政治', '国会', '内閣'],
-            '行政法': ['行政', '許可', '認可', '規制', '官庁', '公務員', '地方自治'],
-            '税法': ['税', '税務', '確定申告', '消費税', '所得税', '法人税'],
-            '知的財産法': ['特許', '商標', '著作権', '知的財産', 'IP', '発明'],
-            '国際法': ['国際', '外国', '条約', '貿易', '外交', '海外'],
-            '一般法律':  # デフォルトカテゴリ
-        }
-        
-        for category, keywords in categories.items():
-            if category == '一般法律':
-                continue
-            for keyword in keywords:
-                if keyword in text:
-                    return category
-        
-        return '一般法律'
-    
-    def create_rss_item(self, article: Dict) -> Element:
-        """RSS itemエレメントを作成"""
-        item = Element('item')
-        
-        SubElement(item, 'title').text = article['title']
-        SubElement(item, 'link').text = article['url']
-        
-        # --- ★ 修正箇所 ★ ---
-        # scraper.pyが取得した本文をそのままdescriptionとして使用
-        SubElement(item, 'description').text = article['content']
-        
-        pub_date = SubElement(item, 'pubDate')
-        if isinstance(article['published_date'], str):
-            pub_datetime = datetime.fromisoformat(article['published_date'])
-        else:
-            pub_datetime = article['published_date']
-        
-        # タイムゾーン情報がない場合はJST (+0900) を付与
-        if pub_datetime.tzinfo is None:
-            jst = timezone(timedelta(hours=+9))
-            pub_datetime = pub_datetime.replace(tzinfo=jst)
-        
-        pub_date.text = pub_datetime.strftime('%a, %d %b %Y %H:%M:%S %z')
-        
-        guid = SubElement(item, 'guid', isPermaLink='true')
-        guid.text = article['url']
-        
-        category = SubElement(item, 'category')
-        category.text = self.categorize_article(article['title'], article['content'])
-        
-        source = SubElement(item, 'source', url=article['url'])
-        source.text = article['source']
-        
-        return item
-    
-    def generate_rss_feed(self, articles: List, site_filter: str = None) -> str:
-        """RSSフィードを生成"""
-        if site_filter:
-            site_names = {
-                'bengo4': '弁護士ドットコム',
-                'corporate_legal': '企業法務ナビ',
-                'ben54': '弁護士JPニュース'
+        # 各サイトのHTML構造に合わせた、正確なCSSセレクタに更新
+        self.site_configs = {
+            'bengo4': {
+                'name': '弁護士ドットコム',
+                'base_url': 'https://www.bengo4.com',
+                'list_url': 'https://www.bengo4.com/times/',
+                'selectors': {
+                    'article_links': 'div.p-topics-list__item > a',
+                    'title': 'h1.p-article-header__title',
+                    'content': 'div.story_body',
+                    'date': 'time.p-article-header__date'
+                }
+            },
+            'corporate_legal': {
+                'name': '企業法務ナビ',
+                'base_url': 'https://www.corporate-legal.jp',
+                'list_url': 'https://www.corporate-legal.jp/news/',
+                'selectors': {
+                    'article_links': 'div.article-list-item > a',
+                    'title': 'h1.article_title',
+                    'content': 'div.article_text_area',
+                    'date': 'p.article_date'
+                }
+            },
+            'ben54': {
+                'name': '弁護士JPニュース',
+                'base_url': 'https://www.ben54.jp',
+                'list_url': 'https://www.ben54.jp/news/',
+                'selectors': {
+                    'article_links': 'div.article_item > a',
+                    'title': 'h1.article_title',
+                    'content': 'div.article_cont',
+                    'date': 'span.date'
+                }
             }
-            target_site = site_names.get(site_filter)
-            if target_site:
-                articles = [a for a in articles if a['source'] == target_site]
-        
-        articles = sorted(articles, key=lambda x: datetime.fromisoformat(x['published_date']), reverse=True)
-        
-        rss = Element('rss', version='2.0', attrib={'xmlns:atom': 'http://www.w3.org/2005/Atom'})
-        channel = SubElement(rss, 'channel')
-        
-        title = SubElement(channel, 'title')
-        if site_filter:
-            site_names = {
-                'bengo4': '弁護士ドットコム',
-                'corporate_legal': '企業法務ナビ',
-                'ben54': '弁護士JPニュース'
-            }
-            title.text = f"{site_names.get(site_filter, 'Unknown')} - 法律ニュースRSS"
-        else:
-            title.text = self.channel_info['title']
-        
-        SubElement(channel, 'link').text = self.channel_info['link']
-        SubElement(channel, 'description').text = self.channel_info['description']
-        SubElement(channel, 'language').text = self.channel_info['language']
-        
-        jst = timezone(timedelta(hours=+9))
-        SubElement(channel, 'lastBuildDate').text = datetime.now(jst).strftime('%a, %d %b %Y %H:%M:%S %z')
-        SubElement(channel, 'generator').text = self.channel_info['generator']
-        
-        atom_link = SubElement(channel, 'atom:link')
-        atom_link.set('href', f"{self.channel_info['link']}rss/{'combined' if not site_filter else site_filter}.xml")
-        atom_link.set('rel', 'self')
-        atom_link.set('type', 'application/rss+xml')
-        
-        for article in articles[:20]:
-            item = self.create_rss_item(article)
-            channel.append(item)
-        
-        rough_string = tostring(rss, 'utf-8')
-        reparsed = minidom.parseString(rough_string)
-        return reparsed.toprettyxml(indent="  ", encoding="utf-8").decode()
-    
-    def save_rss_file(self, rss_content: str, filepath: str):
-        """RSSファイルを保存"""
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(rss_content)
-        logger.info(f"RSSファイルを保存しました: {filepath}")
-    
-    def generate_metadata(self, articles: List) -> Dict:
-        """メタデータを生成"""
-        return {
-            'last_updated': datetime.now().isoformat(),
-            'total_articles': len(articles),
-            'sources': list(set(article['source'] for article in articles)),
-            'categories': list(set(self.categorize_article(article['title'], article['content']) for article in articles))
         }
     
-    def save_metadata(self, metadata: Dict, filepath: str):
-        """メタデータをJSONファイルに保存"""
-        with open(filepath, 'w', encoding='utf-8') as f:
-            json.dump(metadata, f, ensure_ascii=False, indent=2)
-        logger.info(f"メタデータを保存しました: {filepath}")
+    def get_article_links(self, site_key: str, max_links: int = 5) -> List[str]:
+        """記事リンクを取得"""
+        config = self.site_configs[site_key]
+        try:
+            logger.info(f"{config['name']}から記事リンクを取得中...")
+            response = self.session.get(config['list_url'], timeout=30)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            links =
+            for link_elem in soup.select(config['selectors']['article_links'])[:max_links]:
+                href = link_elem.get('href')
+                if href:
+                    if href.startswith('/'):
+                        href = config['base_url'] + href
+                    elif not href.startswith('http'):
+                        href = os.path.join(config['list_url'], href)
+                    if href not in links:
+                        links.append(href)
+            logger.info(f"{len(links)}件の記事リンクを取得しました")
+            return links
+        except Exception as e:
+            logger.error(f"{config['name']}の記事リンク取得エラー: {e}")
+            return
+    
+    def extract_article_content(self, url: str, site_key: str) -> Dict:
+        """個別記事の内容を抽出"""
+        config = self.site_configs[site_key]
+        try:
+            response = self.session.get(url, timeout=30)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            title_elem = soup.select_one(config['selectors']['title'])
+            title = title_elem.get_text(strip=True) if title_elem else "タイトル不明"
+            
+            content_elem = soup.select_one(config['selectors']['content'])
+            if content_elem:
+                content = ' '.join(content_elem.get_text(strip=True).split())
+                content = content[:300] + '...' if len(content) > 300 else content
+            else:
+                content = "内容を取得できませんでした。"
 
-def main():
-    """メイン処理"""
-    generator = StaticRSSGenerator()
+            published_date = datetime.now()
+            date_elem = soup.select_one(config['selectors']['date'])
+            if date_elem:
+                date_text = date_elem.get_text(strip=True)
+                match = re.search(r'(\d{4})[/\.\-年](\d{1,2})[/\.\-月](\d{1,2})', date_text)
+                if match:
+                    year, month, day = map(int, match.groups())
+                    published_date = datetime(year, month, day)
+            
+            return {
+                'title': title,
+                'url': url,
+                'content': content,
+                'published_date': published_date,
+                'source': config['name']
+            }
+        except Exception as e:
+            logger.error(f"記事内容抽出エラー ({url}): {e}")
+            return None
+
+    def scrape_site(self, site_key: str, max_articles: int = 5) -> List:
+        """特定サイトから記事を取得"""
+        config = self.site_configs[site_key]
+        logger.info(f"{config['name']}からニュースを取得中...")
+        article_links = self.get_article_links(site_key, max_articles)
+        articles =
+        for i, link in enumerate(article_links, 1):
+            logger.info(f"記事 {i}/{len(article_links)} を処理中: {link}")
+            article = self.extract_article_content(link, site_key)
+            if article:
+                articles.append(article)
+                logger.info(f"  ✓ 取得完了: {article['title'][:50]}...")
+            time.sleep(1)
+        return articles
+
+    def scrape_all_sites(self, max_articles_per_site: int = 5) -> List:
+        """全サイトから記事を取得"""
+        all_articles =
+        for site_key in self.site_configs.keys():
+            try:
+                articles = self.scrape_site(site_key, max_articles_per_site)
+                all_articles.extend(articles)
+            except Exception as e:
+                logger.error(f"{site_key}のスクレイピングエラー: {e}")
+        logger.info(f"スクレイピング完了: 合計{len(all_articles)}件の記事を取得")
+        return all_articles
     
-    if not os.path.exists('articles.json'):
-        logger.error("articles.jsonが見つかりません。先にscraper.pyを実行してください。")
-        return
-    
-    with open('articles.json', 'r', encoding='utf-8') as f:
-        articles = json.load(f)
-    
-    logger.info(f"{len(articles)}件の記事を読み込みました")
-    
-    combined_rss = generator.generate_rss_feed(articles)
-    generator.save_rss_file(combined_rss, 'rss/combined.xml')
-    
-    site_keys = ['bengo4', 'corporate_legal', 'ben54']
-    for site_key in site_keys:
-        site_rss = generator.generate_rss_feed(articles, site_key)
-        generator.save_rss_file(site_rss, f'rss/{site_key}.xml')
-    
-    metadata = generator.generate_metadata(articles)
-    generator.save_metadata(metadata, 'metadata.json')
-    
-    logger.info("RSS生成完了")
+    def save_articles_json(self, articles: List, filepath: str):
+        """記事データをJSONファイルに保存"""
+        articles_for_json =
+        for article in articles:
+            article_copy = article.copy()
+            article_copy['published_date'] = article['published_date'].isoformat()
+            articles_for_json.append(article_copy)
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(articles_for_json, f, ensure_ascii=False, indent=2)
+        logger.info(f"記事データを保存しました: {filepath}")
 
 if __name__ == "__main__":
-    main()
+    scraper = StaticLegalScraper()
+    articles = scraper.scrape_all_sites(max_articles_per_site=5)
+    scraper.save_articles_json(articles, 'articles.json')
+    print(f"\n=== 取得結果 ===")
+    print(f"総記事数: {len(articles)}")
