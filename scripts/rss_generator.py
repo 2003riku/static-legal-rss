@@ -1,5 +1,3 @@
-# scripts/rss_generator.py
-
 import json
 import os
 from datetime import datetime, timezone, timedelta
@@ -41,7 +39,7 @@ class StaticRSSGenerator:
             '税法': ['税', '税務', '確定申告', '消費税', '所得税', '法人税'],
             '知的財産法': ['特許', '商標', '著作権', '知的財産', 'IP', '発明'],
             '国際法': ['国際', '外国', '条約', '貿易', '外交', '海外'],
-            '一般法律':  # ★★★ 構文エラーを修正 ★★★
+            '一般法律': []  # ★★★ 修正済み ★★★
         }
         
         for category, keywords in categories.items():
