@@ -7,6 +7,8 @@ from typing import List, Dict
 import logging
 import os
 import re
+# ★★★ 修正点1: urljoinをインポート ★★★
+from urllib.parse import urljoin
 
 # ログ設定
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -21,7 +23,7 @@ class StaticLegalScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
         
-        # ★★★ 各サイトの現在のHTML構造に合わせてCSSセレクタを更新済み ★★★
+        # 各サイトの現在のHTML構造に合わせてCSSセレクタを更新済み
         self.site_configs = {
             'bengo4': {
                 'name': '弁護士ドットコム',
@@ -70,12 +72,10 @@ class StaticLegalScraper:
             for link_elem in soup.select(config['selectors']['article_links'])[:max_links]:
                 href = link_elem.get('href')
                 if href:
-                    if href.startswith('/'):
-                        href = config['base_url'] + href
-                    elif not href.startswith('http'):
-                        href = os.path.join(config['list_url'], href)
-                    if href not in links:
-                        links.append(href)
+                    # ★★★ 修正点2: urljoinを使用して、あらゆる相対パスを正しく絶対URLに変換 ★★★
+                    full_url = urljoin(config['list_url'], href)
+                    if full_url not in links:
+                        links.append(full_url)
             logger.info(f"{len(links)}件の記事リンクを取得しました")
             return links
         except Exception as e:
