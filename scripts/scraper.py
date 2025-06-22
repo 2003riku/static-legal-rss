@@ -1,4 +1,5 @@
-import requests
+# ★★★ ここを修正(1) ★★★
+import cloudscraper
 from bs4 import BeautifulSoup
 import json
 import time
@@ -7,7 +8,6 @@ from typing import List, Dict
 import logging
 import os
 import re
-# ★★★ 修正点1: urljoinをインポート ★★★
 from urllib.parse import urljoin
 
 # ログ設定
@@ -18,7 +18,9 @@ class StaticLegalScraper:
     """GitHub Pages用の静的RSS生成のためのスクレイパー"""
     
     def __init__(self):
-        self.session = requests.Session()
+        # ★★★ ここを修正(2) ★★★
+        # requests.Session() から cloudscraper に変更してボット対策を回避
+        self.session = cloudscraper.create_scraper()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
@@ -72,7 +74,6 @@ class StaticLegalScraper:
             for link_elem in soup.select(config['selectors']['article_links'])[:max_links]:
                 href = link_elem.get('href')
                 if href:
-                    # ★★★ 修正点2: urljoinを使用して、あらゆる相対パスを正しく絶対URLに変換 ★★★
                     full_url = urljoin(config['list_url'], href)
                     if full_url not in links:
                         links.append(full_url)
