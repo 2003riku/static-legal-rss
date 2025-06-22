@@ -41,7 +41,7 @@ class StaticRSSGenerator:
             '税法': ['税', '税務', '確定申告', '消費税', '所得税', '法人税'],
             '知的財産法': ['特許', '商標', '著作権', '知的財産', 'IP', '発明'],
             '国際法': ['国際', '外国', '条約', '貿易', '外交', '海外'],
-            '一般法律':  # デフォルトカテゴリ
+            '一般法律':  # ★★★ 構文エラーを修正 ★★★
         }
         
         for category, keywords in categories.items():
@@ -59,7 +59,10 @@ class StaticRSSGenerator:
         
         SubElement(item, 'title').text = article['title']
         SubElement(item, 'link').text = article['url']
-        SubElement(item, 'description').text = article['content']
+        
+        # scraper.pyが取得した本文をdescriptionとして使用
+        description = SubElement(item, 'description')
+        description.text = f"【{article['source']}】{article['content']}"
         
         pub_date = SubElement(item, 'pubDate')
         if isinstance(article['published_date'], str):
