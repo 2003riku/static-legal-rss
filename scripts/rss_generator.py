@@ -1,6 +1,8 @@
+# scripts/rss_generator.py
+
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from xml.etree.ElementTree import Element, SubElement, tostring
 from xml.dom import minidom
 import logging
@@ -14,9 +16,11 @@ class StaticRSSGenerator:
     """GitHub Pages用の静的RSS生成器"""
     
     def __init__(self):
+        # --- ★ 修正箇所 ★ ---
+        # チャンネルのリンクを正しいURLに修正
         self.channel_info = {
             'title': '法律ニュース総合RSS',
-            'link': 'https://your-username.github.io/static-legal-rss/',
+            'link': 'https://2003riku.github.io/static-legal-rss/',
             'description': '複数の法律関連サイトから取得した最新ニュースを統合配信',
             'language': 'ja',
             'generator': 'Static Legal RSS Tool'
@@ -38,7 +42,7 @@ class StaticRSSGenerator:
             '税法': ['税', '税務', '確定申告', '消費税', '所得税', '法人税'],
             '知的財産法': ['特許', '商標', '著作権', '知的財産', 'IP', '発明'],
             '国際法': ['国際', '外国', '条約', '貿易', '外交', '海外'],
-            '一般法律': []  # デフォルトカテゴリ
+            '一般法律':  # デフォルトカテゴリ
         }
         
         for category, keywords in categories.items():
@@ -54,47 +58,39 @@ class StaticRSSGenerator:
         """RSS itemエレメントを作成"""
         item = Element('item')
         
-        # タイトル
-        title = SubElement(item, 'title')
-        title.text = article['title']
+        SubElement(item, 'title').text = article['title']
+        SubElement(item, 'link').text = article['url']
         
-        # リンク
-        link = SubElement(item, 'link')
-        link.text = article['url']
+        # --- ★ 修正箇所 ★ ---
+        # scraper.pyが取得した本文をそのままdescriptionとして使用
+        SubElement(item, 'description').text = article['content']
         
-        # 説明
-        description = SubElement(item, 'description')
-        description.text = f"【{article['source']}】{article['content']}"
-        
-        # 公開日時
         pub_date = SubElement(item, 'pubDate')
         if isinstance(article['published_date'], str):
             pub_datetime = datetime.fromisoformat(article['published_date'])
         else:
             pub_datetime = article['published_date']
-        pub_date.text = pub_datetime.strftime('%a, %d %b %Y %H:%M:%S %z')
-        if not pub_date.text.endswith(' +0900'):
-            pub_date.text = pub_datetime.strftime('%a, %d %b %Y %H:%M:%S') + ' +0900'
         
-        # GUID
-        guid = SubElement(item, 'guid')
-        guid.set('isPermaLink', 'true')
+        # タイムゾーン情報がない場合はJST (+0900) を付与
+        if pub_datetime.tzinfo is None:
+            jst = timezone(timedelta(hours=+9))
+            pub_datetime = pub_datetime.replace(tzinfo=jst)
+        
+        pub_date.text = pub_datetime.strftime('%a, %d %b %Y %H:%M:%S %z')
+        
+        guid = SubElement(item, 'guid', isPermaLink='true')
         guid.text = article['url']
         
-        # カテゴリ
         category = SubElement(item, 'category')
         category.text = self.categorize_article(article['title'], article['content'])
         
-        # ソース
-        source = SubElement(item, 'source')
-        source.set('url', article['url'])
+        source = SubElement(item, 'source', url=article['url'])
         source.text = article['source']
         
         return item
     
-    def generate_rss_feed(self, articles: List[Dict], site_filter: str = None) -> str:
+    def generate_rss_feed(self, articles: List, site_filter: str = None) -> str:
         """RSSフィードを生成"""
-        # サイトフィルタリング
         if site_filter:
             site_names = {
                 'bengo4': '弁護士ドットコム',
@@ -105,17 +101,11 @@ class StaticRSSGenerator:
             if target_site:
                 articles = [a for a in articles if a['source'] == target_site]
         
-        # 日付でソート（新しい順）
-        articles = sorted(articles, key=lambda x: x['published_date'] if isinstance(x['published_date'], datetime) else datetime.fromisoformat(x['published_date']), reverse=True)
+        articles = sorted(articles, key=lambda x: datetime.fromisoformat(x['published_date']), reverse=True)
         
-        # RSS要素作成
-        rss = Element('rss')
-        rss.set('version', '2.0')
-        rss.set('xmlns:atom', 'http://www.w3.org/2005/Atom')
-        
+        rss = Element('rss', version='2.0', attrib={'xmlns:atom': 'http://www.w3.org/2005/Atom'})
         channel = SubElement(rss, 'channel')
         
-        # チャンネル情報
         title = SubElement(channel, 'title')
         if site_filter:
             site_names = {
@@ -127,47 +117,35 @@ class StaticRSSGenerator:
         else:
             title.text = self.channel_info['title']
         
-        link = SubElement(channel, 'link')
-        link.text = self.channel_info['link']
+        SubElement(channel, 'link').text = self.channel_info['link']
+        SubElement(channel, 'description').text = self.channel_info['description']
+        SubElement(channel, 'language').text = self.channel_info['language']
         
-        description = SubElement(channel, 'description')
-        description.text = self.channel_info['description']
+        jst = timezone(timedelta(hours=+9))
+        SubElement(channel, 'lastBuildDate').text = datetime.now(jst).strftime('%a, %d %b %Y %H:%M:%S %z')
+        SubElement(channel, 'generator').text = self.channel_info['generator']
         
-        language = SubElement(channel, 'language')
-        language.text = self.channel_info['language']
-        
-        last_build_date = SubElement(channel, 'lastBuildDate')
-        last_build_date.text = datetime.now().strftime('%a, %d %b %Y %H:%M:%S +0900')
-        
-        generator = SubElement(channel, 'generator')
-        generator.text = self.channel_info['generator']
-        
-        # Atom link
         atom_link = SubElement(channel, 'atom:link')
         atom_link.set('href', f"{self.channel_info['link']}rss/{'combined' if not site_filter else site_filter}.xml")
         atom_link.set('rel', 'self')
         atom_link.set('type', 'application/rss+xml')
         
-        # 記事アイテム追加
-        for article in articles[:20]:  # 最新20件
+        for article in articles[:20]:
             item = self.create_rss_item(article)
             channel.append(item)
         
-        # XML文字列に変換
-        rough_string = tostring(rss, encoding='unicode')
+        rough_string = tostring(rss, 'utf-8')
         reparsed = minidom.parseString(rough_string)
-        return reparsed.toprettyxml(indent="  ", encoding=None)
+        return reparsed.toprettyxml(indent="  ", encoding="utf-8").decode()
     
     def save_rss_file(self, rss_content: str, filepath: str):
         """RSSファイルを保存"""
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(rss_content)
-        
         logger.info(f"RSSファイルを保存しました: {filepath}")
     
-    def generate_metadata(self, articles: List[Dict]) -> Dict:
+    def generate_metadata(self, articles: List) -> Dict:
         """メタデータを生成"""
         return {
             'last_updated': datetime.now().isoformat(),
@@ -180,14 +158,12 @@ class StaticRSSGenerator:
         """メタデータをJSONファイルに保存"""
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(metadata, f, ensure_ascii=False, indent=2)
-        
         logger.info(f"メタデータを保存しました: {filepath}")
 
 def main():
     """メイン処理"""
     generator = StaticRSSGenerator()
     
-    # 記事データを読み込み
     if not os.path.exists('articles.json'):
         logger.error("articles.jsonが見つかりません。先にscraper.pyを実行してください。")
         return
@@ -197,31 +173,18 @@ def main():
     
     logger.info(f"{len(articles)}件の記事を読み込みました")
     
-    # 統合RSSフィード生成
     combined_rss = generator.generate_rss_feed(articles)
     generator.save_rss_file(combined_rss, 'rss/combined.xml')
     
-    # サイト別RSSフィード生成
     site_keys = ['bengo4', 'corporate_legal', 'ben54']
     for site_key in site_keys:
         site_rss = generator.generate_rss_feed(articles, site_key)
         generator.save_rss_file(site_rss, f'rss/{site_key}.xml')
     
-    # メタデータ生成・保存
     metadata = generator.generate_metadata(articles)
     generator.save_metadata(metadata, 'metadata.json')
     
     logger.info("RSS生成完了")
-    
-    # 統計表示
-    print(f"\n=== RSS生成結果 ===")
-    print(f"総記事数: {len(articles)}")
-    print(f"生成ファイル:")
-    print(f"  - rss/combined.xml (統合フィード)")
-    for site_key in site_keys:
-        print(f"  - rss/{site_key}.xml")
-    print(f"  - metadata.json")
 
 if __name__ == "__main__":
     main()
-
