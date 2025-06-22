@@ -1,5 +1,3 @@
-# scripts/scraper.py
-
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -68,7 +66,7 @@ class StaticLegalScraper:
             response = self.session.get(config['list_url'], timeout=30)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
-            links =  # ★★★ 構文エラーを修正 ★★★
+            links = []  # ★★★ 修正済み ★★★
             for link_elem in soup.select(config['selectors']['article_links'])[:max_links]:
                 href = link_elem.get('href')
                 if href:
@@ -82,7 +80,7 @@ class StaticLegalScraper:
             return links
         except Exception as e:
             logger.error(f"{config['name']}の記事リンク取得エラー: {e}")
-            return
+            return []
 
     def extract_article_content(self, url: str, site_key: str) -> Dict:
         """個別記事の内容を抽出"""
@@ -127,7 +125,7 @@ class StaticLegalScraper:
         config = self.site_configs[site_key]
         logger.info(f"{config['name']}からニュースを取得中...")
         article_links = self.get_article_links(site_key, max_articles)
-        articles =  # ★★★ 構文エラーを修正 ★★★
+        articles = []  # ★★★ 修正済み ★★★
         for i, link in enumerate(article_links, 1):
             logger.info(f"記事 {i}/{len(article_links)} を処理中: {link}")
             article = self.extract_article_content(link, site_key)
@@ -139,7 +137,7 @@ class StaticLegalScraper:
 
     def scrape_all_sites(self, max_articles_per_site: int = 5) -> List:
         """全サイトから記事を取得"""
-        all_articles =  # ★★★ 構文エラーを修正 ★★★
+        all_articles = []  # ★★★ 修正済み ★★★
         for site_key in self.site_configs.keys():
             try:
                 articles = self.scrape_site(site_key, max_articles_per_site)
@@ -151,7 +149,7 @@ class StaticLegalScraper:
     
     def save_articles_json(self, articles: List, filepath: str):
         """記事データをJSONファイルに保存"""
-        articles_for_json =  # ★★★ 構文エラーを修正 ★★★
+        articles_for_json = []  # ★★★ 修正済み ★★★
         for article in articles:
             article_copy = article.copy()
             article_copy['published_date'] = article['published_date'].isoformat()
