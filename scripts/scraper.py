@@ -21,14 +21,14 @@ class StaticLegalScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
         
-        # 各サイトのHTML構造に合わせた、正確なCSSセレクタに更新
+        # ★★★ 各サイトの現在のHTML構造に合わせてCSSセレクタを更新済み ★★★
         self.site_configs = {
             'bengo4': {
                 'name': '弁護士ドットコム',
                 'base_url': 'https://www.bengo4.com',
                 'list_url': 'https://www.bengo4.com/times/',
                 'selectors': {
-                    'article_links': 'div.p-topics-list__item > a',
+                    'article_links': 'a.p-topics-list-item__container',
                     'title': 'h1.p-article-header__title',
                     'content': 'div.story_body',
                     'date': 'time.p-article-header__date'
@@ -39,7 +39,7 @@ class StaticLegalScraper:
                 'base_url': 'https://www.corporate-legal.jp',
                 'list_url': 'https://www.corporate-legal.jp/news/',
                 'selectors': {
-                    'article_links': 'div.article-list-item > a',
+                    'article_links': 'a.article-list--link',
                     'title': 'h1.article_title',
                     'content': 'div.article_text_area',
                     'date': 'p.article_date'
@@ -50,7 +50,7 @@ class StaticLegalScraper:
                 'base_url': 'https://www.ben54.jp',
                 'list_url': 'https://www.ben54.jp/news/',
                 'selectors': {
-                    'article_links': 'div.article_item > a',
+                    'article_links': 'div.article_item a',
                     'title': 'h1.article_title',
                     'content': 'div.article_cont',
                     'date': 'span.date'
@@ -66,7 +66,7 @@ class StaticLegalScraper:
             response = self.session.get(config['list_url'], timeout=30)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
-            links = []  # ★★★ 修正済み ★★★
+            links = []
             for link_elem in soup.select(config['selectors']['article_links'])[:max_links]:
                 href = link_elem.get('href')
                 if href:
@@ -125,7 +125,7 @@ class StaticLegalScraper:
         config = self.site_configs[site_key]
         logger.info(f"{config['name']}からニュースを取得中...")
         article_links = self.get_article_links(site_key, max_articles)
-        articles = []  # ★★★ 修正済み ★★★
+        articles = []
         for i, link in enumerate(article_links, 1):
             logger.info(f"記事 {i}/{len(article_links)} を処理中: {link}")
             article = self.extract_article_content(link, site_key)
@@ -137,7 +137,7 @@ class StaticLegalScraper:
 
     def scrape_all_sites(self, max_articles_per_site: int = 5) -> List:
         """全サイトから記事を取得"""
-        all_articles = []  # ★★★ 修正済み ★★★
+        all_articles = []
         for site_key in self.site_configs.keys():
             try:
                 articles = self.scrape_site(site_key, max_articles_per_site)
@@ -149,7 +149,7 @@ class StaticLegalScraper:
     
     def save_articles_json(self, articles: List, filepath: str):
         """記事データをJSONファイルに保存"""
-        articles_for_json = []  # ★★★ 修正済み ★★★
+        articles_for_json = []
         for article in articles:
             article_copy = article.copy()
             article_copy['published_date'] = article['published_date'].isoformat()
