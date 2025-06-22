@@ -1,4 +1,3 @@
-# ★★★ ここを修正(1) ★★★
 import cloudscraper
 from bs4 import BeautifulSoup
 import json
@@ -18,21 +17,20 @@ class StaticLegalScraper:
     """GitHub Pages用の静的RSS生成のためのスクレイパー"""
     
     def __init__(self):
-        # ★★★ ここを修正(2) ★★★
-        # requests.Session() から cloudscraper に変更してボット対策を回避
+        # cloudscraper に変更してボット対策を回避
         self.session = cloudscraper.create_scraper()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
         
-        # 各サイトの現在のHTML構造に合わせてCSSセレクタを更新済み
         self.site_configs = {
             'bengo4': {
                 'name': '弁護士ドットコム',
                 'base_url': 'https://www.bengo4.com',
                 'list_url': 'https://www.bengo4.com/times/',
                 'selectors': {
-                    'article_links': 'a.p-topics-list-item__container',
+                    # ★★★ あなたの発見に基づき、セレクタを更新 ★★★
+                    'article_links': 'a.p-topics-list-item__container, div.p-secondaryArticle a',
                     'title': 'h1.p-article-header__title',
                     'content': 'div.story_body',
                     'date': 'time.p-article-header__date'
@@ -71,12 +69,19 @@ class StaticLegalScraper:
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
             links = []
-            for link_elem in soup.select(config['selectors']['article_links'])[:max_links]:
+            
+            # `max_links`の制限内で重複なくリンクを追加するロジック
+            seen_urls = set()
+            for link_elem in soup.select(config['selectors']['article_links']):
+                if len(links) >= max_links:
+                    break
                 href = link_elem.get('href')
                 if href:
                     full_url = urljoin(config['list_url'], href)
-                    if full_url not in links:
+                    if full_url not in seen_urls:
+                        seen_urls.add(full_url)
                         links.append(full_url)
+
             logger.info(f"{len(links)}件の記事リンクを取得しました")
             return links
         except Exception as e:
