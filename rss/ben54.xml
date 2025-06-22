@@ -1,57 +1,12 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>弁護士JPニュース - 法律ニュースRSS</title>
-    <link>https://your-username.github.io/static-legal-rss/</link>
+    <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Jun 2025 11:16:31 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 22 Jun 2025 21:16:05 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
-    <atom:link href="https://your-username.github.io/static-legal-rss/rss/ben54.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>新着記事一覧</title>
-      <link>https://www.ben54.jp/news/list</link>
-      <description>【弁護士JPニュース】内容不明</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/list</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/list">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>日常生活の記事一覧</title>
-      <link>https://www.ben54.jp/news/life</link>
-      <description>【弁護士JPニュース】内容不明</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/life</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/life">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>働き方の記事一覧</title>
-      <link>https://www.ben54.jp/news/work</link>
-      <description>【弁護士JPニュース】内容不明</description>
-      <pubDate>Fri, 20 Jun 2025 00:00:00 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/work</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/work">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>お金の記事一覧</title>
-      <link>https://www.ben54.jp/news/money</link>
-      <description>【弁護士JPニュース】内容不明</description>
-      <pubDate>Thu, 19 Jun 2025 00:00:00 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/money</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/money">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>医療・健康の記事一覧</title>
-      <link>https://www.ben54.jp/news/health</link>
-      <description>【弁護士JPニュース】内容不明</description>
-      <pubDate>Wed, 18 Jun 2025 00:00:00 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/health</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/health">弁護士JPニュース</source>
-    </item>
+    <atom:link href="https://2003riku.github.io/static-legal-rss/rss/ben54.xml" rel="self" type="application/rss+xml"/>
   </channel>
 </rss>
