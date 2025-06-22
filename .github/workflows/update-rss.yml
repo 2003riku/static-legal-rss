@@ -2,8 +2,8 @@ name: Update Legal RSS Feed
 
 on:
   schedule:
-    # 6時間ごとに実行 (UTC時間で指定)
-    - cron: '0 */6 * * *'
+    # 1時間ごとに実行 (UTC時間で指定)
+    - cron: '0 */1 * * *'
   workflow_dispatch: # 手動実行も可能
 
 permissions:
