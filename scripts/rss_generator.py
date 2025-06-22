@@ -16,7 +16,6 @@ class StaticRSSGenerator:
     """GitHub Pages用の静的RSS生成器"""
     
     def __init__(self):
-        # --- ★ 修正箇所 ★ ---
         # チャンネルのリンクを正しいURLに修正
         self.channel_info = {
             'title': '法律ニュース総合RSS',
@@ -60,9 +59,6 @@ class StaticRSSGenerator:
         
         SubElement(item, 'title').text = article['title']
         SubElement(item, 'link').text = article['url']
-        
-        # --- ★ 修正箇所 ★ ---
-        # scraper.pyが取得した本文をそのままdescriptionとして使用
         SubElement(item, 'description').text = article['content']
         
         pub_date = SubElement(item, 'pubDate')
@@ -71,7 +67,6 @@ class StaticRSSGenerator:
         else:
             pub_datetime = article['published_date']
         
-        # タイムゾーン情報がない場合はJST (+0900) を付与
         if pub_datetime.tzinfo is None:
             jst = timezone(timedelta(hours=+9))
             pub_datetime = pub_datetime.replace(tzinfo=jst)
