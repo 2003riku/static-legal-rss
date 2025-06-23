@@ -15,6 +15,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 # ログ設定
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -23,13 +24,12 @@ logger = logging.getLogger(__name__)
 def setup_driver():
     """Selenium WebDriverをセットアップする"""
     options = Options()
-    options.add_argument("--headless")  # ヘッドレスモードで実行
+    options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
     
-    # GitHub Actions環境でのChromeバイナリのパスを指定
     if 'CHROME_BINARY_LOCATION' in os.environ:
         options.binary_location = os.environ['CHROME_BINARY_LOCATION']
 
@@ -38,16 +38,14 @@ def setup_driver():
 
 
 class SeleniumScraper:
-    """Seleniumを使用して動的コンテンツを扱うスクレイパー"""
     def __init__(self, driver):
         self.driver = driver
         self.site_configs = {
             'bengo4': {
                 'name': '弁護士ドットコム',
-                'base_url': 'https://www.bengo4.com',
                 'list_url': 'https://www.bengo4.com/times/',
                 'selectors': {
-                    'wait_for': '.p-topics-list-item__container, .p-secondaryArticle a', # ページ読み込み完了の目印
+                    'wait_for': '.p-topics-list-item__container, .p-secondaryArticle a',
                     'article_links': '.p-topics-list-item__container, .p-secondaryArticle a',
                     'title': '.p-articleDetail__headText h1',
                     'content': '.p-articleDetail__body',
@@ -58,7 +56,7 @@ class SeleniumScraper:
                 'name': '企業法務ナビ',
                 'list_url': 'https://www.corporate-legal.jp/news/',
                 'selectors': {
-                    'wait_for': 'ul.article-list > li.article-list--item',
+                    'wait_for': 'ul.article-list', # よりシンプルなコンテナを待つ
                     'article_links': 'ul.article-list > li.article-list--item > a.article-list--link',
                     'title': 'h1.article_title',
                     'content': 'div.article_text_area',
@@ -73,41 +71,59 @@ class SeleniumScraper:
                     'article_links': 'div.article_item > a',
                     'title': 'h1.article_title',
                     'content': 'div.article_cont',
-                    'date': 'span.date'
+                    'date': 'span.date',
+                    'cookie_accept_button': '#cookie_accept' # Cookie同意ボタンのセレクタ
                 }
             }
         }
 
-    def get_page_source(self, url: str, wait_for_selector: str) -> str:
-        """指定したURLのページソースを、要素が表示されるまで待ってから取得"""
+    def get_page_source(self, url: str, site_key: str) -> str:
+        """ページにアクセスし、必要に応じてCookie同意ボタンを押し、ソースを取得"""
         logger.info(f"URLにアクセス中: {url}")
-        self.driver.get(url)
+        config = self.site_configs[site_key]
+        
         try:
-            # 指定したセレクタの要素が表示されるまで最大20秒待つ
+            self.driver.get(url)
+            
+            # ★★★ 対策: Cookie同意ボタンがあればクリックする ★★★
+            if 'cookie_accept_button' in config['selectors']:
+                try:
+                    cookie_button = WebDriverWait(self.driver, 5).until(
+                        EC.element_to_be_clickable((By.CSS_SELECTOR, config['selectors']['cookie_accept_button']))
+                    )
+                    logger.info("Cookie同意ボタンが見つかりました。クリックします。")
+                    cookie_button.click()
+                    time.sleep(1) # クリック後の描画を待つ
+                except TimeoutException:
+                    logger.info("Cookie同意ボタンは見つかりませんでした。処理を続行します。")
+
+            # ★★★ 対策: メインコンテンツの表示を待つ ★★★
             WebDriverWait(self.driver, 20).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, wait_for_selector))
+                EC.presence_of_element_located((By.CSS_SELECTOR, config['selectors']['wait_for']))
             )
             logger.info("ページの読み込み完了。")
             return self.driver.page_source
+
+        except TimeoutException:
+            logger.error(f"ページの読み込み待機中にタイムアウトしました: {url}")
+            logger.error(f"現在のページタイトル: {self.driver.title}")
+            return ""
         except Exception as e:
-            logger.error(f"ページの読み込み待機中にタイムアウトまたはエラー: {e}")
+            logger.error(f"ページ取得中に予期せぬエラー: {e}")
             return ""
 
     def get_article_links(self, site_key: str, max_links: int = 5) -> List[str]:
         config = self.site_configs[site_key]
         list_url = config['list_url']
         
-        page_source = self.get_page_source(list_url, config['selectors']['wait_for'])
-        if not page_source:
-            return []
+        page_source = self.get_page_source(list_url, site_key)
+        if not page_source: return []
             
         soup = BeautifulSoup(page_source, 'html.parser')
-        links = []
-        seen_urls = set()
+        links, seen_urls = [], set()
 
         for link_elem in soup.select(config['selectors']['article_links']):
-            if len(links) >= max_links:
-                break
+            if len(links) >= max_links: break
             href = link_elem.get('href')
             if href:
                 full_url = urljoin(list_url, href.strip())
@@ -120,14 +136,14 @@ class SeleniumScraper:
 
     def extract_article_content(self, url: str, site_key: str) -> Dict:
         config = self.site_configs[site_key]
-        page_source = self.get_page_source(url, config['selectors']['title'])
-        if not page_source:
-            return None
+        # 個別記事ページでは、タイトルが表示されるのを待つ
+        page_source = self.get_page_source(url, site_key) # ここでも汎用的な待機処理を使う
+        if not page_source: return None
             
         soup = BeautifulSoup(page_source, 'html.parser')
         
-        title_elem = soup.select_one(config['selectors']['title'])
-        title = title_elem.get_text(strip=True) if title_elem else "タイトル不明"
+        title = soup.select_one(config['selectors']['title'])
+        title = title.get_text(strip=True) if title else "タイトル不明"
         
         content_elem = soup.select_one(config['selectors']['content'])
         if content_elem:
@@ -149,7 +165,7 @@ class SeleniumScraper:
         
         return {'title': title, 'url': url, 'content': content, 'published_date': published_date, 'source': config['name']}
 
-    def scrape_site(self, site_key: str, max_articles: int = 5) -> List:
+    def scrape_site(self, site_key: str, max_articles: int = 5) -> List[Dict]:
         logger.info(f"サイト「{self.site_configs[site_key]['name']}」のスクレイピングを開始します。")
         article_links = self.get_article_links(site_key, max_articles)
         
@@ -160,7 +176,7 @@ class SeleniumScraper:
         articles = []
         for i, link in enumerate(article_links, 1):
             logger.info(f"記事 {i}/{len(article_links)} を処理中: {link}")
-            time.sleep(2) # サーバー負荷軽減
+            time.sleep(1) # サーバー負荷軽減
             article = self.extract_article_content(link, site_key)
             if article:
                 articles.append(article)
@@ -168,7 +184,12 @@ class SeleniumScraper:
         return articles
 
 def save_articles_json(articles: List, filepath: str):
-    articles_for_json = [{'published_date': a['published_date'].isoformat(), **{k: v for k, v in a.items() if k != 'published_date'}} for a in articles]
+    articles_for_json = []
+    for article in articles:
+        # datetimeオブジェクトをisoformat文字列に変換
+        if isinstance(article.get('published_date'), datetime):
+            article['published_date'] = article['published_date'].isoformat()
+        articles_for_json.append(article)
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(articles_for_json, f, ensure_ascii=False, indent=2)
     logger.info(f"記事データを保存しました: {filepath}")
