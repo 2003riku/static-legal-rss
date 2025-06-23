@@ -15,12 +15,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+import cloudscraper
 
 # ログ設定
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# --- Selenium WebDriver Setup ---
 def setup_driver():
     """Selenium WebDriverをセットアップする"""
     options = Options()
@@ -36,186 +38,188 @@ def setup_driver():
     service = ChromeService(ChromeDriverManager().install())
     return webdriver.Chrome(service=service, options=options)
 
+# --- スクレイパークラス ---
+class HybridScraper:
+    def __init__(self):
+        self.driver = None
+        self.cloudscraper = cloudscraper.create_scraper()
+        self.cloudscraper.headers.update({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'Accept-Language': 'ja,en-US;q=0.9,en;q=0.8',
+        })
+    
+    def get_driver(self):
+        """必要になった場合にのみSeleniumドライバを初期化"""
+        if self.driver is None:
+            logger.info("Selenium WebDriverを初期化しています...")
+            self.driver = setup_driver()
+        return self.driver
 
-class SeleniumScraper:
-    def __init__(self, driver):
-        self.driver = driver
-        self.site_configs = {
-            'bengo4': {
-                'name': '弁護士ドットコム',
-                'list_url': 'https://www.bengo4.com/times/',
-                'selectors': {
-                    'wait_for': '.p-topics-list-item__container, .p-secondaryArticle a',
-                    'article_links': '.p-topics-list-item__container, .p-secondaryArticle a',
-                    'title': '.p-articleDetail__headText h1',
-                    'content': '.p-articleDetail__body',
-                    'date': '.p-articleDetail__meta time'
-                }
-            },
-            'corporate_legal': {
-                'name': '企業法務ナビ',
-                'list_url': 'https://www.corporate-legal.jp/news/',
-                'selectors': {
-                    'wait_for': 'ul.article-list', # よりシンプルなコンテナを待つ
-                    'article_links': 'ul.article-list > li.article-list--item > a.article-list--link',
-                    'title': 'h1.article_title',
-                    'content': 'div.article_text_area',
-                    'date': 'p.article_date'
-                }
-            },
-            'ben54': {
-                'name': '弁護士JPニュース',
-                'list_url': 'https://www.ben54.jp/news/',
-                'selectors': {
-                    'wait_for': 'div.article_item',
-                    'article_links': 'div.article_item > a',
-                    'title': 'h1.article_title',
-                    'content': 'div.article_cont',
-                    'date': 'span.date',
-                    'cookie_accept_button': '#cookie_accept' # Cookie同意ボタンのセレクタ
-                }
-            }
-        }
+    def close_driver(self):
+        """Seleniumドライバを閉じる"""
+        if self.driver:
+            self.driver.quit()
+            self.driver = None
+            logger.info("Selenium WebDriverを終了しました。")
+            
+    # --- サイト別スクレイピングメソッド ---
 
-    def get_page_source(self, url: str, site_key: str) -> str:
-        """ページにアクセスし、必要に応じてCookie同意ボタンを押し、ソースを取得"""
-        logger.info(f"URLにアクセス中: {url}")
-        config = self.site_configs[site_key]
-        
+    def scrape_bengo4(self, max_articles=5) -> List[Dict]:
+        """弁護士ドットコム: JSON解析方式"""
+        logger.info("サイト「弁護士ドットコム」のスクレイピングを開始します (JSON解析方式)。")
+        url = 'https://www.bengo4.com/times/'
         try:
-            self.driver.get(url)
+            response = self.cloudscraper.get(url, timeout=30)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
             
-            # ★★★ 対策: Cookie同意ボタンがあればクリックする ★★★
-            if 'cookie_accept_button' in config['selectors']:
-                try:
-                    cookie_button = WebDriverWait(self.driver, 5).until(
-                        EC.element_to_be_clickable((By.CSS_SELECTOR, config['selectors']['cookie_accept_button']))
-                    )
-                    logger.info("Cookie同意ボタンが見つかりました。クリックします。")
-                    cookie_button.click()
-                    time.sleep(1) # クリック後の描画を待つ
-                except TimeoutException:
-                    logger.info("Cookie同意ボタンは見つかりませんでした。処理を続行します。")
-
-            # ★★★ 対策: メインコンテンツの表示を待つ ★★★
-            WebDriverWait(self.driver, 20).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, config['selectors']['wait_for']))
-            )
-            logger.info("ページの読み込み完了。")
-            return self.driver.page_source
-
-        except TimeoutException:
-            logger.error(f"ページの読み込み待機中にタイムアウトしました: {url}")
-            logger.error(f"現在のページタイトル: {self.driver.title}")
-            return ""
+            json_data_tag = soup.find('script', {'id': '__NEXT_DATA__'})
+            if not json_data_tag:
+                logger.error("弁護士ドットコム: __NEXT_DATA__ JSONが見つかりません。")
+                return []
+                
+            data = json.loads(json_data_tag.string)
+            articles_data = data.get('props', {}).get('pageProps', {}).get('articles', [])
+            
+            articles = []
+            for article_json in articles_data[:max_articles]:
+                article_url = urljoin(url, f"/times/articles/{article_json.get('id')}/")
+                articles.append({
+                    'title': article_json.get('title', 'タイトル不明'),
+                    'url': article_url,
+                    'content': article_json.get('description', '内容不明')[:300] + '...',
+                    'published_date': datetime.fromisoformat(article_json.get('publishedAt').replace('Z', '+00:00')),
+                    'source': '弁護士ドットコム'
+                })
+            logger.info(f"弁護士ドットコムで{len(articles)}件の記事を取得しました。")
+            return articles
         except Exception as e:
-            logger.error(f"ページ取得中に予期せぬエラー: {e}")
-            return ""
-
-    def get_article_links(self, site_key: str, max_links: int = 5) -> List[str]:
-        config = self.site_configs[site_key]
-        list_url = config['list_url']
-        
-        page_source = self.get_page_source(list_url, site_key)
-        if not page_source: return []
-            
-        soup = BeautifulSoup(page_source, 'html.parser')
-        links, seen_urls = [], set()
-
-        for link_elem in soup.select(config['selectors']['article_links']):
-            if len(links) >= max_links: break
-            href = link_elem.get('href')
-            if href:
-                full_url = urljoin(list_url, href.strip())
-                if full_url not in seen_urls:
-                    seen_urls.add(full_url)
-                    links.append(full_url)
-        
-        logger.info(f"{config['name']}で{len(links)}件の記事リンクを取得しました")
-        return links
-
-    def extract_article_content(self, url: str, site_key: str) -> Dict:
-        config = self.site_configs[site_key]
-        # 個別記事ページでは、タイトルが表示されるのを待つ
-        page_source = self.get_page_source(url, site_key) # ここでも汎用的な待機処理を使う
-        if not page_source: return None
-            
-        soup = BeautifulSoup(page_source, 'html.parser')
-        
-        title = soup.select_one(config['selectors']['title'])
-        title = title.get_text(strip=True) if title else "タイトル不明"
-        
-        content_elem = soup.select_one(config['selectors']['content'])
-        if content_elem:
-            for unwanted in content_elem.select('.rel_kiji, .kijinaka_ad, script, style'):
-                unwanted.decompose()
-            content = ' '.join(content_elem.get_text(strip=True).split())
-            content = content[:300] + '...' if len(content) > 300 else content
-        else:
-            content = "内容を取得できませんでした。"
-
-        published_date = datetime.now()
-        date_elem = soup.select_one(config['selectors']['date'])
-        if date_elem:
-            date_text = re.sub(r'公開日：', '', date_elem.get_text(strip=True))
-            match = re.search(r'(\d{4})[/\.\-年](\d{1,2})[/\.\-月](\d{1,2})', date_text)
-            if match:
-                year, month, day = map(int, match.groups())
-                published_date = datetime(year, month, day)
-        
-        return {'title': title, 'url': url, 'content': content, 'published_date': published_date, 'source': config['name']}
-
-    def scrape_site(self, site_key: str, max_articles: int = 5) -> List[Dict]:
-        logger.info(f"サイト「{self.site_configs[site_key]['name']}」のスクレイピングを開始します。")
-        article_links = self.get_article_links(site_key, max_articles)
-        
-        if not article_links:
-            logger.warning(f"サイト「{self.site_configs[site_key]['name']}」から取得する記事リンクがありません。")
+            logger.error(f"弁護士ドットコムのスクレイピング中にエラー: {e}", exc_info=True)
             return []
+
+    def scrape_corporate_legal(self, max_articles=5) -> List[Dict]:
+        """企業法務ナビ: CloudScraper方式"""
+        logger.info("サイト「企業法務ナビ」のスクレイピングを開始します (CloudScraper方式)。")
+        url = 'https://www.corporate-legal.jp/news/'
+        try:
+            response = self.cloudscraper.get(url, timeout=30)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.content, 'html.parser')
             
+            links_elems = soup.select('a.card-categories.news')
+            article_links = [urljoin(url, elem.get('href')) for elem in links_elems][:max_articles]
+            
+            articles = []
+            for link in article_links:
+                time.sleep(1)
+                page_res = self.cloudscraper.get(link, timeout=30)
+                page_soup = BeautifulSoup(page_res.content, 'html.parser')
+                
+                title = page_soup.select_one('h1.article_title')
+                title = title.get_text(strip=True) if title else "タイトル不明"
+
+                content_elem = page_soup.select_one('div.article_text_area')
+                content = ' '.join(content_elem.get_text(strip=True).split())[:300] + '...' if content_elem else "内容不明"
+
+                date_elem = page_soup.select_one('p.article_date')
+                published_date = datetime.now()
+                if date_elem:
+                    match = re.search(r'(\d{4})\.(\d{1,2})\.(\d{1,2})', date_elem.get_text())
+                    if match:
+                        published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
+                
+                articles.append({'title': title, 'url': link, 'content': content, 'published_date': published_date, 'source': '企業法務ナビ'})
+                logger.info(f"  ✓ 取得完了: {title[:50]}...")
+            
+            logger.info(f"企業法務ナビで{len(articles)}件の記事を取得しました。")
+            return articles
+        except Exception as e:
+            logger.error(f"企業法務ナビのスクレイピング中にエラー: {e}", exc_info=True)
+            return []
+
+    def scrape_ben54(self, max_articles=5) -> List[Dict]:
+        """弁護士JPニュース: Selenium方式"""
+        logger.info("サイト「弁護士JPニュース」のスクレイピングを開始します (Selenium方式)。")
+        driver = self.get_driver()
+        url = 'https://www.ben54.jp/news/'
         articles = []
-        for i, link in enumerate(article_links, 1):
-            logger.info(f"記事 {i}/{len(article_links)} を処理中: {link}")
-            time.sleep(1) # サーバー負荷軽減
-            article = self.extract_article_content(link, site_key)
-            if article:
-                articles.append(article)
-                logger.info(f"  ✓ 取得完了: {article['title'][:50]}...")
-        return articles
+        try:
+            driver.get(url)
+            
+            # Cookie同意ボタン対策
+            try:
+                WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#cookie_accept"))).click()
+                logger.info("弁護士JPニュース: Cookie同意ボタンをクリックしました。")
+            except TimeoutException:
+                logger.info("弁護士JPニュース: Cookie同意ボタンは見つかりませんでした。")
+
+            # 記事一覧が表示されるまで待つ
+            WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, "article.c-news-card--small a.c-news-card__link")))
+            soup = BeautifulSoup(driver.page_source, 'html.parser')
+            
+            link_elems = soup.select('article a.c-news-card__link')
+            article_links = []
+            seen_urls = set()
+            for elem in link_elems:
+                if len(article_links) >= max_articles: break
+                href = elem.get('href')
+                if href and href not in seen_urls:
+                    article_links.append(href)
+                    seen_urls.add(href)
+
+            for link in article_links:
+                time.sleep(1)
+                driver.get(link)
+                WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, "h1.article_title")))
+                page_soup = BeautifulSoup(driver.page_source, 'html.parser')
+                
+                title = page_soup.select_one('h1.article_title').get_text(strip=True)
+                content_elem = page_soup.select_one('div.article_cont')
+                content = ' '.join(content_elem.get_text(strip=True).split())[:300] + '...' if content_elem else "内容不明"
+                
+                date_elem = page_soup.select_one('span.date')
+                published_date = datetime.now()
+                if date_elem:
+                    match = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})', date_elem.get_text())
+                    if match:
+                        published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
+
+                articles.append({'title': title, 'url': link, 'content': content, 'published_date': published_date, 'source': '弁護士JPニュース'})
+                logger.info(f"  ✓ 取得完了: {title[:50]}...")
+
+            logger.info(f"弁護士JPニュースで{len(articles)}件の記事を取得しました。")
+            return articles
+        except Exception as e:
+            logger.error(f"弁護士JPニュースのスクレイピング中にエラー: {e}", exc_info=True)
+            return []
 
 def save_articles_json(articles: List, filepath: str):
     articles_for_json = []
     for article in articles:
-        # datetimeオブジェクトをisoformat文字列に変換
-        if isinstance(article.get('published_date'), datetime):
-            article['published_date'] = article['published_date'].isoformat()
-        articles_for_json.append(article)
+        article_copy = article.copy()
+        if isinstance(article_copy.get('published_date'), datetime):
+            article_copy['published_date'] = article_copy['published_date'].isoformat()
+        articles_for_json.append(article_copy)
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(articles_for_json, f, ensure_ascii=False, indent=2)
     logger.info(f"記事データを保存しました: {filepath}")
 
 def main():
-    driver = None
+    scraper = HybridScraper()
+    all_articles = []
     try:
-        driver = setup_driver()
-        scraper = SeleniumScraper(driver)
+        # サイトごとに最適化されたメソッドを呼び出す
+        all_articles.extend(scraper.scrape_bengo4(max_articles=5))
+        all_articles.extend(scraper.scrape_corporate_legal(max_articles=5))
+        all_articles.extend(scraper.scrape_ben54(max_articles=5))
         
-        all_articles = []
-        for site_key in scraper.site_configs.keys():
-            try:
-                articles = scraper.scrape_site(site_key, max_articles=5)
-                all_articles.extend(articles)
-            except Exception as e:
-                logger.error(f"{site_key}のスクレイピング中に予期せぬエラー: {e}", exc_info=True)
-                
         logger.info(f"全サイトのスクレイピング完了: 合計{len(all_articles)}件の記事を取得")
         save_articles_json(all_articles, 'articles.json')
         print(f"\n=== 取得結果 ===")
         print(f"総記事数: {len(all_articles)}")
-
     finally:
-        if driver:
-            driver.quit()
+        scraper.close_driver()
 
 if __name__ == "__main__":
     main()
