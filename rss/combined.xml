@@ -5,8 +5,98 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Jun 2025 13:27:32 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Jun 2025 13:41:19 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.ben54.jp/news/2389</link>
+      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:41:19 +0900</pubDate>
+      <guid isPermaLink="true">https://www.ben54.jp/news/2389</guid>
+      <category>一般法律</category>
+      <source url="https://www.ben54.jp/news/2389">弁護士JPニュース</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.ben54.jp/news/2378</link>
+      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:41:11 +0900</pubDate>
+      <guid isPermaLink="true">https://www.ben54.jp/news/2378</guid>
+      <category>一般法律</category>
+      <source url="https://www.ben54.jp/news/2378">弁護士JPニュース</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.ben54.jp/news/2379</link>
+      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:41:03 +0900</pubDate>
+      <guid isPermaLink="true">https://www.ben54.jp/news/2379</guid>
+      <category>一般法律</category>
+      <source url="https://www.ben54.jp/news/2379">弁護士JPニュース</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.ben54.jp/news/2388</link>
+      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:40:54 +0900</pubDate>
+      <guid isPermaLink="true">https://www.ben54.jp/news/2388</guid>
+      <category>一般法律</category>
+      <source url="https://www.ben54.jp/news/2388">弁護士JPニュース</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.ben54.jp/news/2393</link>
+      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:40:47 +0900</pubDate>
+      <guid isPermaLink="true">https://www.ben54.jp/news/2393</guid>
+      <category>一般法律</category>
+      <source url="https://www.ben54.jp/news/2393">弁護士JPニュース</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.corporate-legal.jp/news/6105</link>
+      <description>【企業法務ナビ】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:40:29 +0900</pubDate>
+      <guid isPermaLink="true">https://www.corporate-legal.jp/news/6105</guid>
+      <category>一般法律</category>
+      <source url="https://www.corporate-legal.jp/news/6105">企業法務ナビ</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.corporate-legal.jp/news/6106</link>
+      <description>【企業法務ナビ】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:40:26 +0900</pubDate>
+      <guid isPermaLink="true">https://www.corporate-legal.jp/news/6106</guid>
+      <category>一般法律</category>
+      <source url="https://www.corporate-legal.jp/news/6106">企業法務ナビ</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.corporate-legal.jp/news/6102</link>
+      <description>【企業法務ナビ】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:40:24 +0900</pubDate>
+      <guid isPermaLink="true">https://www.corporate-legal.jp/news/6102</guid>
+      <category>一般法律</category>
+      <source url="https://www.corporate-legal.jp/news/6102">企業法務ナビ</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.corporate-legal.jp/news/6103</link>
+      <description>【企業法務ナビ】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:40:21 +0900</pubDate>
+      <guid isPermaLink="true">https://www.corporate-legal.jp/news/6103</guid>
+      <category>一般法律</category>
+      <source url="https://www.corporate-legal.jp/news/6103">企業法務ナビ</source>
+    </item>
+    <item>
+      <title>タイトル不明</title>
+      <link>https://www.corporate-legal.jp/news/6110</link>
+      <description>【企業法務ナビ】内容を取得できませんでした。</description>
+      <pubDate>Mon, 23 Jun 2025 04:40:18 +0900</pubDate>
+      <guid isPermaLink="true">https://www.corporate-legal.jp/news/6110</guid>
+      <category>一般法律</category>
+      <source url="https://www.corporate-legal.jp/news/6110">企業法務ナビ</source>
+    </item>
   </channel>
 </rss>
