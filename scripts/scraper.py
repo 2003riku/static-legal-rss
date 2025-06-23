@@ -23,13 +23,17 @@ logger = logging.getLogger(__name__)
 
 def setup_driver():
     options = Options()
+    # ★★★ 対策: ページ読み込み戦略をeagerに変更し、高速化と安定化を図る ★★★
+    options.page_load_strategy = 'eager'
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36")
+    
     if 'CHROME_BINARY_LOCATION' in os.environ:
         options.binary_location = os.environ['CHROME_BINARY_LOCATION']
+
     service = ChromeService(ChromeDriverManager().install())
     return webdriver.Chrome(service=service, options=options)
 
@@ -44,7 +48,7 @@ class SeleniumScraper:
                 'selectors': {
                     'list_wait': 'a.p-latestArticle__link, a.p-secondaryArticle__itemLink, a.c-list__itemLink',
                     'article_links': 'a.p-latestArticle__link, a.p-secondaryArticle__itemLink, a.c-list__itemLink',
-                    'article_wait': '.p-articleDetail__headText h1, .p-articleDetail__body', # タイトルか本文のどちらかを待つ
+                    'article_wait': '.p-articleDetail__body', # 本文の表示を待つのが最も確実
                     'title': '.p-articleDetail__headText h1',
                     'content': '.p-articleDetail__body',
                     'date': '.p-articleDetail__meta time'
@@ -56,7 +60,7 @@ class SeleniumScraper:
                 'selectors': {
                     'list_wait': 'a.card-categories.news',
                     'article_links': 'a.card-categories.news',
-                    'article_wait': 'h1.article_title, div.article_text_area', # タイトルか本文のどちらかを待つ
+                    'article_wait': 'div.article_text_area', # 本文の表示を待つ
                     'title': 'h1.article_title',
                     'content': 'div.article_text_area',
                     'date': 'p.article_date'
@@ -68,7 +72,7 @@ class SeleniumScraper:
                 'selectors': {
                     'list_wait': 'article a.c-news-card__link',
                     'article_links': 'article a.c-news-card__link',
-                    'article_wait': 'h1.article_title, div.article_cont', # タイトルか本文のどちらかを待つ
+                    'article_wait': 'div.article_cont', # 本文の表示を待つ
                     'title': 'h1.article_title',
                     'content': 'div.article_cont',
                     'date': 'span.date',
@@ -87,8 +91,7 @@ class SeleniumScraper:
             if 'cookie_accept_button' in config['selectors']:
                 try:
                     cookie_button = WebDriverWait(self.driver, 3).until(EC.element_to_be_clickable((By.CSS_SELECTOR, config['selectors']['cookie_accept_button'])))
-                    cookie_button.click()
-                    logger.info("Cookie同意ボタンをクリックしました。")
+                    cookie_button.click(); logger.info("Cookie同意ボタンをクリックしました。")
                     time.sleep(1)
                 except TimeoutException:
                     logger.info("Cookie同意ボタンは見つかりませんでした。")
@@ -127,11 +130,12 @@ class SeleniumScraper:
         if not page_source: return None
             
         soup = BeautifulSoup(page_source, 'html.parser')
-        title = (soup.select_one(config['selectors']['title']) or BeautifulSoup('', 'html.parser')).get_text(strip=True) or "タイトル不明"
+        title_elem = soup.select_one(config['selectors']['title'])
+        title = title_elem.get_text(strip=True) if title_elem else "タイトル不明"
         
         content_elem = soup.select_one(config['selectors']['content'])
         if content_elem:
-            for unwanted in content_elem.select('script, style, .ad, .advertisement, .related-articles'):
+            for unwanted in content_elem.select('script, style, .ad, .advertisement, [class*="related"], [class*="banner"]'):
                 unwanted.decompose()
             content = ' '.join(content_elem.get_text(strip=True).split())[:300] + '...'
         else:
@@ -186,6 +190,7 @@ def main():
                 all_articles.extend(articles)
             except Exception as e:
                 logger.error(f"{site_key}のスクレイピング中に予期せぬエラー: {e}", exc_info=True)
+                
         logger.info(f"全サイトのスクレイピング完了: 合計{len(all_articles)}件の記事を取得")
         save_articles_json(all_articles, 'articles.json')
         print(f"\n=== 取得結果 ===")
