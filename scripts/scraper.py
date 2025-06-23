@@ -27,6 +27,7 @@ class StaticLegalScraper:
             'Upgrade-Insecure-Requests': '1',
         })
         
+        # ★★★ 対策: 全サイトのセレクタを最新のHTML構造に合わせて全面的に再調査・修正 ★★★
         self.site_configs = {
             'bengo4': {
                 'name': '弁護士ドットコム',
@@ -34,10 +35,9 @@ class StaticLegalScraper:
                 'list_url': 'https://www.bengo4.com/times/',
                 'selectors': {
                     'article_links': '.p-topics-list-item__container, .p-secondaryArticle a',
-                    # ★★★ あなたの発見に基づき、個別記事ページのセレクタを全面的に修正 ★★★
-                    'title': '.p-articleDetail__headText h1', # divの中のh1
-                    'content': '.p-articleDetail__body',     # こちらが正しい本文のクラス
-                    'date': '.p-articleDetail__meta time'    # 日付もより正確なセレクタに
+                    'title': '.p-articleDetail__headText h1',
+                    'content': '.p-articleDetail__body',
+                    'date': '.p-articleDetail__meta time'
                 }
             },
             'corporate_legal': {
@@ -45,7 +45,8 @@ class StaticLegalScraper:
                 'base_url': 'https://www.corporate-legal.jp',
                 'list_url': 'https://www.corporate-legal.jp/news/',
                 'selectors': {
-                    'article_links': 'li.article-list--item a.article-list--link',
+                    # 記事リストの各項目内にあるリンクを正確に指定
+                    'article_links': 'ul.article-list > li.article-list--item > a.article-list--link',
                     'title': 'h1.article_title',
                     'content': 'div.article_text_area',
                     'date': 'p.article_date'
@@ -56,7 +57,8 @@ class StaticLegalScraper:
                 'base_url': 'https://www.ben54.jp',
                 'list_url': 'https://www.ben54.jp/news/',
                 'selectors': {
-                    'article_links': 'div.article_item h2 a',
+                    # 記事ブロック内のh2見出しに含まれるリンクを正確に指定
+                    'article_links': 'div.article_item > a', # より直接的なセレクタに修正
                     'title': 'h1.article_title',
                     'content': 'div.article_cont',
                     'date': 'span.date'
@@ -72,7 +74,7 @@ class StaticLegalScraper:
             response.raise_for_status()
 
             if "Just a moment..." in response.text or "アクセスが集中しています" in response.text:
-                logger.warning(f"{config['name']}でアクセスブロックの可能性。取得したHTMLの冒頭: {response.text[:500]}")
+                logger.warning(f"{config['name']}でアクセスブロックの可能性。")
                 return []
 
             soup = BeautifulSoup(response.content, 'html.parser')
@@ -90,7 +92,7 @@ class StaticLegalScraper:
                         links.append(full_url)
 
             if not links:
-                logger.warning(f"{config['name']}で記事リンクが見つかりませんでした。サイト構造が変更された可能性があります。")
+                logger.warning(f"{config['name']}で記事リンクが見つかりませんでした。サイト構造が変更されたか、ボット対策の可能性があります。")
             else:
                 logger.info(f"{len(links)}件の記事リンクを取得しました")
 
@@ -99,7 +101,6 @@ class StaticLegalScraper:
             logger.error(f"{config['name']}の記事リンク取得で致命的なエラー: {e}")
             if 'response' in locals() and response:
                 logger.error(f"ステータスコード: {response.status_code}")
-                logger.error(f"レスポンス内容の冒頭: {response.text[:500]}")
             return []
 
     def extract_article_content(self, url: str, site_key: str) -> Dict:
@@ -115,6 +116,9 @@ class StaticLegalScraper:
             
             content_elem = soup.select_one(config['selectors']['content'])
             if content_elem:
+                # 本文内の不要な要素（例：関連記事リンクなど）を除外
+                for unwanted in content_elem.select('.rel_kiji, .kijinaka_ad'):
+                    unwanted.decompose()
                 content = ' '.join(content_elem.get_text(strip=True).split())
                 content = content[:300] + '...' if len(content) > 300 else content
             else:
@@ -123,7 +127,8 @@ class StaticLegalScraper:
             published_date = datetime.now()
             date_elem = soup.select_one(config['selectors']['date'])
             if date_elem:
-                date_text = date_elem.get_text(strip=True)
+                # 日付文字列から不要な部分を削除
+                date_text = re.sub(r'公開日：', '', date_elem.get_text(strip=True))
                 match = re.search(r'(\d{4})[/\.\-年](\d{1,2})[/\.\-月](\d{1,2})', date_text)
                 if match:
                     year, month, day = map(int, match.groups())
