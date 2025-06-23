@@ -2,9 +2,8 @@ name: Update Legal RSS Feed
 
 on:
   schedule:
-    # 1時間ごとに実行 (UTC時間で指定)
     - cron: '0 */1 * * *'
-  workflow_dispatch: # 手動実行も可能
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,13 +23,18 @@ jobs:
       with:
         python-version: '3.11'
         
-    # ★★★ ここを修正 ★★★
-    - name: Install dependencies
+    # ★★★ ここを全面刷新 ★★★
+    - name: Set up Chrome and install dependencies
       run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
         python -m pip install --upgrade pip
-        pip install requests beautifulsoup4 cloudscraper
+        pip install selenium beautifulsoup4 webdriver-manager
         
     - name: Run update_all script
+      env:
+        # GitHub Actions環境でChromeを正しく動かすための設定
+        CHROME_BINARY_LOCATION: /usr/bin/google-chrome-stable
       run: |
         python scripts/update_all.py
         
