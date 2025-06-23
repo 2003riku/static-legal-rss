@@ -5,53 +5,8 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Jun 2025 14:17:03 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Jun 2025 14:54:22 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/ben54.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>タイトル不明</title>
-      <link>https://www.ben54.jp/news/2389</link>
-      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
-      <pubDate>Mon, 23 Jun 2025 05:17:02 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/2389</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/2389">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>タイトル不明</title>
-      <link>https://www.ben54.jp/news/2378</link>
-      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
-      <pubDate>Mon, 23 Jun 2025 05:16:55 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/2378</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/2378">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>タイトル不明</title>
-      <link>https://www.ben54.jp/news/2379</link>
-      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
-      <pubDate>Mon, 23 Jun 2025 05:16:47 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/2379</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/2379">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>タイトル不明</title>
-      <link>https://www.ben54.jp/news/2388</link>
-      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
-      <pubDate>Mon, 23 Jun 2025 05:16:39 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/2388</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/2388">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>タイトル不明</title>
-      <link>https://www.ben54.jp/news/2393</link>
-      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
-      <pubDate>Mon, 23 Jun 2025 05:16:31 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/2393</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/2393">弁護士JPニュース</source>
-    </item>
   </channel>
 </rss>
