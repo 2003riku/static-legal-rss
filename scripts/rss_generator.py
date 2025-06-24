@@ -14,7 +14,6 @@ class StaticRSSGenerator:
     """GitHub Pages用の静的RSS生成器"""
     
     def __init__(self):
-        # チャンネルのリンクを正しいURLに修正
         self.channel_info = {
             'title': '法律ニュース総合RSS',
             'link': 'https://2003riku.github.io/static-legal-rss/',
@@ -39,12 +38,11 @@ class StaticRSSGenerator:
             '税法': ['税', '税務', '確定申告', '消費税', '所得税', '法人税'],
             '知的財産法': ['特許', '商標', '著作権', '知的財産', 'IP', '発明'],
             '国際法': ['国際', '外国', '条約', '貿易', '外交', '海外'],
-            '一般法律': []  # ★★★ 修正済み ★★★
+            '一般法律': []
         }
         
         for category, keywords in categories.items():
-            if category == '一般法律':
-                continue
+            if category == '一般法律': continue
             for keyword in keywords:
                 if keyword in text:
                     return category
@@ -54,35 +52,25 @@ class StaticRSSGenerator:
     def create_rss_item(self, article: Dict) -> Element:
         """RSS itemエレメントを作成"""
         item = Element('item')
-        
         SubElement(item, 'title').text = article['title']
         SubElement(item, 'link').text = article['url']
-        
-        # scraper.pyが取得した本文をdescriptionとして使用
         description = SubElement(item, 'description')
         description.text = f"【{article['source']}】{article['content']}"
-        
         pub_date = SubElement(item, 'pubDate')
         if isinstance(article['published_date'], str):
             pub_datetime = datetime.fromisoformat(article['published_date'])
         else:
             pub_datetime = article['published_date']
-        
         if pub_datetime.tzinfo is None:
             jst = timezone(timedelta(hours=+9))
             pub_datetime = pub_datetime.replace(tzinfo=jst)
-        
         pub_date.text = pub_datetime.strftime('%a, %d %b %Y %H:%M:%S %z')
-        
         guid = SubElement(item, 'guid', isPermaLink='true')
         guid.text = article['url']
-        
         category = SubElement(item, 'category')
         category.text = self.categorize_article(article['title'], article['content'])
-        
         source = SubElement(item, 'source', url=article['url'])
         source.text = article['source']
-        
         return item
     
     def generate_rss_feed(self, articles: List, site_filter: str = None) -> str:
@@ -126,9 +114,12 @@ class StaticRSSGenerator:
         atom_link.set('rel', 'self')
         atom_link.set('type', 'application/rss+xml')
         
-        for article in articles[:20]:
+        # ▼ ここを修正 ▼
+        # articles[:20] の[:20]を削除し、全ての記事を対象にする
+        for article in articles:
             item = self.create_rss_item(article)
             channel.append(item)
+        # ▲ 修正ここまで ▲
         
         rough_string = tostring(rss, 'utf-8')
         reparsed = minidom.parseString(rough_string)
