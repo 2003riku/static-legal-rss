@@ -33,7 +33,6 @@ def setup_driver():
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    # ユーザーエージェントを少し新しく更新
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
     prefs = {"profile.managed_default_content_settings.images": 2}
@@ -69,23 +68,20 @@ class RobustScraper:
                 },
                 'wait_strategy': 'standard'
             },
-            # --- ▼ 最終修正 ▼ ---
             'ben54': {
                 'name': '弁護士JPニュース',
                 'list_url': 'https://www.ben54.jp/news/list',
-                'link_pattern': r'/news/\d+', # 記事詳細のURLパターン
+                'link_pattern': r'/news/\d+',
                 'selectors': {
-                    'links': 'ul.c-list li.p-news-list a', # 記事一覧のリンク
-                    'title': 'h1.article-header__title',   # 記事タイトル
-                    'content': 'div.article-body__content', # 記事本文
-                    'date': 'time.c-fs14, time.article-header__date', # 日付
+                    'links': 'ul.c-list li.p-news-list a',
+                    'title': 'h1.article-header__title',
+                    'content': 'div.article-body__content',
+                    'date': 'time.article-header__date', # 詳細ページ専用の日付セレクタに修正
                 },
                 'wait_strategy': 'dynamic',
-                'wait_selector': 'ul.c-list', # 実際に存在するリストのセレクタ
+                'wait_selector': 'ul.c-list',
                 'rate_limit': 2,
-                # クッキー同意処理は不要なため削除
             }
-            # --- ▲ 最終修正 ▲ ---
         }
 
     def wait_for_page_load(self, config: Dict, timeout: int = 30):
@@ -101,15 +97,11 @@ class RobustScraper:
                 logger.warning(f"要素 '{wait_selector}' の読み込みがタイムアウトしました。")
                 self.save_debug_info(config.get('name', 'unknown_site'))
                 return
-
         try:
-            WebDriverWait(self.driver, 15).until(
-                lambda driver: driver.execute_script("return document.readyState") == "complete"
-            )
+            WebDriverWait(self.driver, 15).until(lambda d: d.execute_script("return document.readyState") == "complete")
         except TimeoutException:
             logger.warning("ページの完全読み込みがタイムアウトしましたが、処理を続行します")
-        
-        time.sleep(1) # 安定化のための短い待機
+        time.sleep(1)
 
     def save_debug_info(self, site_name: str):
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -132,13 +124,11 @@ class RobustScraper:
             try:
                 self.driver.get(config['list_url'])
                 self.wait_for_page_load(config)
-
                 soup = BeautifulSoup(self.driver.page_source, 'html.parser')
                 link_candidates = soup.select(config['selectors']['links'])
                 link_pattern = config.get('link_pattern')
                 seen_urls = set()
                 count = 0
-                
                 for link_elem in link_candidates:
                     if count >= max_per_site: break
                     href = link_elem.get('href')
@@ -149,9 +139,7 @@ class RobustScraper:
                         all_links_info.append({'url': full_url, 'site_key': site_key})
                         seen_urls.add(full_url)
                         count += 1
-                
                 logger.info(f"  -> {count}件のリンクを取得しました。")
-
             except Exception as e:
                 logger.error(f"「{config['name']}」のリンク取得中にエラー: {e}")
                 self.save_debug_info(config.get('name', 'error'))
@@ -161,6 +149,7 @@ class RobustScraper:
         if not text: return ""
         return re.sub(r'\s+', ' ', text).strip()
 
+    # --- ▼ ここを修正 ▼ ---
     def get_article_detail(self, url: str, site_key: str) -> Optional[Dict]:
         config = self.site_configs[site_key]
         logger.info(f"記事詳細を取得中: {url}")
@@ -168,17 +157,20 @@ class RobustScraper:
 
         try:
             self.driver.get(url)
-            self.wait_for_page_load({'wait_strategy': 'standard'})
+            
+            # ページ描画を確実にするため、タイトルが表示されるまで明示的に待機する
+            WebDriverWait(self.driver, 20).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, config['selectors']['title']))
+            )
+            
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
 
             for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", "header"]:
                 for element in soup.select(unwanted_selector):
                     element.decompose()
             
-            title = "タイトル不明"
             title_elem = soup.select_one(config['selectors']['title'])
-            if title_elem:
-                title = self.clean_text(title_elem.get_text())
+            title = self.clean_text(title_elem.get_text()) if title_elem else "タイトル不明"
 
             content = "内容を取得できませんでした。"
             content_elem = soup.select_one(config['selectors']['content'])
@@ -194,23 +186,20 @@ class RobustScraper:
                     published_date = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
                 except ValueError:
                     match = re.search(r'(\d{4})[/\.年]\s*(\d{1,2})[/\.月]\s*(\d{1,2})', dt_str)
-                    if match:
-                        published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
+                    if match: published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
             
-            if not isinstance(published_date, datetime):
-                published_date = datetime.now(JST)
+            if not isinstance(published_date, datetime): published_date = datetime.now(JST)
             
-            if published_date.tzinfo is None:
-                published_date = published_date.replace(tzinfo=JST)
-            else:
-                published_date = published_date.astimezone(JST)
+            published_date = published_date.astimezone(JST) if published_date.tzinfo else published_date.replace(tzinfo=JST)
 
             result = {'title': title, 'url': url, 'content': content, 'published_date': published_date, 'source': config['name']}
             logger.info(f"  ✓ 取得完了: {title[:50]}...")
             return result
         except Exception as e:
             logger.error(f"記事詳細の取得中にエラー ({url}): {e}")
+            self.save_debug_info(f"detail_{site_key}") # 詳細ページでもデバッグ情報を保存
             return None
+    # --- ▲ 修正ここまで ▲ ---
 
 def save_articles_json(articles: List[Dict], filepath: str):
     articles_for_json = []
