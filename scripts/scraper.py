@@ -60,22 +60,25 @@ class RobustScraper:
             'corporate_legal': {
                 'name': '企業法務ナビ',
                 'list_url': 'https://www.corporate-legal.jp/news/',
+                # 修正点: URLパターンを追加
+                'link_pattern': r'/news/\d+<span class="math-inline">',
+'selectors'\: \{
+\# 修正点\: リンク候補を広く取得
+'links'\: 'main a',
+'title'\: 'h1\.title\-articles, h1\.article\-title, h1\.news\-title, h1',
+'content'\: 'div\.l\-cont1',
+'date'\: 'h1\.title\-articles \.text\-s, \.publish\-date, time'
+\},
+'wait\_strategy'\: 'standard'
+\},
+'ben54'\: \{
+'name'\: '弁護士JPニュース',
+'list\_url'\: 'https\://www\.ben54\.jp/news/',
+\# 修正点\: URLパターンを追加
+'link\_pattern'\: r'/news/\\d\+</span>',
                 'selectors': {
-                    'links': '.news-item a, .article-link, .news-list-item a, h2.news-headline a, a[href*="/news/"]',
-                    'title': 'h1.title-articles, h1.article-title, h1.news-title, h1',
-                    'content': 'div.l-cont1',
-                    'date': 'h1.title-articles .text-s, .publish-date, time'
-                },
-                'wait_strategy': 'standard',
-                'cookie_selectors': '.cookie-consent, .privacy-banner, .gdpr-notice'
-            },
-            'ben54': {
-                'name': '弁護士JPニュース',
-                'list_url': 'https://www.ben54.jp/news/',
-                'selectors': {
-                    # === ここが修正箇所です ===
-                    'links': '.p-news-list__item a',
-                    # =======================
+                    # 修正点: リンク候補を広く取得
+                    'links': 'main a',
                     'title': 'h1.p-news__title, h1.article-title, h1',
                     'content': '.p-news__contents',
                     'date': '.p-news__date, time[datetime]',
@@ -106,45 +109,41 @@ class RobustScraper:
                 except Exception as e:
                     logger.debug(f"スクロール処理でエラー: {e}")
 
-    def handle_cookie_consent(self, config: Dict):
-        cookie_selectors = config.get('cookie_selectors', '')
-        if cookie_selectors:
-            for selector in [s.strip() for s in cookie_selectors.split(',')]:
-                try:
-                    elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
-                    for element in elements:
-                        if element.is_displayed():
-                            for button in element.find_elements(By.TAG_NAME, 'button'):
-                                if any(text in button.text.lower() for text in ['同意', 'accept', 'ok', '承認']):
-                                    button.click()
-                                    logger.info("Cookie同意バナーを処理しました")
-                                    time.sleep(1)
-                                    return
-                except Exception:
-                    pass
-
-    def get_all_article_links(self, max_per_site=5) -> List[Dict]:
+    def get_all_article_links(self, max_per_site=10) -> List[Dict]:
         all_links_info = []
         for site_key, config in self.site_configs.items():
             logger.info(f"サイト「{config['name']}」の記事リンクを取得します。")
             try:
                 self.driver.get(config['list_url'])
                 self.wait_for_page_load(config)
-                self.handle_cookie_consent(config)
+                
                 soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-                found_links = soup.select(config['selectors']['links'])
+                
+                # 修正点: リンク取得とフィルタリングのロジックを更新
+                link_candidates = soup.select(config['selectors']['links'])
+                link_pattern = config.get('link_pattern')
+                
                 seen_urls = set()
                 count = 0
-                for link_elem in found_links:
+                for link_elem in link_candidates:
                     if count >= max_per_site:
                         break
+                    
                     href = link_elem.get('href')
-                    if href and href.strip() != '#' and not href.strip().startswith('javascript:'):
-                        full_url = urljoin(config['list_url'], href.strip())
-                        if full_url not in seen_urls:
-                            all_links_info.append({'url': full_url, 'site_key': site_key})
-                            seen_urls.add(full_url)
-                            count += 1
+                    if not href or href.strip() in ['#', ''] or href.strip().startswith('javascript:'):
+                        continue
+
+                    full_url = urljoin(config['list_url'], href.strip())
+
+                    # パターンが定義されていれば、URLがパターンに一致するかチェック
+                    if link_pattern and not re.search(link_pattern, full_url):
+                        continue
+
+                    if full_url not in seen_urls:
+                        all_links_info.append({'url': full_url, 'site_key': site_key})
+                        seen_urls.add(full_url)
+                        count += 1
+
                 logger.info(f"  -> {count}件のリンクを取得しました。")
             except Exception as e:
                 logger.error(f"「{config['name']}」のリンク取得中にエラー: {e}")
@@ -165,7 +164,7 @@ class RobustScraper:
             self.wait_for_page_load(config)
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
             
-            for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', '.related', '.box-sns-share']:
+            for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', '.related', '.box-sns-share', '.l-mail-magazine-btn']:
                 for element in soup.select(unwanted_selector):
                     element.decompose()
             
@@ -228,7 +227,8 @@ def main():
         driver = setup_driver()
         scraper = RobustScraper(driver)
         
-        links_to_scrape = scraper.get_all_article_links(max_per_site=5)
+        # 修正点: 1サイトあたり10件の記事を取得
+        links_to_scrape = scraper.get_all_article_links(max_per_site=10)
         logger.info(f"取得したリンク総数: {len(links_to_scrape)}")
         
         all_articles = []
