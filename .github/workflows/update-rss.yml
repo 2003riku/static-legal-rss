@@ -37,6 +37,20 @@ jobs:
       run: |
         python scripts/update_all.py
         
+    # --- ▼ ここに追加 ▼ ---
+    # このステップは、先行するステップ（Run update_all scriptなど）が失敗した場合にのみ実行されます。
+    - name: Upload debug artifacts on failure
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        # 成果物の名前
+        name: debug-artifacts
+        # アップロードするファイルのパス（*.pngと*.htmlの両方）
+        path: |
+          *.png
+          *.html
+    # --- ▲ 追加部分ここまで ▲ ---
+        
     - name: Configure Git
       run: |
         git config --local user.email "action@github.com"
