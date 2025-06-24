@@ -39,8 +39,11 @@ def setup_driver():
     prefs = {"profile.managed_default_content_settings.images": 2}
     options.add_experimental_option("prefs", prefs)
 
-    if 'CHROME_BINARY_LOCATION' in os.environ:
-        options.binary_location = os.environ['CHROME_BINARY_LOCATION']
+    # GitHub Actions環境では、環境変数からChromeの場所を取得することが推奨される
+    chrome_binary_location = os.environ.get('CHROME_BINARY_LOCATION')
+    if chrome_binary_location:
+        options.binary_location = chrome_binary_location
+        logger.info(f"Chrome binary location set to: {chrome_binary_location}")
 
     service = ChromeService(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
@@ -61,7 +64,6 @@ class RobustScraper:
                 'selectors': {
                     'links': '.news-item a, .article-link, .news-list-item a, h2.news-headline a, a[href*="/news/"]',
                     'title': 'h1.title-articles, h1.article-title, h1.news-title, h1',
-                    # 修正点: ご提供のHTMLに基づきセレクタを更新
                     'content': 'div.l-cont1',
                     'date': 'h1.title-articles .text-s, .publish-date, time'
                 },
@@ -74,7 +76,6 @@ class RobustScraper:
                 'selectors': {
                     'links': '.news-list article a, .article-item .title-link, .news-item h2 a, [class*="article"] [class*="title"] a, a[href*="/news/"]',
                     'title': 'h1.p-news__title, h1.article-title, h1',
-                    # 修正点: ご提供のHTMLに基づきセレクタを更新
                     'content': '.p-news__contents',
                     'date': '.p-news__date, time[datetime]',
                     'author': '.p-news__meta .writer'
@@ -121,10 +122,10 @@ class RobustScraper:
                 except Exception:
                     pass
 
-    def get_all_article_links(self, max_candidates_per_site=20) -> List[Dict]:
+    def get_all_article_links(self, max_per_site=5) -> List[Dict]:
         all_links_info = []
         for site_key, config in self.site_configs.items():
-            logger.info(f"サイト「{config['name']}」の記事リンク候補を取得します。")
+            logger.info(f"サイト「{config['name']}」の記事リンクを取得します。")
             try:
                 self.driver.get(config['list_url'])
                 self.wait_for_page_load(config)
@@ -134,7 +135,7 @@ class RobustScraper:
                 seen_urls = set()
                 count = 0
                 for link_elem in found_links:
-                    if count >= max_candidates_per_site:
+                    if count >= max_per_site:
                         break
                     href = link_elem.get('href')
                     if href and href.strip() != '#' and not href.strip().startswith('javascript:'):
@@ -143,7 +144,7 @@ class RobustScraper:
                             all_links_info.append({'url': full_url, 'site_key': site_key})
                             seen_urls.add(full_url)
                             count += 1
-                logger.info(f"  -> {count}件のリンク候補を取得しました。")
+                logger.info(f"  -> {count}件のリンクを取得しました。")
             except Exception as e:
                 logger.error(f"「{config['name']}」のリンク取得中にエラー: {e}")
         return all_links_info
@@ -175,7 +176,6 @@ class RobustScraper:
             content = "内容を取得できませんでした。"
             content_elem = soup.select_one(config['selectors']['content'])
             if content_elem:
-                # 修正点: 本文抽出ロジックを改善
                 paragraphs = content_elem.find_all('p')
                 text_parts = [self.clean_text(p.get_text()) for p in paragraphs if len(self.clean_text(p.get_text())) > 20]
                 if text_parts:
@@ -223,27 +223,37 @@ def save_articles_json(articles: List[Dict], filepath: str):
 
 def main():
     driver = None
+    # Make.com連携用に最新記事を取得するロジック
     try:
         driver = setup_driver()
         scraper = RobustScraper(driver)
         
-        TARGET_ARTICLES_COUNT = 10
-        now = datetime.now(JST)
-        # 約6ヶ月前の記事をターゲットにする (5ヶ月前～7ヶ月前の記事を対象)
-        DATE_FROM = now - timedelta(days=210)
-        DATE_TO = now - timedelta(days=150)
-        
-        logger.info(f"取得対象期間: {DATE_FROM.strftime('%Y-%m-%d')} から {DATE_TO.strftime('%Y-%m-%d')}")
-
-        links_to_scrape = scraper.get_all_article_links(max_candidates_per_site=50) # 候補を多めに取得
-        logger.info(f"取得したリンク候補総数: {len(links_to_scrape)}")
+        # 1サイトあたり5件の最新記事を取得
+        links_to_scrape = scraper.get_all_article_links(max_per_site=5)
+        logger.info(f"取得したリンク総数: {len(links_to_scrape)}")
         
         all_articles = []
         for i, link_info in enumerate(links_to_scrape, 1):
-            if len(all_articles) >= TARGET_ARTICLES_COUNT:
-                logger.info(f"目的の {TARGET_ARTICLES_COUNT} 件の記事を取得したため、処理を終了します。")
-                break
-
-            logger.info(f"処理中: {i}/{len(links_to_scrape)} (現在 {len(all_articles)} 件取得済み)")
+            logger.info(f"処理中: {i}/{len(links_to_scrape)}")
             
-            article = scraper.get_article_detail(link_info['
+            # === ここが修正箇所です ===
+            article = scraper.get_article_detail(link_info['url'], link_info['site_key'])
+            # =======================
+
+            if article and article['content'] != "内容を取得できませんでした。":
+                all_articles.append(article)
+        
+        logger.info(f"全サイトのスクレイピング完了: 合計 {len(all_articles)} 件の記事を取得")
+        
+        save_articles_json(all_articles, 'articles.json')
+        
+    except Exception as e:
+        logger.error(f"メイン処理でエラーが発生: {e}")
+        import traceback
+        traceback.print_exc()
+    finally:
+        if driver:
+            driver.quit()
+
+if __name__ == "__main__":
+    main()
