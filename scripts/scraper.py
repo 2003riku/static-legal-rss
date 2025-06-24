@@ -213,7 +213,7 @@ def main():
     try:
         driver = setup_driver()
         scraper = RobustScraper(driver)
-        links_to_scrape = scraper.get_all_article_links(max_per_site=10)
+        links_to_scrape = scraper.get_all_article_links(max_per_site=100)
         logger.info(f"取得したリンク総数: {len(links_to_scrape)}")
 
         all_articles = []
