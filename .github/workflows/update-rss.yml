@@ -26,30 +26,29 @@ jobs:
     - name: Set up Chrome and install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y google-chrome-stable # Google Chromeをインストール
+        sudo apt-get install -y google-chrome-stable
         python -m pip install --upgrade pip
-        pip install selenium beautifulsoup4 webdriver-manager # 必要なPythonパッケージをインストール
+        pip install selenium beautifulsoup4 webdriver-manager
         
     - name: Run update_all script
+      id: scraper # ステップにIDを付与
       env:
-        # CHROME_BINARY_LOCATION環境変数を設定し、SeleniumがChromeのバイナリを見つけられるようにする
         CHROME_BINARY_LOCATION: /usr/bin/google-chrome-stable
       run: |
         python scripts/update_all.py
         
-    # --- ▼ ここに追加 ▼ ---
-    # このステップは、先行するステップ（Run update_all scriptなど）が失敗した場合にのみ実行されます。
-    - name: Upload debug artifacts on failure
-      if: failure()
+    # --- ▼ ここを修正 ▼ ---
+    # if: failure() を削除し、常に実行されるようにする
+    - name: Upload debug artifacts
       uses: actions/upload-artifact@v4
       with:
-        # 成果物の名前
         name: debug-artifacts
-        # アップロードするファイルのパス（*.pngと*.htmlの両方）
         path: |
           *.png
           *.html
-    # --- ▲ 追加部分ここまで ▲ ---
+        # ファイルがない場合にエラーにしない
+        if-no-files-found: ignore
+    # --- ▲ 修正部分ここまで ▲ ---
         
     - name: Configure Git
       run: |
