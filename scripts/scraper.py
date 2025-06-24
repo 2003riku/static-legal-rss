@@ -60,7 +60,7 @@ class RobustScraper:
             'corporate_legal': {
                 'name': '企業法務ナビ',
                 'list_url': 'https://www.corporate-legal.jp/news/',
-                'link_pattern': r'/news/\d+$',
+                'link_pattern': r'/news/',
                 'selectors': {
                     'links': 'div.l-main div.container a[href*="/news/"]',
                     'title': 'h1.title-articles, h1.article-title, h1.news-title, h1',
@@ -253,5 +253,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
