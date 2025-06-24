@@ -68,20 +68,22 @@ class RobustScraper:
                 },
                 'wait_strategy': 'standard'
             },
+            # --- ▼ 完成版 ▼ ---
             'ben54': {
                 'name': '弁護士JPニュース',
                 'list_url': 'https://www.ben54.jp/news/list',
                 'link_pattern': r'/news/\d+',
                 'selectors': {
                     'links': 'ul.c-list li.p-news-list a',
-                    'title': 'h1.article-header__title',
-                    'content': 'div.article-body__content',
-                    'date': 'time.article-header__date', # 詳細ページ専用の日付セレクタに修正
+                    'title': 'h1.p-ttl__lv1', # 正しいタイトルセレクタ
+                    'content': 'div.p-news__contents', # 正しいコンテントセレクタ
+                    'date': 'time[datetime]', # 確実にdatetime属性を持つtimeタグを指定
                 },
                 'wait_strategy': 'dynamic',
                 'wait_selector': 'ul.c-list',
                 'rate_limit': 2,
             }
+            # --- ▲ 完成版 ▲ ---
         }
 
     def wait_for_page_load(self, config: Dict, timeout: int = 30):
@@ -90,9 +92,7 @@ class RobustScraper:
 
         if strategy == 'dynamic' and wait_selector:
             try:
-                WebDriverWait(self.driver, timeout).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, wait_selector))
-                )
+                WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, wait_selector)))
             except TimeoutException:
                 logger.warning(f"要素 '{wait_selector}' の読み込みがタイムアウトしました。")
                 self.save_debug_info(config.get('name', 'unknown_site'))
@@ -149,7 +149,6 @@ class RobustScraper:
         if not text: return ""
         return re.sub(r'\s+', ' ', text).strip()
 
-    # --- ▼ ここを修正 ▼ ---
     def get_article_detail(self, url: str, site_key: str) -> Optional[Dict]:
         config = self.site_configs[site_key]
         logger.info(f"記事詳細を取得中: {url}")
@@ -157,12 +156,8 @@ class RobustScraper:
 
         try:
             self.driver.get(url)
-            
-            # ページ描画を確実にするため、タイトルが表示されるまで明示的に待機する
-            WebDriverWait(self.driver, 20).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, config['selectors']['title']))
-            )
-            
+            WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.CSS_SELECTOR, config['selectors']['title'])))
+            time.sleep(1) # コンテンツが描画されるのを少し待つ
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
 
             for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", "header"]:
@@ -182,24 +177,25 @@ class RobustScraper:
             date_elem = soup.select_one(config['selectors']['date'])
             if date_elem:
                 dt_str = date_elem.get('datetime', self.clean_text(date_elem.get_text()))
-                try:
-                    published_date = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
+                try: published_date = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
                 except ValueError:
                     match = re.search(r'(\d{4})[/\.年]\s*(\d{1,2})[/\.月]\s*(\d{1,2})', dt_str)
                     if match: published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
             
             if not isinstance(published_date, datetime): published_date = datetime.now(JST)
-            
             published_date = published_date.astimezone(JST) if published_date.tzinfo else published_date.replace(tzinfo=JST)
-
             result = {'title': title, 'url': url, 'content': content, 'published_date': published_date, 'source': config['name']}
-            logger.info(f"  ✓ 取得完了: {title[:50]}...")
+            
+            # タイトルが取得できなければ警告を出す
+            if title == "タイトル不明":
+                logger.warning(f"  - タイトルが取得できませんでした。")
+            else:
+                 logger.info(f"  ✓ 取得完了: {title[:50]}...")
             return result
         except Exception as e:
             logger.error(f"記事詳細の取得中にエラー ({url}): {e}")
-            self.save_debug_info(f"detail_{site_key}") # 詳細ページでもデバッグ情報を保存
+            self.save_debug_info(f"detail_{site_key}")
             return None
-    # --- ▲ 修正ここまで ▲ ---
 
 def save_articles_json(articles: List[Dict], filepath: str):
     articles_for_json = []
@@ -208,7 +204,6 @@ def save_articles_json(articles: List[Dict], filepath: str):
         if isinstance(new_article.get('published_date'), datetime):
             new_article['published_date'] = new_article['published_date'].isoformat()
         articles_for_json.append(new_article)
-
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(articles_for_json, f, ensure_ascii=False, indent=2)
     logger.info(f"記事データを保存しました: {filepath}")
@@ -225,12 +220,11 @@ def main():
         if links_to_scrape:
             for link_info in links_to_scrape:
                 article = scraper.get_article_detail(link_info['url'], link_info['site_key'])
-                if article and article.get('content') != "内容を取得できませんでした。":
+                if article and article.get('content') != "内容を取得できませんでした。" and article.get('title') != "タイトル不明":
                     all_articles.append(article)
         
         logger.info(f"全サイトのスクレイピング完了: 合計 {len(all_articles)} 件の記事を取得")
         save_articles_json(all_articles, 'articles.json')
-
     except Exception as e:
         logger.error(f"メイン処理でエラーが発生: {e}")
         import traceback
