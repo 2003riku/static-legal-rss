@@ -5,9 +5,18 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 24 Jun 2025 15:51:13 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jun 2025 21:24:10 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/ben54.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「サッカー振興の美名のもと、区に大きな損害が与えられた」 葛飾区・サッカースクール“運営不正”を追及する住民訴訟が提起</title>
+      <link>https://www.ben54.jp/news/2398</link>
+      <description>【弁護士JPニュース】6月24日、葛飾区（東京都）が一般社団法人との間で締結したサッカークラブのトレーラーハウスの賃貸借契約について、賃料があまりに廉価であるとして、区を被告とし、一般社団法人に対し適正な賃料との差額を請求することなどを求める住民訴訟（地方自治法242条の2第1項4号参照）が提起された。 葛飾区は人気サッカー漫画『キャプテン翼』作者の高橋陽一さんが生まれ育った街であり、区は『キャプテン翼』のキャラクターをまちおこし事業やイベントなどで積極的に活用してきた。 2011年、区民有志が「スペインのサッカークラブ『FCバルセロナ』のオフィシャルスクールを『キャプテン翼』ゆかりの地である葛飾区に誘致したい」と計画。区に協力を求め、区もこれを承諾した。 2015年、有志の1人が代表理事となり、運営団体として一般財団法人「キッズチャレンジ未来」（以下「キッズチャレンジ」）を立ち上げる。 2015年1月、キッズチャレンジと葛飾区は、区営東金町運動場のグラウンドを優先利用できる協定を区と締結。区は約4億6000万円でグラウンドに夜間照明や人工芝を整備した。 また、葛飾区はキッズチャレンジの要望を受け、区内にあ...</description>
+      <pubDate>Tue, 24 Jun 2025 19:05:39 +0900</pubDate>
+      <guid isPermaLink="true">https://www.ben54.jp/news/2398</guid>
+      <category>民事法</category>
+      <source url="https://www.ben54.jp/news/2398">弁護士JPニュース</source>
+    </item>
     <item>
       <title>法律事務所なのに…「セクハラ・パワハラ横行」「手取り14万円」「有給取れない」 事務員労組が改善求め、日弁連に要望書提出</title>
       <link>https://www.ben54.jp/news/2397</link>
@@ -898,15 +907,6 @@
       <guid isPermaLink="true">https://www.ben54.jp/news/2294</guid>
       <category>一般法律</category>
       <source url="https://www.ben54.jp/news/2294">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>過酷な労働環境で“頑張る”人ほど「地獄」を見る？ 社会保障制度の落とし穴…行政書士がすすめる“回避方法”とは</title>
-      <link>https://www.ben54.jp/news/2293</link>
-      <description>【弁護士JPニュース】わが国ではここ何年も、職場の過酷な労働環境やパワハラなどに苦しみ、心身ともに追い詰められるケースが問題になっています。いわゆる「ブラック企業」の問題も解消されていません。 私は行政書士として、過酷な労働に苦しんでいるという人には、「迷わず、すぐに辞めてください」とアドバイスすることにしています。 なぜなら、まずは自分の身を守ることが第一であり、収入がなくなることなど、経済的なリスクは、これから説明する、さまざまな公的支援のしくみによって、後で何とかなるからです。 また、無理した結果、心身の障害を負ってしまうと、取り返しがつかなくなるリスク、経済的にさらに苦境に陥るリスクもあります。 たとえば、働いて収入を得ることが困難な状態に陥った場合のセーフティーネットとして、障害年金の制度があります。しかし、障害年金の受給要件には、あまり知られていない「落とし穴」があります。それを知らないと、障害年金を受給できないことがあるのです。 ただし、日本の社会保障制度は、そういう人も救済を受けられるようになっています。 実は、障害年金の受給要件をみたさない場合でも、それとは別に「生活保護」を受けることがで...</description>
-      <pubDate>Sun, 25 May 2025 10:26:00 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/2293</guid>
-      <category>企業法</category>
-      <source url="https://www.ben54.jp/news/2293">弁護士JPニュース</source>
     </item>
   </channel>
 </rss>
