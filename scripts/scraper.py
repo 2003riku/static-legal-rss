@@ -39,7 +39,6 @@ def setup_driver():
     prefs = {"profile.managed_default_content_settings.images": 2}
     options.add_experimental_option("prefs", prefs)
 
-    # GitHub Actions環境では、環境変数からChromeの場所を取得することが推奨される
     chrome_binary_location = os.environ.get('CHROME_BINARY_LOCATION')
     if chrome_binary_location:
         options.binary_location = chrome_binary_location
@@ -74,7 +73,9 @@ class RobustScraper:
                 'name': '弁護士JPニュース',
                 'list_url': 'https://www.ben54.jp/news/',
                 'selectors': {
-                    'links': '.news-list article a, .article-item .title-link, .news-item h2 a, [class*="article"] [class*="title"] a, a[href*="/news/"]',
+                    # === ここが修正箇所です ===
+                    'links': '.p-news-list__item a',
+                    # =======================
                     'title': 'h1.p-news__title, h1.article-title, h1',
                     'content': '.p-news__contents',
                     'date': '.p-news__date, time[datetime]',
@@ -223,12 +224,10 @@ def save_articles_json(articles: List[Dict], filepath: str):
 
 def main():
     driver = None
-    # Make.com連携用に最新記事を取得するロジック
     try:
         driver = setup_driver()
         scraper = RobustScraper(driver)
         
-        # 1サイトあたり5件の最新記事を取得
         links_to_scrape = scraper.get_all_article_links(max_per_site=5)
         logger.info(f"取得したリンク総数: {len(links_to_scrape)}")
         
@@ -236,10 +235,8 @@ def main():
         for i, link_info in enumerate(links_to_scrape, 1):
             logger.info(f"処理中: {i}/{len(links_to_scrape)}")
             
-            # === ここが修正箇所です ===
             article = scraper.get_article_detail(link_info['url'], link_info['site_key'])
-            # =======================
-
+            
             if article and article['content'] != "内容を取得できませんでした。":
                 all_articles.append(article)
         
