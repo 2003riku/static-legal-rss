@@ -68,41 +68,42 @@ class RobustScraper:
                 },
                 'wait_strategy': 'standard'
             },
+            # --- ▼ 修正箇所 ▼ ---
             'ben54': {
                 'name': '弁護士JPニュース',
                 'list_url': 'https://www.ben54.jp/news/list',
-                'link_pattern': r'/news/',
+                'link_pattern': r'/news/detail/\d+',
                 'selectors': {
-                    'links': 'div.p-news__item a[href*="/news/"]',
-                    'title': 'h1.p-news__title, h1.article-title, h1',
-                    'content': '.p-news__contents',
-                    'date': '.p-news__date, time[datetime]',
-                    'author': '.p-news__meta .writer'
+                    'links': 'li.article-list__item a',
+                    'title': 'h1.article-header__title',
+                    'content': 'div.article-body__content',
+                    'date': 'time.article-header__date',
+                    # 'author'セレクタは現在のHTMLで見つからないため削除
                 },
                 'wait_strategy': 'dynamic',
-                'scroll_before_wait': True,
-                'rate_limit': 3
+                'wait_selector': 'ul.article-list__list', # 読み込み待機対象のセレクタ
+                'rate_limit': 2
             }
+            # --- ▲ 修正箇所 ▲ ---
         }
 
+    # --- ▼ 修正箇所 ▼ ---
     def wait_for_page_load(self, config: Dict, timeout: int = 30):
         strategy = config.get('wait_strategy', 'standard')
+
+        # 動的サイト向けの待機処理
         if strategy == 'dynamic':
-            try:
-                WebDriverWait(self.driver, timeout).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div.p-news__item'))
-                )
-            except TimeoutException:
-                logger.warning("記事要素の読み込みがタイムアウトしましたが、処理を続行します")
-            try:
-                WebDriverWait(self.driver, timeout).until(
-                    lambda driver: driver.execute_script("return document.readyState") == "complete"
-                )
-            except TimeoutException:
-                logger.warning("ページの完全読み込みがタイムアウトしましたが、処理を続行します")
+            wait_selector = config.get('wait_selector')
+            if wait_selector:
+                try:
+                    # 設定されたセレクタを持つ要素が現れるまで待機
+                    WebDriverWait(self.driver, timeout).until(
+                        EC.presence_of_element_located((By.CSS_SELECTOR, wait_selector))
+                    )
+                except TimeoutException:
+                    logger.warning(f"要素 '{wait_selector}' の読み込みがタイムアウトしましたが、処理を続行します")
             
-            time.sleep(2)
-            
+            # スクロール処理（設定がある場合のみ実行）
             if config.get('scroll_before_wait'):
                 try:
                     self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
@@ -111,6 +112,18 @@ class RobustScraper:
                     time.sleep(1)
                 except Exception as e:
                     logger.debug(f"スクロール処理でエラー: {e}")
+
+        # 全ての戦略で共通の完了待機
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                lambda driver: driver.execute_script("return document.readyState") == "complete"
+            )
+        except TimeoutException:
+            logger.warning("ページの完全読み込みがタイムアウトしましたが、処理を続行します")
+        
+        # 安定化のための待機時間
+        time.sleep(2)
+    # --- ▲ 修正箇所 ▲ ---
 
     def get_all_article_links(self, max_per_site=10) -> List[Dict]:
         all_links_info = []
@@ -161,7 +174,9 @@ class RobustScraper:
 
         try:
             self.driver.get(url)
-            self.wait_for_page_load(config)
+            # 詳細ページでは特別な待機は不要なことが多いので、標準的な待機を行う
+            self.wait_for_page_load({'wait_strategy': 'standard'})
+            
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
 
             for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", ".l-mail-magazine-btn"]:
