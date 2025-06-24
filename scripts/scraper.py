@@ -33,9 +33,9 @@ def setup_driver():
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    
+
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36")
-    
+
     prefs = {"profile.managed_default_content_settings.images": 2}
     options.add_experimental_option("prefs", prefs)
 
@@ -46,11 +46,11 @@ def setup_driver():
 
     service = ChromeService(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
-    
+
     driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
         'source': "Object.defineProperty(navigator, 'webdriver', { get: () => undefined })"
     })
-    
+
     return driver
 
 class RobustScraper:
@@ -60,24 +60,20 @@ class RobustScraper:
             'corporate_legal': {
                 'name': '企業法務ナビ',
                 'list_url': 'https://www.corporate-legal.jp/news/',
-                # 修正点: URLパターンを追加
-                'link_pattern': r'/news/\d+<span class="math-inline">',
-'selectors'\: \{
-\# 修正点\: リンク候補を広く取得
-'links'\: 'main a',
-'title'\: 'h1\.title\-articles, h1\.article\-title, h1\.news\-title, h1',
-'content'\: 'div\.l\-cont1',
-'date'\: 'h1\.title\-articles \.text\-s, \.publish\-date, time'
-\},
-'wait\_strategy'\: 'standard'
-\},
-'ben54'\: \{
-'name'\: '弁護士JPニュース',
-'list\_url'\: 'https\://www\.ben54\.jp/news/',
-\# 修正点\: URLパターンを追加
-'link\_pattern'\: r'/news/\\d\+</span>',
+                'link_pattern': r'/news/\d+$',
                 'selectors': {
-                    # 修正点: リンク候補を広く取得
+                    'links': 'main a',
+                    'title': 'h1.title-articles, h1.article-title, h1.news-title, h1',
+                    'content': 'div.l-cont1',
+                    'date': 'h1.title-articles .text-s, .publish-date, time'
+                },
+                'wait_strategy': 'standard'
+            },
+            'ben54': {
+                'name': '弁護士JPニュース',
+                'list_url': 'https://www.ben54.jp/news/',
+                'link_pattern': r'/news/\d+$',
+                'selectors': {
                     'links': 'main a',
                     'title': 'h1.p-news__title, h1.article-title, h1',
                     'content': '.p-news__contents',
@@ -116,26 +112,24 @@ class RobustScraper:
             try:
                 self.driver.get(config['list_url'])
                 self.wait_for_page_load(config)
-                
+
                 soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-                
-                # 修正点: リンク取得とフィルタリングのロジックを更新
+
                 link_candidates = soup.select(config['selectors']['links'])
                 link_pattern = config.get('link_pattern')
-                
+
                 seen_urls = set()
                 count = 0
                 for link_elem in link_candidates:
                     if count >= max_per_site:
                         break
-                    
+
                     href = link_elem.get('href')
                     if not href or href.strip() in ['#', ''] or href.strip().startswith('javascript:'):
                         continue
 
                     full_url = urljoin(config['list_url'], href.strip())
 
-                    # パターンが定義されていれば、URLがパターンに一致するかチェック
                     if link_pattern and not re.search(link_pattern, full_url):
                         continue
 
@@ -148,7 +142,7 @@ class RobustScraper:
             except Exception as e:
                 logger.error(f"「{config['name']}」のリンク取得中にエラー: {e}")
         return all_links_info
-        
+
     def clean_text(self, text: str) -> str:
         if not text:
             return ""
@@ -158,21 +152,21 @@ class RobustScraper:
         config = self.site_configs[site_key]
         logger.info(f"記事詳細を取得中: {url}")
         time.sleep(config.get('rate_limit', 1))
-        
+
         try:
             self.driver.get(url)
             self.wait_for_page_load(config)
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-            
+
             for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', '.related', '.box-sns-share', '.l-mail-magazine-btn']:
                 for element in soup.select(unwanted_selector):
                     element.decompose()
-            
+
             title = "タイトル不明"
             title_elem = soup.select_one(config['selectors']['title'])
             if title_elem:
                 title = self.clean_text(title_elem.get_text())
-            
+
             content = "内容を取得できませんでした。"
             content_elem = soup.select_one(config['selectors']['content'])
             if content_elem:
@@ -193,10 +187,10 @@ class RobustScraper:
                     match = re.search(r'(\d{4})[/\.年](\d{1,2})[/\.月](\d{1,2})', dt_str)
                     if match:
                         published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
-            
+
             if not isinstance(published_date, datetime):
                 published_date = datetime.now(JST)
-            
+
             if published_date.tzinfo is None:
                 published_date = published_date.replace(tzinfo=JST)
             else:
@@ -205,7 +199,7 @@ class RobustScraper:
             result = {'title': title, 'url': url, 'content': content, 'published_date': published_date, 'source': config['name']}
             logger.info(f"  ✓ 取得完了: {title[:50]}...")
             return result
-            
+
         except Exception as e:
             logger.error(f"記事詳細の取得中にエラー ({url}): {e}")
             return None
@@ -216,7 +210,7 @@ def save_articles_json(articles: List[Dict], filepath: str):
         if isinstance(article.get('published_date'), datetime):
             article['published_date'] = article['published_date'].isoformat()
         articles_for_json.append(article)
-    
+
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(articles_for_json, f, ensure_ascii=False, indent=2)
     logger.info(f"記事データを保存しました: {filepath}")
@@ -226,24 +220,23 @@ def main():
     try:
         driver = setup_driver()
         scraper = RobustScraper(driver)
-        
-        # 修正点: 1サイトあたり10件の記事を取得
+
         links_to_scrape = scraper.get_all_article_links(max_per_site=10)
         logger.info(f"取得したリンク総数: {len(links_to_scrape)}")
-        
+
         all_articles = []
         for i, link_info in enumerate(links_to_scrape, 1):
             logger.info(f"処理中: {i}/{len(links_to_scrape)}")
-            
+
             article = scraper.get_article_detail(link_info['url'], link_info['site_key'])
-            
+
             if article and article['content'] != "内容を取得できませんでした。":
                 all_articles.append(article)
-        
+
         logger.info(f"全サイトのスクレイピング完了: 合計 {len(all_articles)} 件の記事を取得")
-        
+
         save_articles_json(all_articles, 'articles.json')
-        
+
     except Exception as e:
         logger.error(f"メイン処理でエラーが発生: {e}")
         import traceback
