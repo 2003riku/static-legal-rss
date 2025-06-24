@@ -2,7 +2,7 @@ name: Update Legal RSS Feed
 
 on:
   schedule:
-    - cron: '0 */12 * * *'
+    - cron: '0 */12 * * *' # 更新頻度を12時間ごとに変更
   workflow_dispatch:
 
 permissions:
@@ -31,14 +31,12 @@ jobs:
         pip install selenium beautifulsoup4 webdriver-manager
         
     - name: Run update_all script
-      id: scraper # ステップにIDを付与
-      env:
-        CHROME_BINARY_LOCATION: /usr/bin/google-chrome-stable
+      id: scraper
       run: |
-        python scripts/update_all.py
+        # update_all.pyが2つのスクリプトを実行すると仮定
+        python scripts/scraper.py
+        python scripts/rss_generator.py
         
-    # --- ▼ ここを修正 ▼ ---
-    # if: failure() を削除し、常に実行されるようにする
     - name: Upload debug artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -46,17 +44,17 @@ jobs:
         path: |
           *.png
           *.html
-        # ファイルがない場合にエラーにしない
         if-no-files-found: ignore
-    # --- ▲ 修正部分ここまで ▲ ---
         
-    - name: Configure Git
+    # ▼ ここを修正 ▼
+    - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
-    - name: Commit and push changes
-      run: |
+        # リモートの最新の変更を取り込む (--rebaseで履歴を綺麗に保つ)
+        git pull --rebase
+        
         git add rss/ metadata.json articles.json
         if git diff --staged --quiet; then
           echo "No changes to commit"
@@ -64,10 +62,12 @@ jobs:
           git commit -m "Auto-update RSS feeds - $(date "+%Y-%m-%d %H:%M:%S")"
           git push
         fi
+    # ▲ 修正ここまで ▲
         
   deploy:
     needs: update-rss
     runs-on: ubuntu-latest
+    if: success() # update-rssジョブが成功した場合のみ実行
     
     steps:
     - name: Checkout repository
