@@ -5,7 +5,7 @@ import os
 import re
 from datetime import datetime, timezone, timedelta
 from typing import List, Dict, Optional
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -15,7 +15,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from selenium.common.exceptions import TimeoutException
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -44,7 +44,9 @@ def setup_driver():
         logger.info(f"Chrome binary location set to: {chrome_binary_location}")
 
     service = ChromeService(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options) Bisque
+    # --- ▼ 構文エラーを修正 ▼ ---
+    driver = webdriver.Chrome(service=service, options=options)
+    # --- ▲ 構文エラーを修正 ▲ ---
 
     driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
         'source': "Object.defineProperty(navigator, 'webdriver', { get: () => undefined })"
@@ -81,11 +83,9 @@ class RobustScraper:
                 'wait_strategy': 'dynamic',
                 'wait_selector': 'ul.article-list__list',
                 'rate_limit': 2,
-                # --- ▼ 追加 ▼ ---
                 'cookie_consent': {
                     'button_selector': 'button.js-cookie-consent-agree'
                 }
-                # --- ▲ 追加 ▲ ---
             }
         }
 
@@ -100,9 +100,7 @@ class RobustScraper:
                 )
             except TimeoutException:
                 logger.warning(f"要素 '{wait_selector}' の読み込みがタイムアウトしました。")
-                # タイムアウト時にデバッグ情報を保存する
                 self.save_debug_info(config.get('name', 'unknown_site'))
-                # 例外を再発生させず、後続処理で0件として扱われるようにする
                 return
 
         try:
@@ -114,12 +112,11 @@ class RobustScraper:
         
         time.sleep(2)
 
-    # --- ▼ 追加 ▼ ---
     def save_debug_info(self, site_name: str):
-        """デバッグ用にスクリーンショットとHTMLを保存する"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        screenshot_path = f"{site_name}_debug_{timestamp}.png"
-        html_path = f"{site_name}_debug_{timestamp}.html"
+        safe_site_name = re.sub(r'[^a-zA-Z0-9]', '_', site_name)
+        screenshot_path = f"{safe_site_name}_debug_{timestamp}.png"
+        html_path = f"{safe_site_name}_debug_{timestamp}.html"
         try:
             self.driver.save_screenshot(screenshot_path)
             logger.info(f"デバッグ用スクリーンショットを保存しました: {screenshot_path}")
@@ -128,7 +125,6 @@ class RobustScraper:
             logger.info(f"デバッグ用HTMLを保存しました: {html_path}")
         except Exception as e:
             logger.error(f"デバッグ情報の保存中にエラーが発生しました: {e}")
-    # --- ▲ 追加 ▲ ---
 
     def get_all_article_links(self, max_per_site=10) -> List[Dict]:
         all_links_info = []
@@ -137,8 +133,6 @@ class RobustScraper:
             try:
                 self.driver.get(config['list_url'])
 
-                # --- ▼ 追加 ▼ ---
-                # クッキー同意バナーの処理
                 cookie_config = config.get('cookie_consent')
                 if cookie_config:
                     try:
@@ -147,12 +141,11 @@ class RobustScraper:
                         )
                         logger.info("クッキー同意ボタンを検出しました。クリックします。")
                         agree_button.click()
-                        time.sleep(2)  # バナーが消え、コンテンツが再描画されるのを待つ
+                        time.sleep(2)
                     except TimeoutException:
                         logger.info("クッキー同意ボタンが見つかりませんでした（または、すでに同意済み）。")
                     except Exception as e:
                         logger.warning(f"クッキー同意ボタンのクリック中にエラー: {e}")
-                # --- ▲ 追加 ▲ ---
 
                 self.wait_for_page_load(config)
 
@@ -193,7 +186,7 @@ class RobustScraper:
             self.driver.get(url)
             self.wait_for_page_load({'wait_strategy': 'standard'})
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-            for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", ".l-mail-magazine-btn"]:
+            for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", ".l-mail-magazine-btn", "header"]:
                 for element in soup.select(unwanted_selector):
                     element.decompose()
             title = self.clean_text(soup.select_one(config['selectors']['title']).get_text()) if soup.select_one(config['selectors']['title']) else "タイトル不明"
@@ -220,12 +213,11 @@ class RobustScraper:
             return None
 
 def save_articles_json(articles: List[Dict], filepath: str):
-    articles_for_json = []
-    for article in articles:
-        if isinstance(article.get('published_date'), datetime):
-            article['published_date'] = article['published_date'].isoformat()
-        articles_for_json.append(article)
-
+    articles_for_json = [
+        {**article, 'published_date': article['published_date'].isoformat()}
+        for article in articles
+        if isinstance(article.get('published_date'), datetime)
+    ]
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(articles_for_json, f, ensure_ascii=False, indent=2)
     logger.info(f"記事データを保存しました: {filepath}")
@@ -237,7 +229,11 @@ def main():
         scraper = RobustScraper(driver)
         links_to_scrape = scraper.get_all_article_links(max_per_site=10)
         logger.info(f"取得したリンク総数: {len(links_to_scrape)}")
-        all_articles = [article for link_info in links_to_scrape if (article := scraper.get_article_detail(link_info['url'], link_info['site_key'])) and article['content'] != "内容を取得できませんでした。"]
+        all_articles = [
+            article for link_info in links_to_scrape
+            if (article := scraper.get_article_detail(link_info['url'], link_info['site_key']))
+            and article.get('content') != "内容を取得できませんでした。"
+        ]
         logger.info(f"全サイトのスクレイピング完了: 合計 {len(all_articles)} 件の記事を取得")
         save_articles_json(all_articles, 'articles.json')
     except Exception as e:
