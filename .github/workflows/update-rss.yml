@@ -23,16 +23,16 @@ jobs:
       with:
         python-version: '3.11'
         
-    # ★★★ ここをSelenium用に修正 ★★★
     - name: Set up Chrome and install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
+        sudo apt-get install -y google-chrome-stable # Google Chromeをインストール
         python -m pip install --upgrade pip
-        pip install selenium beautifulsoup4 webdriver-manager
+        pip install selenium beautifulsoup4 webdriver-manager # 必要なPythonパッケージをインストール
         
     - name: Run update_all script
       env:
+        # CHROME_BINARY_LOCATION環境変数を設定し、SeleniumがChromeのバイナリを見つけられるようにする
         CHROME_BINARY_LOCATION: /usr/bin/google-chrome-stable
       run: |
         python scripts/update_all.py
