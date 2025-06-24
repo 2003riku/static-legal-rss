@@ -44,7 +44,7 @@ def setup_driver():
         logger.info(f"Chrome binary location set to: {chrome_binary_location}")
 
     service = ChromeService(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(service=service, options=options) Bisque
 
     driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
         'source': "Object.defineProperty(navigator, 'webdriver', { get: () => undefined })"
@@ -68,7 +68,6 @@ class RobustScraper:
                 },
                 'wait_strategy': 'standard'
             },
-            # --- ▼ 修正箇所 ▼ ---
             'ben54': {
                 'name': '弁護士JPニュース',
                 'list_url': 'https://www.ben54.jp/news/list',
@@ -78,52 +77,58 @@ class RobustScraper:
                     'title': 'h1.article-header__title',
                     'content': 'div.article-body__content',
                     'date': 'time.article-header__date',
-                    # 'author'セレクタは現在のHTMLで見つからないため削除
                 },
                 'wait_strategy': 'dynamic',
-                'wait_selector': 'ul.article-list__list', # 読み込み待機対象のセレクタ
-                'rate_limit': 2
+                'wait_selector': 'ul.article-list__list',
+                'rate_limit': 2,
+                # --- ▼ 追加 ▼ ---
+                'cookie_consent': {
+                    'button_selector': 'button.js-cookie-consent-agree'
+                }
+                # --- ▲ 追加 ▲ ---
             }
-            # --- ▲ 修正箇所 ▲ ---
         }
 
-    # --- ▼ 修正箇所 ▼ ---
     def wait_for_page_load(self, config: Dict, timeout: int = 30):
         strategy = config.get('wait_strategy', 'standard')
+        wait_selector = config.get('wait_selector')
 
-        # 動的サイト向けの待機処理
-        if strategy == 'dynamic':
-            wait_selector = config.get('wait_selector')
-            if wait_selector:
-                try:
-                    # 設定されたセレクタを持つ要素が現れるまで待機
-                    WebDriverWait(self.driver, timeout).until(
-                        EC.presence_of_element_located((By.CSS_SELECTOR, wait_selector))
-                    )
-                except TimeoutException:
-                    logger.warning(f"要素 '{wait_selector}' の読み込みがタイムアウトしましたが、処理を続行します")
-            
-            # スクロール処理（設定がある場合のみ実行）
-            if config.get('scroll_before_wait'):
-                try:
-                    self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight/2);")
-                    time.sleep(1)
-                    self.driver.execute_script("window.scrollTo(0, 0);")
-                    time.sleep(1)
-                except Exception as e:
-                    logger.debug(f"スクロール処理でエラー: {e}")
+        if strategy == 'dynamic' and wait_selector:
+            try:
+                WebDriverWait(self.driver, timeout).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, wait_selector))
+                )
+            except TimeoutException:
+                logger.warning(f"要素 '{wait_selector}' の読み込みがタイムアウトしました。")
+                # タイムアウト時にデバッグ情報を保存する
+                self.save_debug_info(config.get('name', 'unknown_site'))
+                # 例外を再発生させず、後続処理で0件として扱われるようにする
+                return
 
-        # 全ての戦略で共通の完了待機
         try:
-            WebDriverWait(self.driver, timeout).until(
+            WebDriverWait(self.driver, 15).until(
                 lambda driver: driver.execute_script("return document.readyState") == "complete"
             )
         except TimeoutException:
             logger.warning("ページの完全読み込みがタイムアウトしましたが、処理を続行します")
         
-        # 安定化のための待機時間
         time.sleep(2)
-    # --- ▲ 修正箇所 ▲ ---
+
+    # --- ▼ 追加 ▼ ---
+    def save_debug_info(self, site_name: str):
+        """デバッグ用にスクリーンショットとHTMLを保存する"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        screenshot_path = f"{site_name}_debug_{timestamp}.png"
+        html_path = f"{site_name}_debug_{timestamp}.html"
+        try:
+            self.driver.save_screenshot(screenshot_path)
+            logger.info(f"デバッグ用スクリーンショットを保存しました: {screenshot_path}")
+            with open(html_path, 'w', encoding='utf-8') as f:
+                f.write(self.driver.page_source)
+            logger.info(f"デバッグ用HTMLを保存しました: {html_path}")
+        except Exception as e:
+            logger.error(f"デバッグ情報の保存中にエラーが発生しました: {e}")
+    # --- ▲ 追加 ▲ ---
 
     def get_all_article_links(self, max_per_site=10) -> List[Dict]:
         all_links_info = []
@@ -131,6 +136,24 @@ class RobustScraper:
             logger.info(f"サイト「{config['name']}」の記事リンクを取得します。")
             try:
                 self.driver.get(config['list_url'])
+
+                # --- ▼ 追加 ▼ ---
+                # クッキー同意バナーの処理
+                cookie_config = config.get('cookie_consent')
+                if cookie_config:
+                    try:
+                        agree_button = WebDriverWait(self.driver, 10).until(
+                            EC.element_to_be_clickable((By.CSS_SELECTOR, cookie_config['button_selector']))
+                        )
+                        logger.info("クッキー同意ボタンを検出しました。クリックします。")
+                        agree_button.click()
+                        time.sleep(2)  # バナーが消え、コンテンツが再描画されるのを待つ
+                    except TimeoutException:
+                        logger.info("クッキー同意ボタンが見つかりませんでした（または、すでに同意済み）。")
+                    except Exception as e:
+                        logger.warning(f"クッキー同意ボタンのクリック中にエラー: {e}")
+                # --- ▲ 追加 ▲ ---
+
                 self.wait_for_page_load(config)
 
                 soup = BeautifulSoup(self.driver.page_source, 'html.parser')
@@ -140,31 +163,25 @@ class RobustScraper:
                 count = 0
                 
                 for link_elem in link_candidates:
-                    if count >= max_per_site:
-                        break
-
+                    if count >= max_per_site: break
                     href = link_elem.get('href')
-                    if not href or href.strip() in ['#', ''] or href.strip().startswith('javascript:'):
-                        continue
-
+                    if not href: continue
                     full_url = urljoin(config['list_url'], href.strip())
-
-                    if link_pattern and not re.search(link_pattern, full_url):
-                        continue
-
+                    if link_pattern and not re.search(link_pattern, full_url): continue
                     if full_url not in seen_urls:
                         all_links_info.append({'url': full_url, 'site_key': site_key})
                         seen_urls.add(full_url)
                         count += 1
                 
                 logger.info(f"  -> {count}件のリンクを取得しました。")
+
             except Exception as e:
                 logger.error(f"「{config['name']}」のリンク取得中にエラー: {e}")
+                self.save_debug_info(config.get('name', 'error'))
         return all_links_info
 
     def clean_text(self, text: str) -> str:
-        if not text:
-            return ""
+        if not text: return ""
         return re.sub(r'\s+', ' ', text).strip()
 
     def get_article_detail(self, url: str, site_key: str) -> Optional[Dict]:
@@ -174,53 +191,30 @@ class RobustScraper:
 
         try:
             self.driver.get(url)
-            # 詳細ページでは特別な待機は不要なことが多いので、標準的な待機を行う
             self.wait_for_page_load({'wait_strategy': 'standard'})
-            
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-
             for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", ".l-mail-magazine-btn"]:
                 for element in soup.select(unwanted_selector):
                     element.decompose()
-
-            title = "タイトル不明"
-            title_elem = soup.select_one(config['selectors']['title'])
-            if title_elem:
-                title = self.clean_text(title_elem.get_text())
-
+            title = self.clean_text(soup.select_one(config['selectors']['title']).get_text()) if soup.select_one(config['selectors']['title']) else "タイトル不明"
             content = "内容を取得できませんでした。"
             content_elem = soup.select_one(config['selectors']['content'])
             if content_elem:
-                paragraphs = content_elem.find_all('p')
-                text_parts = [self.clean_text(p.get_text()) for p in paragraphs if len(self.clean_text(p.get_text())) > 20]
-                if text_parts:
-                    content = ' '.join(text_parts)[:500] + '...'
-
+                text_parts = [self.clean_text(p.get_text()) for p in content_elem.find_all('p') if len(self.clean_text(p.get_text())) > 20]
+                if text_parts: content = ' '.join(text_parts)[:500] + '...'
             published_date = None
             date_elem = soup.select_one(config['selectors']['date'])
             if date_elem:
                 dt_str = date_elem.get('datetime', self.clean_text(date_elem.get_text()))
-                if dt_str.upper().endswith('Z'):
-                    dt_str = dt_str[:-1] + '+00:00'
-                try:
-                    published_date = datetime.fromisoformat(dt_str)
+                try: published_date = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
                 except ValueError:
                     match = re.search(r'(\d{4})[/\.年](\d{1,2})[/\.月](\d{1,2})', dt_str)
-                    if match:
-                        published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
-
-            if not isinstance(published_date, datetime):
-                published_date = datetime.now(JST)
-
-            if published_date.tzinfo is None:
-                published_date = published_date.replace(tzinfo=JST)
-            else:
-                published_date = published_date.astimezone(JST)
-            
+                    if match: published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
+            if not isinstance(published_date, datetime): published_date = datetime.now(JST)
+            published_date = published_date.astimezone(JST) if published_date.tzinfo else published_date.replace(tzinfo=JST)
             result = {'title': title, 'url': url, 'content': content, 'published_date': published_date, 'source': config['name']}
             logger.info(f"  ✓ 取得完了: {title[:50]}...")
             return result
-
         except Exception as e:
             logger.error(f"記事詳細の取得中にエラー ({url}): {e}")
             return None
@@ -241,20 +235,11 @@ def main():
     try:
         driver = setup_driver()
         scraper = RobustScraper(driver)
-
         links_to_scrape = scraper.get_all_article_links(max_per_site=10)
         logger.info(f"取得したリンク総数: {len(links_to_scrape)}")
-
-        all_articles = []
-        for i, link_info in enumerate(links_to_scrape, 1):
-            logger.info(f"処理中: {i}/{len(links_to_scrape)}")
-            article = scraper.get_article_detail(link_info['url'], link_info['site_key'])
-            if article and article['content'] != "内容を取得できませんでした。":
-                all_articles.append(article)
-        
+        all_articles = [article for link_info in links_to_scrape if (article := scraper.get_article_detail(link_info['url'], link_info['site_key'])) and article['content'] != "内容を取得できませんでした。"]
         logger.info(f"全サイトのスクレイピング完了: 合計 {len(all_articles)} 件の記事を取得")
         save_articles_json(all_articles, 'articles.json')
-
     except Exception as e:
         logger.error(f"メイン処理でエラーが発生: {e}")
         import traceback
