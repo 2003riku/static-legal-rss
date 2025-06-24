@@ -62,19 +62,19 @@ class RobustScraper:
                 'list_url': 'https://www.corporate-legal.jp/news/',
                 'link_pattern': r'/news/\d+$',
                 'selectors': {
-                    'links': 'main a',
+                    'links': 'div.l-main div.container a[href*="/news/"]',
                     'title': 'h1.title-articles, h1.article-title, h1.news-title, h1',
                     'content': 'div.l-cont1',
-                    'date': 'h1.title-articles .text-s, .publish-date, time'
+                    'date': 'time[datetime], .publish-date, h1.title-articles .text-s'
                 },
                 'wait_strategy': 'standard'
             },
             'ben54': {
                 'name': '弁護士JPニュース',
-                'list_url': 'https://www.ben54.jp/news/',
-                'link_pattern': r'/news/\d+$',
+                'list_url': 'https://www.ben54.jp/news/list',
+                'link_pattern': r'/news/',
                 'selectors': {
-                    'links': 'main a',
+                    'links': 'div.p-news__item a[href*="/news/"]',
                     'title': 'h1.p-news__title, h1.article-title, h1',
                     'content': '.p-news__contents',
                     'date': '.p-news__date, time[datetime]',
@@ -89,6 +89,12 @@ class RobustScraper:
     def wait_for_page_load(self, config: Dict, timeout: int = 30):
         strategy = config.get('wait_strategy', 'standard')
         if strategy == 'dynamic':
+            try:
+                WebDriverWait(self.driver, timeout).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div.p-news__item'))
+                )
+            except TimeoutException:
+                logger.warning("記事要素の読み込みがタイムアウトしましたが、処理を続行します")
             try:
                 WebDriverWait(self.driver, timeout).until(
                     lambda driver: driver.execute_script("return document.readyState") == "complete"
@@ -158,7 +164,7 @@ class RobustScraper:
             self.wait_for_page_load(config)
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
 
-            for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', '.related', '.box-sns-share', '.l-mail-magazine-btn']:
+            for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", ".l-mail-magazine-btn"]:
                 for element in soup.select(unwanted_selector):
                     element.decompose()
 
@@ -247,3 +253,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
