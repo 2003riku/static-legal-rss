@@ -5,9 +5,18 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 24 Jun 2025 08:10:58 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jun 2025 09:56:20 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/ben54.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「売春は合法化すべき」歌舞伎町弁護士の“真意”とは？ 夜のトラブル対応3000件以上…「法から見捨てられた領域」の実像</title>
+      <link>https://www.ben54.jp/news/2395</link>
+      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
+      <pubDate>Tue, 24 Jun 2025 08:26:00 +0900</pubDate>
+      <guid isPermaLink="true">https://www.ben54.jp/news/2395</guid>
+      <category>一般法律</category>
+      <source url="https://www.ben54.jp/news/2395">弁護士JPニュース</source>
+    </item>
     <item>
       <title>「火をつけると刑務所に戻れるけん」下関駅に放火… 帰る場所や家族を持たない「累犯障害者」の人たち</title>
       <link>https://www.ben54.jp/news/2379</link>
@@ -43,15 +52,6 @@
       <guid isPermaLink="true">https://www.ben54.jp/news/2393</guid>
       <category>一般法律</category>
       <source url="https://www.ben54.jp/news/2393">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>「義務教育は無償」のはずが…給食費5万円、PTA会費1万円 保護者にのしかかる“隠れ”教育費とは？</title>
-      <link>https://www.ben54.jp/news/2388</link>
-      <description>【弁護士JPニュース】内容を取得できませんでした。</description>
-      <pubDate>Sun, 22 Jun 2025 09:09:00 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/2388</guid>
-      <category>一般法律</category>
-      <source url="https://www.ben54.jp/news/2388">弁護士JPニュース</source>
     </item>
   </channel>
 </rss>
