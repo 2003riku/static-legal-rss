@@ -33,7 +33,8 @@ def setup_driver():
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36")
+    # ユーザーエージェントを少し新しく更新
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
     prefs = {"profile.managed_default_content_settings.images": 2}
     options.add_experimental_option("prefs", prefs)
@@ -44,9 +45,7 @@ def setup_driver():
         logger.info(f"Chrome binary location set to: {chrome_binary_location}")
 
     service = ChromeService(ChromeDriverManager().install())
-    # --- ▼ 構文エラーを修正 ▼ ---
     driver = webdriver.Chrome(service=service, options=options)
-    # --- ▲ 構文エラーを修正 ▲ ---
 
     driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {
         'source': "Object.defineProperty(navigator, 'webdriver', { get: () => undefined })"
@@ -70,23 +69,23 @@ class RobustScraper:
                 },
                 'wait_strategy': 'standard'
             },
+            # --- ▼ 最終修正 ▼ ---
             'ben54': {
                 'name': '弁護士JPニュース',
                 'list_url': 'https://www.ben54.jp/news/list',
-                'link_pattern': r'/news/detail/\d+',
+                'link_pattern': r'/news/\d+', # 記事詳細のURLパターン
                 'selectors': {
-                    'links': 'li.article-list__item a',
-                    'title': 'h1.article-header__title',
-                    'content': 'div.article-body__content',
-                    'date': 'time.article-header__date',
+                    'links': 'ul.c-list li.p-news-list a', # 記事一覧のリンク
+                    'title': 'h1.article-header__title',   # 記事タイトル
+                    'content': 'div.article-body__content', # 記事本文
+                    'date': 'time.c-fs14, time.article-header__date', # 日付
                 },
                 'wait_strategy': 'dynamic',
-                'wait_selector': 'ul.article-list__list',
+                'wait_selector': 'ul.c-list', # 実際に存在するリストのセレクタ
                 'rate_limit': 2,
-                'cookie_consent': {
-                    'button_selector': 'button.js-cookie-consent-agree'
-                }
+                # クッキー同意処理は不要なため削除
             }
+            # --- ▲ 最終修正 ▲ ---
         }
 
     def wait_for_page_load(self, config: Dict, timeout: int = 30):
@@ -110,7 +109,7 @@ class RobustScraper:
         except TimeoutException:
             logger.warning("ページの完全読み込みがタイムアウトしましたが、処理を続行します")
         
-        time.sleep(2)
+        time.sleep(1) # 安定化のための短い待機
 
     def save_debug_info(self, site_name: str):
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -132,21 +131,6 @@ class RobustScraper:
             logger.info(f"サイト「{config['name']}」の記事リンクを取得します。")
             try:
                 self.driver.get(config['list_url'])
-
-                cookie_config = config.get('cookie_consent')
-                if cookie_config:
-                    try:
-                        agree_button = WebDriverWait(self.driver, 10).until(
-                            EC.element_to_be_clickable((By.CSS_SELECTOR, cookie_config['button_selector']))
-                        )
-                        logger.info("クッキー同意ボタンを検出しました。クリックします。")
-                        agree_button.click()
-                        time.sleep(2)
-                    except TimeoutException:
-                        logger.info("クッキー同意ボタンが見つかりませんでした（または、すでに同意済み）。")
-                    except Exception as e:
-                        logger.warning(f"クッキー同意ボタンのクリック中にエラー: {e}")
-
                 self.wait_for_page_load(config)
 
                 soup = BeautifulSoup(self.driver.page_source, 'html.parser')
@@ -186,25 +170,41 @@ class RobustScraper:
             self.driver.get(url)
             self.wait_for_page_load({'wait_strategy': 'standard'})
             soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-            for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", ".l-mail-magazine-btn", "header"]:
+
+            for unwanted_selector in ['script', 'style', 'aside', 'footer', 'form', ".related", ".box-sns-share", "header"]:
                 for element in soup.select(unwanted_selector):
                     element.decompose()
-            title = self.clean_text(soup.select_one(config['selectors']['title']).get_text()) if soup.select_one(config['selectors']['title']) else "タイトル不明"
+            
+            title = "タイトル不明"
+            title_elem = soup.select_one(config['selectors']['title'])
+            if title_elem:
+                title = self.clean_text(title_elem.get_text())
+
             content = "内容を取得できませんでした。"
             content_elem = soup.select_one(config['selectors']['content'])
             if content_elem:
                 text_parts = [self.clean_text(p.get_text()) for p in content_elem.find_all('p') if len(self.clean_text(p.get_text())) > 20]
                 if text_parts: content = ' '.join(text_parts)[:500] + '...'
+            
             published_date = None
             date_elem = soup.select_one(config['selectors']['date'])
             if date_elem:
                 dt_str = date_elem.get('datetime', self.clean_text(date_elem.get_text()))
-                try: published_date = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
+                try:
+                    published_date = datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
                 except ValueError:
-                    match = re.search(r'(\d{4})[/\.年](\d{1,2})[/\.月](\d{1,2})', dt_str)
-                    if match: published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
-            if not isinstance(published_date, datetime): published_date = datetime.now(JST)
-            published_date = published_date.astimezone(JST) if published_date.tzinfo else published_date.replace(tzinfo=JST)
+                    match = re.search(r'(\d{4})[/\.年]\s*(\d{1,2})[/\.月]\s*(\d{1,2})', dt_str)
+                    if match:
+                        published_date = datetime(int(match.group(1)), int(match.group(2)), int(match.group(3)))
+            
+            if not isinstance(published_date, datetime):
+                published_date = datetime.now(JST)
+            
+            if published_date.tzinfo is None:
+                published_date = published_date.replace(tzinfo=JST)
+            else:
+                published_date = published_date.astimezone(JST)
+
             result = {'title': title, 'url': url, 'content': content, 'published_date': published_date, 'source': config['name']}
             logger.info(f"  ✓ 取得完了: {title[:50]}...")
             return result
@@ -213,11 +213,13 @@ class RobustScraper:
             return None
 
 def save_articles_json(articles: List[Dict], filepath: str):
-    articles_for_json = [
-        {**article, 'published_date': article['published_date'].isoformat()}
-        for article in articles
-        if isinstance(article.get('published_date'), datetime)
-    ]
+    articles_for_json = []
+    for article in articles:
+        new_article = article.copy()
+        if isinstance(new_article.get('published_date'), datetime):
+            new_article['published_date'] = new_article['published_date'].isoformat()
+        articles_for_json.append(new_article)
+
     with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(articles_for_json, f, ensure_ascii=False, indent=2)
     logger.info(f"記事データを保存しました: {filepath}")
@@ -229,13 +231,17 @@ def main():
         scraper = RobustScraper(driver)
         links_to_scrape = scraper.get_all_article_links(max_per_site=10)
         logger.info(f"取得したリンク総数: {len(links_to_scrape)}")
-        all_articles = [
-            article for link_info in links_to_scrape
-            if (article := scraper.get_article_detail(link_info['url'], link_info['site_key']))
-            and article.get('content') != "内容を取得できませんでした。"
-        ]
+
+        all_articles = []
+        if links_to_scrape:
+            for link_info in links_to_scrape:
+                article = scraper.get_article_detail(link_info['url'], link_info['site_key'])
+                if article and article.get('content') != "内容を取得できませんでした。":
+                    all_articles.append(article)
+        
         logger.info(f"全サイトのスクレイピング完了: 合計 {len(all_articles)} 件の記事を取得")
         save_articles_json(all_articles, 'articles.json')
+
     except Exception as e:
         logger.error(f"メイン処理でエラーが発生: {e}")
         import traceback
