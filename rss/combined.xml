@@ -5,9 +5,18 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 25 Jun 2025 15:22:32 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jun 2025 21:26:09 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>医師の8割「長時間労働は医療過誤の原因」と懸念…「医師の働き方是正」「医師不足の解消」求め労働組合が厚労省へ要請書提出</title>
+      <link>https://www.ben54.jp/news/2401</link>
+      <description>【弁護士JPニュース】過重労働など医師の働き方の是正を求め、全国の医療従事者でつくる二つの労働組合「全国医師ユニオン」と「日本医療労働組合連合会（日本医労連）」は6月24日、福岡資麿厚生労働大臣に対し要請書を提出した。 厚労省は昨年4月、医療の質・安全の確保などを目的とした新たな制度「医師の働き方改革」を施行した。しかし、必ずしも医師の負担を軽減させるものとはなっていないようだ。 同日都内で会見に臨んだ全国医師ユニオンの植山直人代表、日本医労連の森田進副委員長は過酷な状況の下で働く医師の実情を訴えるとともに、そうした状況が招きかねない医療過誤への“懸念”を示した。（ライター・榎園哲哉） 医師の働き方改革では、制度の一つとして時間外・休日労働の上限規制が設けられた。 一般病院（A水準医療機関）で働く医師の労働時間上限は960時間とされたが、救急医療等を行うB水準の医療機関と臨床・専門研修、高度技能の習得研修を行うC水準の医療機関では1860時間とされた。 1860時間は、月に20日勤務した場合、1日平均約8時間の残業を許容することとなり、同約4時間以上とされる「過労死ライン」の2倍となっている。 医師らはなぜ...</description>
+      <pubDate>Wed, 25 Jun 2025 18:08:00 +0900</pubDate>
+      <guid isPermaLink="true">https://www.ben54.jp/news/2401</guid>
+      <category>労働法</category>
+      <source url="https://www.ben54.jp/news/2401">弁護士JPニュース</source>
+    </item>
     <item>
       <title>石丸伸二氏に古巣・安芸高田市が賠償金「求償」へ…“恫喝訴訟”で市に賠償命令、なぜ“被害者”から直接個人への請求は認められなかったのか？【弁護士解説】</title>
       <link>https://www.ben54.jp/news/2396</link>
@@ -1033,15 +1042,6 @@
       <guid isPermaLink="true">https://www.ben54.jp/news/2298</guid>
       <category>刑事法</category>
       <source url="https://www.ben54.jp/news/2298">弁護士JPニュース</source>
-    </item>
-    <item>
-      <title>「会社の代わりに“社宅”の家賃立て替えも…」脱毛サロン大手「ミュゼプラチナム」元社員らが未払い賃金等求め会見 社長「一日でも早くお支払いできる環境を」</title>
-      <link>https://www.ben54.jp/news/2299</link>
-      <description>【弁護士JPニュース】美容脱毛サロン「ミュゼプラチナム」を全国におよそ170店舗展開するMPH（旧ミュゼプラチナム、本社・東京都港区）の元社員と、支援する労働組合「コミュニティユニオン東京」は5月23日、未払いとなっている給与の支払いを求め、都内で会見を開いた。 給与が支払われず、さらに解雇・退職勧奨された元社員はおよそ2500人にも上る。業界大手の同社で一体何が起きたのか。（ライター・榎園哲哉） 会見には、首都圏の店舗と本社で勤務していたいずれも女性の元社員9人と、「コミュニティユニオン東京」の松井優希副委員長ら3人が出席した。 冒頭、ユニオンの白滝誠書記長が説明した一連の事案の経緯によると、経営悪化によりミュゼプラチナムは昨年9月、経営陣を刷新しMPHへ移行。全ての事業を同社が継承した。 しかし、経営は好転せず、同11月からは給与の遅配・欠配が生じ始め、店舗の全店休業にも至った。さらに、今年3月31日付をもって解雇・退職勧奨することを通告。対象の社員・従業員はおよそ2500人にも上っている。 給与の未払いが4か月に及ぶ元社員もおり、未払い給与の総額は約15億円にも上る。松井副委員長は「働いてきた分の賃金...</description>
-      <pubDate>Mon, 26 May 2025 18:43:38 +0900</pubDate>
-      <guid isPermaLink="true">https://www.ben54.jp/news/2299</guid>
-      <category>労働法</category>
-      <source url="https://www.ben54.jp/news/2299">弁護士JPニュース</source>
     </item>
     <item>
       <title>熱中症対策がまもなく義務化、罰則も（改正労働安全衛生規則）2025/05/26 労務法務, コンプライアンス, 労働法全般</title>
