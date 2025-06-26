@@ -5,6 +5,7 @@ from xml.etree.ElementTree import Element, SubElement, tostring
 from xml.dom import minidom
 import logging
 from typing import List, Dict
+import hashlib # guid生成のために追加
 
 # ログ設定
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -23,7 +24,7 @@ class StaticRSSGenerator:
         }
     
     def categorize_article(self, title: str, content: str) -> str:
-        """記事のカテゴリを自動判定"""
+        # (この関数は変更なし)
         title_lower = title.lower()
         content_lower = content.lower()
         text = f"{title_lower} {content_lower}"
@@ -51,13 +52,16 @@ class StaticRSSGenerator:
     
     # ▼ ここからが変更箇所 ▼
     def create_rss_item(self, article: Dict) -> Element:
-        """RSS itemエレメントを作成"""
+        """RSS itemエレメントを作成（元記事URLを削除）"""
         item = Element('item')
         SubElement(item, 'title').text = article['title']
-        SubElement(item, 'link').text = article['url']
+        
+        # linkタグを元記事URLではなく、サイトのトップページURLに設定
+        SubElement(item, 'link').text = self.channel_info['link']
+        
         description = SubElement(item, 'description')
-        # 概要から【サイト名】を削除
         description.text = article['content']
+        
         pub_date = SubElement(item, 'pubDate')
         if isinstance(article['published_date'], str):
             pub_datetime = datetime.fromisoformat(article['published_date'])
@@ -67,93 +71,79 @@ class StaticRSSGenerator:
             jst = timezone(timedelta(hours=+9))
             pub_datetime = pub_datetime.replace(tzinfo=jst)
         pub_date.text = pub_datetime.strftime('%a, %d %b %Y %H:%M:%S %z')
-        guid = SubElement(item, 'guid', isPermaLink='true')
-        guid.text = article['url']
+        
+        # guid（ユニークID）も元記事URLを含まないように、タイトルからハッシュを生成して設定
+        # これによりRSSリーダーが記事の重複を正しく判定できる
+        guid_text = hashlib.sha1(article['title'].encode('utf-8')).hexdigest()
+        guid = SubElement(item, 'guid', isPermaLink='false')
+        guid.text = guid_text
+
         category = SubElement(item, 'category')
         category.text = self.categorize_article(article['title'], article['content'])
-        # <source> タグを完全に削除
+        
+        # sourceタグは前回同様、生成しない
+        
         return item
+    # ▲ 変更ここまで ▲
     
     def generate_rss_feed(self, articles: List) -> str:
-        """RSSフィードを生成（統合フィード専用に変更）"""
+        # (この関数は変更なし)
         articles = sorted(articles, key=lambda x: datetime.fromisoformat(x['published_date']), reverse=True)
-        
         rss = Element('rss', version='2.0', attrib={'xmlns:atom': 'http://www.w3.org/2005/Atom'})
         channel = SubElement(rss, 'channel')
-        
         SubElement(channel, 'title').text = self.channel_info['title']
         SubElement(channel, 'link').text = self.channel_info['link']
         SubElement(channel, 'description').text = self.channel_info['description']
         SubElement(channel, 'language').text = self.channel_info['language']
-        
         jst = timezone(timedelta(hours=+9))
         SubElement(channel, 'lastBuildDate').text = datetime.now(jst).strftime('%a, %d %b %Y %H:%M:%S %z')
         SubElement(channel, 'generator').text = self.channel_info['generator']
-        
         atom_link = SubElement(channel, 'atom:link')
         atom_link.set('href', f"{self.channel_info['link']}rss/combined.xml")
         atom_link.set('rel', 'self')
         atom_link.set('type', 'application/rss+xml')
-        
         for article in articles:
             item = self.create_rss_item(article)
             channel.append(item)
-        
         rough_string = tostring(rss, 'utf-8')
         reparsed = minidom.parseString(rough_string)
         return reparsed.toprettyxml(indent="  ", encoding="utf-8").decode()
-    # ▲ 変更ここまで ▲
     
     def save_rss_file(self, rss_content: str, filepath: str):
-        """RSSファイルを保存"""
+        # (この関数は変更なし)
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(rss_content)
         logger.info(f"RSSファイルを保存しました: {filepath}")
     
-    # ▼ メタデータ生成関数を修正 ▼
     def generate_metadata(self, articles: List) -> Dict:
-        """メタデータを生成"""
-        # 'sources' キーを削除
+        # (この関数は変更なし)
         return {
             'last_updated': datetime.now().isoformat(),
             'total_articles': len(articles),
             'categories': list(set(self.categorize_article(article['title'], article['content']) for article in articles))
         }
-    # ▲ 修正ここまで ▲
     
     def save_metadata(self, metadata: Dict, filepath: str):
-        """メタデータをJSONファイルに保存"""
+        # (この関数は変更なし)
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(metadata, f, ensure_ascii=False, indent=2)
         logger.info(f"メタデータを保存しました: {filepath}")
 
-# ▼ main関数を修正 ▼
 def main():
-    """メイン処理"""
+    # (この関数は変更なし)
     generator = StaticRSSGenerator()
-    
     if not os.path.exists('articles.json'):
         logger.error("articles.jsonが見つかりません。先にscraper.pyを実行してください。")
         return
-    
     with open('articles.json', 'r', encoding='utf-8') as f:
         articles = json.load(f)
-    
     logger.info(f"{len(articles)}件の記事を読み込みました")
-    
-    # 統合RSSフィードのみを生成
     combined_rss = generator.generate_rss_feed(articles)
     generator.save_rss_file(combined_rss, 'rss/combined.xml')
-    
-    # サイト別のRSS生成処理を削除
-    
-    # メタデータ生成・保存
     metadata = generator.generate_metadata(articles)
     generator.save_metadata(metadata, 'metadata.json')
-    
     logger.info("RSS生成完了")
-# ▲ 修正ここまで ▲
 
 if __name__ == "__main__":
     main()
