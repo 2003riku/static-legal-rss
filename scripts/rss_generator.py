@@ -49,13 +49,15 @@ class StaticRSSGenerator:
         
         return '一般法律'
     
+    # ▼ ここからが変更箇所 ▼
     def create_rss_item(self, article: Dict) -> Element:
         """RSS itemエレメントを作成"""
         item = Element('item')
         SubElement(item, 'title').text = article['title']
         SubElement(item, 'link').text = article['url']
         description = SubElement(item, 'description')
-        description.text = f"【{article['source']}】{article['content']}"
+        # 概要から【サイト名】を削除
+        description.text = article['content']
         pub_date = SubElement(item, 'pubDate')
         if isinstance(article['published_date'], str):
             pub_datetime = datetime.fromisoformat(article['published_date'])
@@ -69,38 +71,17 @@ class StaticRSSGenerator:
         guid.text = article['url']
         category = SubElement(item, 'category')
         category.text = self.categorize_article(article['title'], article['content'])
-        source = SubElement(item, 'source', url=article['url'])
-        source.text = article['source']
+        # <source> タグを完全に削除
         return item
     
-    def generate_rss_feed(self, articles: List, site_filter: str = None) -> str:
-        """RSSフィードを生成"""
-        if site_filter:
-            site_names = {
-                'bengo4': '弁護士ドットコム',
-                'corporate_legal': '企業法務ナビ',
-                'ben54': '弁護士JPニュース'
-            }
-            target_site = site_names.get(site_filter)
-            if target_site:
-                articles = [a for a in articles if a['source'] == target_site]
-        
+    def generate_rss_feed(self, articles: List) -> str:
+        """RSSフィードを生成（統合フィード専用に変更）"""
         articles = sorted(articles, key=lambda x: datetime.fromisoformat(x['published_date']), reverse=True)
         
         rss = Element('rss', version='2.0', attrib={'xmlns:atom': 'http://www.w3.org/2005/Atom'})
         channel = SubElement(rss, 'channel')
         
-        title = SubElement(channel, 'title')
-        if site_filter:
-            site_names = {
-                'bengo4': '弁護士ドットコム',
-                'corporate_legal': '企業法務ナビ',
-                'ben54': '弁護士JPニュース'
-            }
-            title.text = f"{site_names.get(site_filter, 'Unknown')} - 法律ニュースRSS"
-        else:
-            title.text = self.channel_info['title']
-        
+        SubElement(channel, 'title').text = self.channel_info['title']
         SubElement(channel, 'link').text = self.channel_info['link']
         SubElement(channel, 'description').text = self.channel_info['description']
         SubElement(channel, 'language').text = self.channel_info['language']
@@ -110,20 +91,18 @@ class StaticRSSGenerator:
         SubElement(channel, 'generator').text = self.channel_info['generator']
         
         atom_link = SubElement(channel, 'atom:link')
-        atom_link.set('href', f"{self.channel_info['link']}rss/{'combined' if not site_filter else site_filter}.xml")
+        atom_link.set('href', f"{self.channel_info['link']}rss/combined.xml")
         atom_link.set('rel', 'self')
         atom_link.set('type', 'application/rss+xml')
         
-        # ▼ ここを修正 ▼
-        # articles[:20] の[:20]を削除し、全ての記事を対象にする
         for article in articles:
             item = self.create_rss_item(article)
             channel.append(item)
-        # ▲ 修正ここまで ▲
         
         rough_string = tostring(rss, 'utf-8')
         reparsed = minidom.parseString(rough_string)
         return reparsed.toprettyxml(indent="  ", encoding="utf-8").decode()
+    # ▲ 変更ここまで ▲
     
     def save_rss_file(self, rss_content: str, filepath: str):
         """RSSファイルを保存"""
@@ -132,14 +111,16 @@ class StaticRSSGenerator:
             f.write(rss_content)
         logger.info(f"RSSファイルを保存しました: {filepath}")
     
+    # ▼ メタデータ生成関数を修正 ▼
     def generate_metadata(self, articles: List) -> Dict:
         """メタデータを生成"""
+        # 'sources' キーを削除
         return {
             'last_updated': datetime.now().isoformat(),
             'total_articles': len(articles),
-            'sources': list(set(article['source'] for article in articles)),
             'categories': list(set(self.categorize_article(article['title'], article['content']) for article in articles))
         }
+    # ▲ 修正ここまで ▲
     
     def save_metadata(self, metadata: Dict, filepath: str):
         """メタデータをJSONファイルに保存"""
@@ -147,6 +128,7 @@ class StaticRSSGenerator:
             json.dump(metadata, f, ensure_ascii=False, indent=2)
         logger.info(f"メタデータを保存しました: {filepath}")
 
+# ▼ main関数を修正 ▼
 def main():
     """メイン処理"""
     generator = StaticRSSGenerator()
@@ -160,18 +142,18 @@ def main():
     
     logger.info(f"{len(articles)}件の記事を読み込みました")
     
+    # 統合RSSフィードのみを生成
     combined_rss = generator.generate_rss_feed(articles)
     generator.save_rss_file(combined_rss, 'rss/combined.xml')
     
-    site_keys = ['bengo4', 'corporate_legal', 'ben54']
-    for site_key in site_keys:
-        site_rss = generator.generate_rss_feed(articles, site_key)
-        generator.save_rss_file(site_rss, f'rss/{site_key}.xml')
+    # サイト別のRSS生成処理を削除
     
+    # メタデータ生成・保存
     metadata = generator.generate_metadata(articles)
     generator.save_metadata(metadata, 'metadata.json')
     
     logger.info("RSS生成完了")
+# ▲ 修正ここまで ▲
 
 if __name__ == "__main__":
     main()
