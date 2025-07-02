@@ -2,7 +2,7 @@ name: Update Legal RSS Feed
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # 6時間ごとに実行
+    - cron: '0 */12 * * *' # 12時間ごとに実行
   workflow_dispatch:
 
 permissions:
