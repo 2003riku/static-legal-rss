@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 10 Jul 2025 21:35:48 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Jul 2025 10:14:34 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>来年導入の「共同親権」を“先取り”する判決が出されていた 「自然的親子権国賠訴訟」の意義とは【担当弁護士解説】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>2024年に成立した改正民法により、2026年5月までに「共同親権」が導入される予定だ。 共同親権が導入される背景には、離婚後は子どもの親権を父母の片方しか持てないと定める「単独親権」制度に対する批判や異議が積み重なってきた経緯がある。 同制度に対する違憲訴訟も、数々提起されてきた。その一つである「自然的親子権国賠訴訟」について、原告弁護士に訴訟の経緯を聞いた。 本訴訟が東京地裁に提起されたのは2020年10月。東京都などに住む男女6人の原告が、国に総額900万円の損害賠償を請求した。 訴えの内容は、民法819条1項および2項（以下まとめて「民法819条」）が定める単独親権制度によって精神的な苦痛を受けたにもかかわらず、国は民法819条の改正を怠ったとして、国家賠償法1項1項に基づき原告らが各150万円ずつの損害賠償を請求するというもの。 そして、損害賠償を求める法的な根拠として「民法819条は幸福追及権等について定める憲法13条によって原告らに保障されている『自然的親子権』を侵害する」と主張された。 くわえて、単独親権制度は憲法14条と憲法24条が保障する「平等権」や、憲法26条が保...</description>
+      <pubDate>Fri, 11 Jul 2025 09:58:00 +0900</pubDate>
+      <guid isPermaLink="false">86fed7c64a80a296023fa0dcea94944defe48f52</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>【参院選】労働政策、各党の考え方は？ 時間外労働規制など「野党は積極的、自公は現状維持」参政・保守は回答せず</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -959,14 +967,6 @@
       <pubDate>Fri, 13 Jun 2025 09:48:00 +0900</pubDate>
       <guid isPermaLink="false">46ed3b39a374f0b0eba9822a6e0b6ce0b2cbd994</guid>
       <category>憲法</category>
-    </item>
-    <item>
-      <title>医療機関「来年か再来年には多くが倒産」現場から悲痛な声…コロナ禍以降の物価・人件費高騰が深刻 診療報酬の“大幅引き上げ”求め保団連が会見</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「お金がないと医療を受けられない状況になりかねない」――。 10万人を超える医師・ 歯科医師で構成される全国保険医団体連合会（保団連）は12日、都内で会見。 病院現場の深刻な経営実態と、診療報酬の評価の低さに関する、2つの実態調査の結果を発表し、国に対して診療報酬の10%引き上げを求めた。 保団連では今年2月「物価高騰に関する医療機関の緊急影響調査」を実施。回答した医療機関4658件のうち、入院医療機関674件の病院、有床診療所に特化した分析を行った。 分析によると、回答した入院医療機関の55.5％が、2024年1月と比較して、診療報酬改定後の収入が減少したと回答。このうち31.7%の入院医療機関では10%以上の減収となったという。 また、光熱費や医療材料費などの経費は、診療報酬改定を経ても「補塡（ほてん）できていない」と95.4％が答えており、同様に92.9％の医療機関が人件費を補えていないと回答した。 保団連の吉中丈志（よしなか・たけし）理事は「診療報酬の大幅引き上げなしには、医療機関の経営危機は打開できない」として、次のように述べた。 「当会には、大きな病院も加盟していますが、中...</description>
-      <pubDate>Thu, 12 Jun 2025 20:19:24 +0900</pubDate>
-      <guid isPermaLink="false">e301256f7a935ccd41ad30b057cfb51047c1958e</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
