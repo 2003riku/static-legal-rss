@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Jul 2025 21:31:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Jul 2025 10:20:35 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>六本木の“人気ショークラブ”、経営者はなぜ逮捕された？ 風営法「接待」と「遊興」の線引きとは</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>2024年2月、東京・六本木のショークラブ「バーレスク東京」（現在は屋号変更し営業）の経営者が逮捕された。無許可で客に接待をした、風営法違反の疑いだった。 店側はすぐに容疑を認め、「当店は『特定遊興飲食店営業』の許可のもと営業をしていたものの、『風俗営業』の許可を取得できなければならない接待行為があったものとされ、今般の事態に至ったものと思われます」と説明した。 風営法において、「接待」は、その有無が業態を分岐するうえで、重要な要件となっているが、そもそも、その定義は何だろうか。接待が含まれるサービスの場合、なにがどう規制されるのかーー。 法的観点から、ナイトビジネスに精通する若林翔弁護士が解説する。 ※この記事は若林翔弁護士の書籍『歌舞伎町弁護士』（小学館新書）より一部抜粋・再構成しています。 風営法に基づく「風俗営業」のカテゴリーの許可「接待飲食等営業」には、ホストクラブやキャバクラ、スナックなどを対象とする1号を始め、全部で5種類の許可がある。 1号はホストクラブやキャバクラ、スナックといった店が対象で「飲食＋接待」が提供される。営業可能な時間帯は、午前0時〜午前6時以外の18時...</description>
+      <pubDate>Sun, 13 Jul 2025 09:58:00 +0900</pubDate>
+      <guid isPermaLink="false">e3bd0435a87ca3104d204206f42d2b3f70a5d136</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>海難事故“自業自得”でも「救助費用」払わなくていい？ 原則“タダ”だが…「自己負担」しなければならないケースとは【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -959,14 +967,6 @@
       <pubDate>Sat, 14 Jun 2025 10:38:00 +0900</pubDate>
       <guid isPermaLink="false">fe1fc21a2a901b49396cacfee0882cc8522e60f2</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>高齢者のカラオケには“死”のリスクが！？ 「脳梗塞」や「がん」との意外な関係</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>絶賛開催中の大阪・関西万博で、「万博カラオケ」が人気を博している。人前で歌うことは恥ずかしさもあるが、爽快感があり、ストレス解消にもうってつけだ。 ところがこのカラオケで、特に高齢者の場合、身体に危険がもたらされる可能性があるという。 「大きな声を出したり、力んだりすると血圧が上昇します。すると、心房内で作られた血栓が遊離して、脳に向かう血管に詰まることがあるのです」 こう解説するのは法医学者の高木徹也氏だ。さらに、歌いすぎると声帯に負担がかかり、手術が必要になるケースもあるという。 ※この記事は法医学者・高木徹也氏の書籍『こんなことで、死にたくなかった：法医学者だけが知っている高齢者の「意外な死因」』（三笠書房）より一部抜粋・再構成しています。 歌うことは、心肺機能を向上させたり、精神的な解放感をもたらしたりします。カラオケ好きな人が多いのも納得です。 ただ、高齢者の場合、いくつかの注意点があります。 一つは、「心房細動」を背景とした「脳梗塞」を起こす可能性があることです。 「心房細動」とは、高齢者に多い心臓疾患の一つで、心臓の上部にある「心房」が規則正しく収縮・拡張せず、震えるよう...</description>
-      <pubDate>Sat, 14 Jun 2025 10:19:00 +0900</pubDate>
-      <guid isPermaLink="false">c72360bd39d47e8da737cf27812a4876d344ac8f</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
