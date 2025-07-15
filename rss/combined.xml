@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 14 Jul 2025 21:35:55 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jul 2025 10:17:24 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「逃げ得は許さない！」警視庁が“交通違反”未出頭者237人を逮捕、公式SNSでも警告 “反則金”払わず“出頭”もしなかったらどうなる？【弁護士解説】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>警視庁交通総務課が3日、公式Xで6月中に「悪質な未出頭者」237人を逮捕したと発表した。ポスト時の画像には「逃げ得は許さない！」という強いメッセージが使われ、その本気度が示された。 「悪質」について、ポストでは「交通違反に伴う反則金を納付せず、長期にわたり出頭しない違反者等」と説明。 交通違反を犯し「交通反則告知書」（いわゆる青切符）を受け取った場合、「納付書」により反則金を納付すれば刑罰を免れる。 もし、反則金の納付も出頭もせず逃げ続けた場合、どうなるのか。刑事事件に詳しい荒木謙人弁護士に聞いた。 荒木弁護士：反則金の納付は任意である一方、通告を受けても納付しなければ、刑事手続に移行することになります。そのため、「未出頭だと逮捕されることもあり得る」というメッセージを伝えることで、早期に適切な対応を取るよう促す狙いがあると考えられます。...</description>
+      <pubDate>Tue, 15 Jul 2025 09:56:00 +0900</pubDate>
+      <guid isPermaLink="false">46d4373717b4ad296e8744ad72d1b44550eec5b9</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>空き缶、ペットボトル「ポイ捨てしたら2000円」…4月から条例で“過料”を科した自治体の「その後」は？</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -959,14 +967,6 @@
       <pubDate>Mon, 16 Jun 2025 10:37:00 +0900</pubDate>
       <guid isPermaLink="false">a41a6e7c89d0883e9ae32c447d82402e48425e82</guid>
       <category>憲法</category>
-    </item>
-    <item>
-      <title>「30円盗んで懲役3年」なぜ刑務所に知的障害者が多い？ 服役した元代議士が明かす“困窮と使い走り”の闇</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>秘書給与詐取で逮捕され、服役した元代議士の山本譲司氏。出所後に自身の獄中体験をつづった『獄窓記』（2003年、ポプラ社）は大きな反響を呼んだ。 その後、山本氏は更生保護法人「同歩会」やNPO法人「ライフサポートネットワーク」を設立し、現在も高齢受刑者や障害のある受刑者の社会復帰支援に取り組んでいる。 本記事では、山本氏が中高生に向けて執筆した書籍『刑務所しか居場所がない人たち 学校では教えてくれない、障害と犯罪の話』（2018年、大月書店）から、受刑者全体の20％といわれる知的障害者が罪を犯した背景について書かれた内容を、抜粋して紹介する。 刑務所に入るときは、みんなかならず知能検査を受ける。一般的にいって、知能指数が69以下だと、知的障害があるとみなされる（世界保健機関の基準）。 2016年に新しく刑務所に入った受刑者約2万500人のうち、約4200人は知能指数が69以下だった。つまり、受刑者10人のうち、2人くらいは知的障害のある可能性が高いということだ。 ついでに最終学歴はというと、中学校卒業がいちばん多くて40％くらい。次が高校卒業で30％くらい。大学卒業は5％くらいしかいない...</description>
-      <pubDate>Mon, 16 Jun 2025 10:18:00 +0900</pubDate>
-      <guid isPermaLink="false">c0fae37ed4fd3cef8e2feb14edad403673e11bc9</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
