@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 17 Jul 2025 21:35:43 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jul 2025 10:15:23 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AV新法施行3年も…“違法AV”なぜ増加？ ルール守る「適格AV業者」の苦境と「アングラ業者」暗躍の誤算</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>AV新法の交付・施行から3年。法律を順守するメーカーやプロダクションが厳しい規制に苦しむ一方で、違法に利益を上げ続ける人たちもいる。 前編（AV新法施行3年「時間と労力は、以前の4～5倍に」…疲弊する“現場の声”に透ける「問題点」と「改正」の必要性）に続き、後編では出演者を守るための新法が現実にどのように機能し、またどのような課題を生じさせているのか…。現場の声に耳を向け、その改善点をあぶりだす。（ライター・中山美里） 「施行直後から、個人撮影の撮影者や無審査の業者の大幅な増加が目につくようになり、われわれ適格AV事業者以外の逮捕者が多く見受けられました。 AV女優になることを望んでいる女性に出演してもらうのがわれわれ適格AV事業者ですが、そうではなく、AV女優になることを望んでいない女性を巧妙な手口で撮影する、悪質な違法業者が増えていることを実感します」 こう話すのは一般社団法人日本プロダクション協会（以下、JPG）の理事だ。 また、AVや性風俗など性の仕事に対する差別や偏見をなくしたいと活動する一般社団法人sienteの相談窓口には、個人撮影等での被害相談が頻繁に持ち込まれるという...</description>
+      <pubDate>Fri, 18 Jul 2025 09:56:00 +0900</pubDate>
+      <guid isPermaLink="false">1e9006e28a7ce98b468f08a01c9aed158368b7be</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>「裁判所が責任追及を避けたのでは」QBハウスの“時間外手当”請求訴訟、理美容師側が“一部勝訴”も…会社側への請求棄却</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -959,14 +967,6 @@
       <pubDate>Thu, 19 Jun 2025 08:48:00 +0900</pubDate>
       <guid isPermaLink="false">77ad8c81e985b88ee8087c304697604bfb07636d</guid>
       <category>税法</category>
-    </item>
-    <item>
-      <title>「中古車販売」倒産件数が過去最多…トラブル続く背景は？ “儲からないビジネス”に没落させた根本原因【元中古車雑誌編集長解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>購入した中古車が納車されない。そんなトラブルが相次いでいるという。 現物が目の前にあり、支払いが終わっていても納車されない。当然、購入者の怒りは収まらない。 信用調査会社による最新データでは倒産件数が過去最多を更新。中古車販売業界に一体、なにが起こっているのか――。 元中古車雑誌編集長が解説する。（本文：自動車コラムニスト・山本晋也） お客様から預かったクルマを意図的に傷つけ、自動車保険の保険金を不正請求した…というビッグモーター事件も記憶に新しい。当時から「この事件は中古車業界において氷山の一角に過ぎない」とささやかれていた。 世間から大バッシングを受けたビッグモーター事件をきっかけに、中古車業界が全体として襟を正すことも期待されていた。ところが、残念ながら中古車販売ビジネスの闇はそう簡単には晴れないようだ。 最近でも、顧客から代金を受け取っておきながら納車せずに連絡が取れなくなるといったトラブルが報じられたりしている。 はたして、現在の中古車業界はどうなっているのだろうか。かつて中古車情報誌で編集長をつとめたこともある筆者の経験もふまえ、中古車販売ビジネスの過去から現在、および将来...</description>
-      <pubDate>Thu, 19 Jun 2025 08:28:00 +0900</pubDate>
-      <guid isPermaLink="false">7e2cc0fea21af0f38287d82f5f7b0a3bd331dfc1</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
