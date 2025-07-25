@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 24 Jul 2025 21:37:12 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 25 Jul 2025 10:15:21 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>教員による性犯罪「日本版DBS」では防げない？ 深刻な人材不足で“欠員放置”6割超…「現場疲弊」と「リスク拡大」の悪循環</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>教員による性犯罪が止まらない。有力な対策のひとつと目される「日本版DBS」（※）は2026年12月の施行へ向け有識者会議が大詰めを迎えているが、「必要性に疑問を感じる」との声もある。一方で、教職現場の人手不足が深刻で欠員補充ができない「未配置」が全国で3662人に上ることもわかった。 ※Disclosure and Barring Serviceの頭文字をとったもので、日本語で「前歴開示・前歴者就業制限機構」を意味する。元々はイギリスで2012年に確立した制度 「教育現場のストレスフルな環境と教員の性的加害が増えていることは決して無関係とはいえません」と指摘するのは、学校関係者からも相談を受ける、一般社団法人全国盗撮防止ネットワーク代表理事の平松直哉氏だ。 平松氏は、その背景に、教育現場での慢性的な人手不足が深刻化していることを挙げる。 全日本教職員組合（全教）が7月に公表した資料によれば、36都道府県・12政令市で教職員未配置の状況を調査したところ、「定数の欠員」が771人で全体の約21％。「代替者の欠員」が「産育休」「病休」「看護休」などをあわせ1058人で全体の約29％となってお...</description>
+      <pubDate>Fri, 25 Jul 2025 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">33fc89006d2ad21da2e2d8b1f72a47b6264c71ad</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>売春、なぜ“買う側”に罰則ない？ 「慎重に検討していく必要がある」政府が衆参両院で語った“本音”とは</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -959,14 +967,6 @@
       <pubDate>Thu, 26 Jun 2025 00:00:00 +0900</pubDate>
       <guid isPermaLink="false">4e28a9ddf40b05ffefa1b8ac3b0022ee5f232d28</guid>
       <category>企業法</category>
-    </item>
-    <item>
-      <title>医師の8割「長時間労働は医療過誤の原因」と懸念…「医師の働き方是正」「医師不足の解消」求め労働組合が厚労省へ要請書提出</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>過重労働など医師の働き方の是正を求め、全国の医療従事者でつくる二つの労働組合「全国医師ユニオン」と「日本医療労働組合連合会（日本医労連）」は6月24日、福岡資麿厚生労働大臣に対し要請書を提出した。 厚労省は昨年4月、医療の質・安全の確保などを目的とした新たな制度「医師の働き方改革」を施行した。しかし、必ずしも医師の負担を軽減させるものとはなっていないようだ。 同日都内で会見に臨んだ全国医師ユニオンの植山直人代表、日本医労連の森田進副委員長は過酷な状況の下で働く医師の実情を訴えるとともに、そうした状況が招きかねない医療過誤への“懸念”を示した。（ライター・榎園哲哉） 医師の働き方改革では、制度の一つとして時間外・休日労働の上限規制が設けられた。 一般病院（A水準医療機関）で働く医師の労働時間上限は960時間とされたが、救急医療等を行うB水準の医療機関と臨床・専門研修、高度技能の習得研修を行うC水準の医療機関では1860時間とされた。 1860時間は、月に20日勤務した場合、1日平均約8時間の残業を許容することとなり、同約4時間以上とされる「過労死ライン」の2倍となっている。 医師らはなぜ...</description>
-      <pubDate>Wed, 25 Jun 2025 18:08:00 +0900</pubDate>
-      <guid isPermaLink="false">9e2a0db94b111f439afdd7fcb89c3a4bbd0a25a1</guid>
-      <category>労働法</category>
     </item>
   </channel>
 </rss>
