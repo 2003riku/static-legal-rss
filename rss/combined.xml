@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 28 Jul 2025 21:37:15 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jul 2025 10:23:44 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「ブレーキ扱えないんじゃ…」電動キックボード“片手タバコ”に不安の声 「アウト？ セーフ？」弁護士に聞いた法的リスク</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>電動キックボードのシェアリングサービスで世界最大手の「Lime（ライム）」 が日本市場に参入して1年が経過した。同サービス国内大手「LUUP（ループ）」では、今年5月にアプリのダウンロード数が450万を突破。都市部を中心に、街中での利用が目立つようになっている。 一方で、電動キックボードをめぐっては利用者の交通違反や事故が問題視され、車のドライバーや歩行者からは「（道路区分を守らず）怖い」「取り締まりを強化してほしい」という声も絶えない。 「電子タバコを吸いながら、片手で電動キックボードを運転している人がいた……」 弁護士JPニュース編集部にこんな目撃情報を寄せてくれたのはCさん。東京都内の道路で信号待ちのため停止していたところ、横に止まった電動キックボードの男性がおもむろに電子タバコをくわえはじめたという。 「信号が青になると一度は電子タバコを持った手をハンドルに添えて発進しましたが、またすぐにタバコをくわえ、片手運転で走行していました。あれではブレーキもまともに扱えないんじゃないかと怖かったです」（Cさん） 電動キックボードに限らず、タバコを吸いながらバイクや自転車に乗っている人は...</description>
+      <pubDate>Tue, 29 Jul 2025 09:56:00 +0900</pubDate>
+      <guid isPermaLink="false">c5219e042572e3141d29d329059b000ea1d3cf88</guid>
+      <category>一般法律</category>
+    </item>
     <item>
       <title>知的障害者は「弁護士」からも見放される？ 「執行猶予付き」判決はほぼ無理…国の仕組みが招く“刑務所行き”の実態</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -943,14 +951,6 @@
       <pubDate>Mon, 30 Jun 2025 00:00:00 +0900</pubDate>
       <guid isPermaLink="false">e25283e6ab55462934652c1db836b1e091351ec4</guid>
       <category>民事法</category>
-    </item>
-    <item>
-      <title>調理実習で“ブリ照り”作ったら「ブリは私費だが、ガスは公費」…複雑すぎる学校運営費が生む「義務教育は無償」へのギモン</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>日本国憲法にはこう記されているが、実際、ひとりの子どもを公立小中学校に9年間通わせた際の保護者負担は数十万円に上る。 「隠れ教育費」とも呼ばれる、この“見えない支出”について、保護者が声をあげれば「子どもにかかるお金は親が払うのが当然」という言葉が飛んでくる。たとえ生活が苦しかったとしても、払わないような人がいれば批判を浴びることになるだろう。 しかし、「隠れ教育費」を支払うことは、本当に誰もが納得している事象なのか――。 この連載では、本来無償であるはずの義務教育において、実質的に保護者が負担している支出の実態に迫る。第2回では、学校はどのような「お金」で運営されているのかに注目する。（連載第1回はこちら／全5回） ※この記事は栁澤靖明氏・福嶋尚子氏による書籍『隠れ教育費 公立小中学校でかかるお金を徹底検証』（太郎次郎社エディタス）より一部抜粋・構成。 ここで、学校運営を支えるお金として、大きく二種類があることを紹介しておこう。 まず 「公費」とは、ひと言で説明するなら、市区町村の予算から学校に令達される（使ってよいと命令される）予算のことである。財源はもちろん税金。 学校を管理する...</description>
-      <pubDate>Sun, 29 Jun 2025 09:08:00 +0900</pubDate>
-      <guid isPermaLink="false">d25cb1547dbe6fa22cce469da603ce7f6b2d89de</guid>
-      <category>憲法</category>
     </item>
     <item>
       <title>日産自動車の定時総会で株主提案が否決、役員報酬規制について2025/06/27 商事法務, 総会対応, 会社法, 自動車</title>
