@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 19 Aug 2025 21:34:17 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Aug 2025 10:09:11 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>営業契約「名義借り」で懲戒解雇、退職金ゼロとなったが…裁判で争った結果「約300万円」支給されたワケ</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>営業成績に悩む保険会社の営業社員Aさんが、知人に打診して「名義借り契約」に手を染めてしまった。 会社はAさんを懲戒解雇とし、退職金約999万円を全額不支給とした。 裁判所は「懲戒解雇はOK」だが「退職金全額不支給は違法。3割にあたる約299万円は支払え」と判断した。 以下、事件の詳細について、実際の裁判例をもとに紹介する。（弁護士・林 孝匡） 生命保険会社で営業職として保険の販売業務に従事していたAさんは、営業成績に悩んでいたようだ。 解雇の発端となったのは、2016年、Aさんが旧知の友人であるBさんに対して「名前だけ貸してほしい」旨依頼し、生命保険契約を成立させた行為である。Bさんには保険料の支払意思も加入意思もなく、Aさんがすべての保険料（月額5000円）を肩代わりしていた。 契約期間は33か月におよび、最終的にはAさんの依頼でBさんが解約手続を行い、解約返戻金もAさんが受け取った。いわゆる「名義借り契約」であり、会社が定める就業規則では、懲戒解雇の対象となる行為に位置づけられていた。 それから約6年後、Aさんは別の知人Cさんとその息子に関する保険契約を2件手がけた。いずれも契約者...</description>
+      <pubDate>Wed, 20 Aug 2025 09:56:00 +0900</pubDate>
+      <guid isPermaLink="false">d17c307b8794e355a4620a3ebee0ae597a7cfa36</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>生活保護基準引き下げ「違法」判決に厚労大臣「真摯に反省する」コメントも…原告側「行政に軽視されている」不信感あらわ</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -911,14 +919,6 @@
       <pubDate>Sat, 19 Jul 2025 09:58:00 +0900</pubDate>
       <guid isPermaLink="false">e4b88015779cb7fa0794ef6dbb5334ddf47d1583</guid>
       <category>民事法</category>
-    </item>
-    <item>
-      <title>参院選「切り抜き動画」で大混乱…“デマ拡散”なぜ止まらない？ 元議員秘書の弁護士が警告「発信者・サイト運営者」の“法的責任”とは</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>参議院議員選挙の投票日を今月20日（日）に控え、各政党や候補者は動画配信などのSNS戦略に力を入れている。 その他に、YouTubeなどの動画サイトで、一般人によって、演説や討論等の内容を短く切り取り編集を加えた「切り取り動画」が数多く配信されている。その中には、ことさらに発言内容を曲解し、デマや誹謗中傷を拡散しているとみられるものもある。 たとえば、石破茂首相があたかもテレビの討論番組で「都心は外国人富裕層が住めばいい、お金がない日本人は田舎に住め」という趣旨の発言をしたかのように伝える動画（石破首相等の写真とテロップとAIのアナウンスで構成）について、FNNプライムオンライン（フジテレビ系）が、実際の発言内容を紹介のうえ「曲解および過剰表現」と断じている。 このような「切り取り動画」にはどのような法的問題点があるのか。投稿者の法的責任、行政機関の取るべき対応、プラットフォーム事業者の責任等について、国会議員秘書の経歴があり、与野党を問わず政治家の名誉毀損事件への対応も多い三葛敦志（みかつら あつし）弁護士に聞いた。 三葛弁護士は、恣意（しい）的に編集を加えた切り抜き動画を拡散するこ...</description>
-      <pubDate>Fri, 18 Jul 2025 19:56:00 +0900</pubDate>
-      <guid isPermaLink="false">9aa5e70d421dd0d249514b2c745912e9f55c1f66</guid>
-      <category>憲法</category>
     </item>
     <item>
       <title>JR東日本車両清掃中に「タイミー」作業員が死亡、スポットワークの注意点2025/07/17 契約法務, 労務法務, コンプライアンス, 物流</title>
