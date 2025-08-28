@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 27 Aug 2025 21:33:46 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Aug 2025 10:08:32 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>建設会社の取締役だった男性に労災認定、役員の労働者性について2025/08/28 契約法務, 労務法務, 労働法全般, 会社法, 建設</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>今回は取締役など役員に労働関係法令が適用されるのか、労働者性について見直していきます。 男性は専務取締役ではあったものの、代表取締役に認められていた工事の受注や人員配置を決める業務執行権は無く、実質的には「労働者」だったとして２０１８年９月に労災認定がされていました。 男性自身が自主的に記録していた出勤簿や同僚らの証言が認定に重要な役割を果たしたとされています。 そのため、これらの役員には原則として労働関係法令の多くが適用されず、時間外労働や深夜労働、休日労働を行っても割増賃金などは支払われないこととなります。 同様に労災の対象ともなりません。しかし一方で、この取締役としての地位が形だけのもので、実際には通常の従業員と何ら変わらない労働実態を持っている場合には、実質「労働者」と判断される場合があると言えます。 似たような概念として「名ばかり管理職」というものも存在しますが、こちらも問題の所在としては同様と言えます。これらは実際には労働者であるにもかかわらず、労基法の適用や社会保険・雇用保険などの各種保険の加入義務などを免れるために、形だけ取締役や管理職にしているといった実態があると言わ...</description>
+      <pubDate>Thu, 28 Aug 2025 00:00:00 +0900</pubDate>
+      <guid isPermaLink="false">e40a5cc0c7aabbb361a763669595e056ec729294</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>「在留資格目的ではなく、愛しているから結婚した」スリランカ人男性の「難民認定・在留特別許可」求める控訴が棄却 日本人妻は“運”に左右されると訴え</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -959,14 +967,6 @@
       <pubDate>Wed, 16 Jul 2025 00:00:00 +0900</pubDate>
       <guid isPermaLink="false">acf217179cd15498cc2a863e8bdf786dc95166f7</guid>
       <category>企業法</category>
-    </item>
-    <item>
-      <title>ガーシー氏への損害賠償請求訴訟、送達「違法」で差し戻し ー大阪高裁2025/07/14 訴訟対応, 民事訴訟法, エンターテイメント</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>今回は民事訴訟法の送達手続きについて見ていきます。 男性は同氏に名誉を毀損されたとして損害賠償などを求め神戸地裁に提訴していました。 しかし、ガーシー氏は住民票の住所から引っ越していたため送達が届かず、公示送達手続きを実施。 同氏が口頭弁論に出頭しないままに今年１月に、原告の請求どおりの認容判決が下されたとされています。 なお、ガーシー氏は判決報道で提訴の事実を知ったといいます。 一般的には“特別送達”と印字された封筒が郵便配達員により配達されます。 送達は当事者にとって重要な書面を各当事者等に送るもので、例えば両当事者間の特定の事件が裁判所で審理されている状態を表す訴訟係属も、この送達が相手方に到達したときから始まるとされています。 相手方もこの訴状の送達を受けることによって、原告側の主張や請求内容を具体的に了知することができ、応訴の準備もできると言えます。 このように両当事者にとって非常に重要な訴訟手続きである送達は、郵便による配達以外にもいくつか用意されています。以下、具体的に見ていきます。 (1)交付送達は裁判書類等を執行官等が直接手渡しすることを言いますが、郵便配達員によって...</description>
-      <pubDate>Mon, 14 Jul 2025 00:00:00 +0900</pubDate>
-      <guid isPermaLink="false">f4d9993ea55e54fd2d2faaeba05ed2cada7e147f</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
