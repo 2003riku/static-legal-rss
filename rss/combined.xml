@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Oct 2025 21:35:23 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 21 Oct 2025 10:08:38 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>“ツイートは著作物”判決にSNSユーザー衝撃も「当たり前の話」弁護士が指摘 こたつ記事、パクツイ…引用と違法の“ボーダーライン”とは</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>今月9日、東京地裁が裁判の判決の中で、Twitter（現X）上の投稿を「著作物」と認定したことが大きな話題となった。 SNSでは「ツイートが著作物に？」と驚きの声が上がったが、弁護士の見方は異なり、この判決は“新しい判断”ではないという。 報道によれば、原告は2023年、アカウント画像と特定の俳優を応援するツイートをスクリーンショットされ、インターネット掲示板などに無断転載されたとして、著作権侵害を訴えた。 無断転載者に対し約200万円の損害賠償を求めた民事裁判で、東京地裁は、アカウント画像や投稿について「個性が表れたものといえ、思想や感情を創作的に表現したもの」と認め、著作物に当たると判断。無断転載者に約40万円の支払いを命じた。 この判決は、X上などで広く拡散され、速報を伝えた「47NEWS」の投稿は、16日現在で2.2万リポスト、4.3万いいね、約3147万表示を記録している。 Xユーザーからは、「これからは引用ポストもできないの？」「どんな基準で違法になるの？」と困惑した様子や、疑問の声も上がった。 こうした反応に対し、著作権に詳しい杉山大介弁護士は、「特に新しい司法判断があっ...</description>
+      <pubDate>Tue, 21 Oct 2025 09:58:00 +0900</pubDate>
+      <guid isPermaLink="false">8e71f91e2953d1db50147f529451987a84ea6326</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>長井秀和氏の街頭演説、創価学会への「名誉毀損」と控訴審でも認定 「表現の自由を萎縮させるスラップ訴訟だ」代理人弁護士が批判</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -887,14 +895,6 @@
       <pubDate>Sun, 21 Sep 2025 10:38:00 +0900</pubDate>
       <guid isPermaLink="false">5f2110d1b1bc84b5a55e640929a0e42c03a06fdf</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>ノストラダムス「1999年7月に人類滅亡」と言っていない？ “恐怖の大王”の意外な正体とは</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>1999年7月、恐怖の大王が空から降りてきて人類は滅亡する――。 平成中期に社会現象を巻き起こしたこの終末予言は、16世紀フランスの医師であり、占星術師でもあったノストラダムスの詩が元となっている。 彼の名が日本で広く知られるようになったのは、1973年に出版されたとある本がきっかけだった。この本では、ノストラダムスの詩に登場する「恐怖の大王」が、すなわち「人類を滅亡させる何か」であるとセンセーショナルに紹介されている。しかし実は、ノストラダムス自身は「恐怖の大王」が何を意味するのかを明確にしていない。 果たして、ノストラダムスの予言は本当に「人類滅亡」を意味していたのか。 本記事では、東京大学非常勤講師、元法政大学生命科学部環境応用化学科教授の左巻健男氏が、ノストラダムスの予言の真実をひも解いていく。 なお、科学的な事実に基づかない言説は、時として社会に混乱をもたらす。特にSNS時代の今、安易な発信や拡散は法的リスクをともなう可能性もあり、注意が必要だ。 ※ この記事は、左巻健男氏による著作『陰謀論とニセ科学 - あなたもだまされている -』（ワニブックス【PLUS】新書、2022年...</description>
-      <pubDate>Sun, 21 Sep 2025 10:17:00 +0900</pubDate>
-      <guid isPermaLink="false">1684c50ade97f4ddffb71231db759b4bb6ec8216</guid>
-      <category>一般法律</category>
     </item>
     <item>
       <title>容姿の侮辱投稿で東京高裁が通信履歴解析を認める／発信者情報開示請求について2025/09/19 コンプライアンス, 訴訟対応, 情報セキュリティ, 民事訴訟法, プロバイダ責任制限法, IT</title>
