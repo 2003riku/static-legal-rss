@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 09 Nov 2025 10:20:38 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Nov 2025 21:37:42 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>巡査長が突然失踪→数日後「亡くなった」 パワハラなど噂が飛び交う中…警察組織内に出された“口外禁止令”の不可解</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>警察官の自殺報道を目にする機会が年に数回はある。その原因としてパワハラや長時間労働が挙げられることも珍しくない。 心身が疲弊しやすい過酷な環境の印象もある警察官。体育会気質で上下関係の厳しさも想像されるだけにそうした実態もあるのかもしれないが、真相が明るみになるケースは珍しい部類といえる。 勤続約20年の警察OB・安沼保夫氏は現役時代、機動隊所属時に、身近な仲間の死を経験した。発覚直後、周辺は騒然としたそうだが、状況が明らかになると「パワハラなどはなかった」と全体説明がなされた上で、事案についての口外禁止令が発令されたという。 組織内では「ビルから飛び降りた」「ひどいパワハラにあっていた」とのうわさが飛び交っていたというが、安沼氏も結局、その真相はわからないままだったという…。 ※ この記事は、安沼保夫氏著『警察官のこのこ日記』（三五館シンシャ）より一部抜粋・構成しています。 他中隊（※1）の幹部が突然、寮にある私の部屋に乗り込んできて尋ねる。 ※1 中隊：機動隊などの部隊編成において使用される単位。約70名で構成される警備部隊のグループ 錦糸町の独身寮では8畳の部屋に2名が寝起きして...</description>
+      <pubDate>Sun, 09 Nov 2025 10:18:00 +0900</pubDate>
+      <guid isPermaLink="false">12b2f439ee280a5db082d54d8f7e43144ac68875</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>受刑者に「適切な医療」を受ける権利はないのか？ “国の賠償責任”認めた判決が意味するもの</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -895,14 +903,6 @@
       <pubDate>Sat, 11 Oct 2025 09:56:00 +0900</pubDate>
       <guid isPermaLink="false">1433d623dcb584d9658ee00461c185eb35f7a717</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>「置き配対策」配達員のオートロック“一時解錠可”に賛否 「住民のリスクが大きい」指摘も…トラブル時の責任は？【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>マンション管理大手の大京アステージと穴吹コミュニティが管理する既存分譲マンションで2025年10月以降、順次導入される「置き配」対応システムをめぐって、賛否が分かれている。 新システムは、ヤマト運輸の「EAZY」に対応する「bitlock GATE」端末と、Amazonの「Amazon Key」端末をオートロック付き分譲マンションに後付け設置。登録済みの配達員が専用端末を通じてオートロックを一時的に解錠し、各住戸の玄関前まで荷物を届ける仕組みだ。 不在時の再配達を減らし、物流業界の人手不足を補うことが目的とされているが、「配達員が簡単にオートロックを開けられる」という点に懸念の声も上がっている。 ネットでは「オートロックの意味がなくなるのでは」「便利だが住民がこうむるリスクが大きい」「宅配ボックスを増やす方が安全」などの意見が相次いだ。 大京アステージ・穴吹コミュニティによると、こうした懸念に対しては「誤解も多い」とのこと。実際には次のような安全設計がなされているという。 2. 解錠は宅配時に限定される一時的なもの 3. 導入を決定するのは管理会社ではなく、各マンションの管理組合 一部...</description>
-      <pubDate>Fri, 10 Oct 2025 10:35:00 +0900</pubDate>
-      <guid isPermaLink="false">86846493377dc109bfa677a0ed03eb35a55b2b20</guid>
-      <category>一般法律</category>
     </item>
     <item>
       <title>タビオが３７５０万円分の自己株式取得を発表2025/10/09 商事法務, 総会対応, 会社法, メーカー</title>
