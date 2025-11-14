@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 13 Nov 2025 21:43:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 14 Nov 2025 10:18:54 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「ゲッホゴホッ」体調不良なのに出社する同僚…インフル・コロナをうつされ“旅行キャンセル”になったら「損害賠償」請求できる？</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「絶対に通勤電車でうつされたと思うんですよね…」 東京都内で働く30代女性のAさんは、こう振り返る。 10月、Aさんは風邪をこじらせ咳喘息（せきぜんそく）にかかり、約2週間にわたり咳が止まらない状態が続いた。幸い、会社は在宅勤務が可能だったため出社せずに勤務を続けられたが、息をするだけで非常に激しい咳が出る状態が続いたため、「もし在宅勤務ができなかったら、（電車でも職場でも迷惑になるので）長期間休まなければならなかったかもしれない」と恐ろしくなった。 Aさんは「もっとしっかり体調管理していれば…」と悔やむが、たとえば新型コロナウイルスや、流行期を迎えたインフルエンザは感染力が強く、いくら気をつけていても、電車や職場でうつってしまうこともあるだろう。 一般的に、通勤中や勤務中のケガは労災と認められるケースが多いが、新型コロナウイルスやインフルエンザの場合はどのように扱われるのか。また、感染によって旅行などプライベートの予定をキャンセルせざるを得なくなった場合、会社に損害賠償を求めることはできるのか。労働問題に詳しい河野翔平弁護士に聞いた。 「基本的に、通勤電車や職場でインフルエンザ、新型...</description>
+      <pubDate>Fri, 14 Nov 2025 09:58:00 +0900</pubDate>
+      <guid isPermaLink="false">b4748bf5b90af9f7e0b083e217f7800998736da0</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>「拷問のよう」夏の入浴介助、エアコンない家での作業も…訪問介護ヘルパー3割が酷暑で「離職」検討の実態明らかに</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -895,14 +903,6 @@
       <pubDate>Thu, 16 Oct 2025 10:36:00 +0900</pubDate>
       <guid isPermaLink="false">f05353b37da7cc31ccd90b311eeea7647e560031</guid>
       <category>行政法</category>
-    </item>
-    <item>
-      <title>部下との“秘密の関係”発覚で食品大手CEO解任 社内恋愛「禁止・報告義務」就業規則は“私生活への過度な干渉”にあたる？</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>8月、スイスの巨大食品企業ネスレが、ローラン・フレイシェCEOを「直属部下との未申告の恋愛関係」を理由に解任した。 ローラン氏は2024年9月、ネスレのCEOに就任。わずか1年での退任となったが、同社のポール・ブルケ会長は声明で「これは必要な決断だった。ネスレの価値観とガバナンスは当社の強固な基盤だ」とコメントしている。 就業規則で社内恋愛を規制するケースは日本企業にも存在する。 一方、明治安田生命保険相互会社が昨年11月に発表した調査結果によると、「夫婦の出会いのきっかけ」として最も多かったのは「職場の同僚・先輩・後輩」で、全体の29.1%を占めていた。 また、「結婚相手紹介サービス」を提供する株式会社オーネットが実施した調査では、新社会人の約3割が「職場での異性（恋人）との出会いに期待している」という。 では、社内恋愛に対する企業の“制限”は法的に、どこまで認められるのだろうか。 まず結論から言えば、社内恋愛そのものを、一律に禁止する就業規則は、“私生活への過度な干渉”と評価され無効となる可能性が高いという。 労働問題や企業法務に詳しい栁瀨大貴弁護士は次のように解説する。 「恋愛感...</description>
-      <pubDate>Thu, 16 Oct 2025 10:18:00 +0900</pubDate>
-      <guid isPermaLink="false">d2f45ec1d8a7d6ba8af8bc6ce341e5cf6d2fc6db</guid>
-      <category>企業法</category>
     </item>
     <item>
       <title>東京地裁がゴールドマン・サックスの解雇を無効判断、整理解雇の要件について2025/10/16 労務法務, 労働法全般, 金融・証券・保険</title>
