@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 24 Nov 2025 10:22:22 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 24 Nov 2025 21:42:43 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「安楽死が法制化されると弱者が犠牲になる」は本当か？ 「滑り坂」論証の“論理的誤り”</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>10月15日、ウルグアイで、終末期の患者が安楽死を選ぶ権利を認める法案が賛成多数で可決された。南米で安楽死が法制化されるのは、ウルグアイが初だという。 日本でも安楽死の法制化を求める意見はたびたび発せられている。一方で、合法化されたことを契機に徐々に条件が緩和されていき、障害者や要介護者などの社会的弱者が「安楽死を受けるように」とプレッシャーをかけられる、「滑り坂」と呼ばれる事態に懸念を抱く議論も多い。 しかし、安楽死の法制化と「滑り坂」の結び付きは必ず起こるのだろうか。本稿では、海外の安楽死制度について研究する盛永審一郎氏（小松大学大学院客員教授、富山大学名誉教授）が、「滑り坂」論証の欠点や安楽死批判論が人々の「自律」を軽視している問題を指摘する。（本文：盛永審一郎） 安楽死を批判する観点は「安楽死が持つ本質の問題」と「安楽死法の運用の問題」のどちらにあるのだろうか。 どうも安楽死批判を展開する人々が書いている記事を読むと、運用の問題であるらしい。たとえば、先日に出版された学会論文集『生命倫理』（VOL.35 NO.1,2025 SEP.）の巻頭言「安楽死は逸脱する」がそうだ。 これ...</description>
+      <pubDate>Mon, 24 Nov 2025 10:18:00 +0900</pubDate>
+      <guid isPermaLink="false">f64e2623f97ededa3ac45488a9e68f6feaaa683f</guid>
+      <category>国際法</category>
+    </item>
     <item>
       <title>「推し活」遠征費を“パパ活”で捻出？ 福岡在住・19歳フリーター女性が明かす“ちゃっかり”戦略</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -895,14 +903,6 @@
       <pubDate>Fri, 24 Oct 2025 11:36:34 +0900</pubDate>
       <guid isPermaLink="false">3177150eb76349d89734c4dc0e264c1cfd0850f5</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>モームリの“限界”は「明らか」だった？ “非弁行為”に手を伸ばさざるを得なかった、退職代行サービスの「構造的な問題」とは</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>22日午前、退職代行サービス「モームリ」を運営する株式会社アルバトロス（東京都品川区）および都内の複数の法律事務所において、弁護士法違反の疑いにより、警視庁が100人体制での一斉家宅捜索を実施した。 モームリは退職希望者の代わりに勤務先へ退職の意思を伝えるサービスで、公式サイトによると、累計利用者数は4万人。利用者の6割以上が20代と、若年層を中心に人気を集めている。 2022年のサービス開始以来、急拡大する一方、弁護士法違反の疑いについては以前より東京弁護士会や一部メディアなどによって指摘されてきた。 弁護士法72条は、弁護士資格を持たない者が報酬目的で法律業務を行うことや、あっせんすることを禁止しており、こうした行為は「非弁行為」として違法になる。 同社公式サイトのQ＆Aには〈退職代行って違法なの？〉との問いに対して〈弁護士以外が交渉を行えば違法になります。（中略）当社は「通知」に徹しているため、違法性は一切ございません〉との回答が掲載されている。「交渉」とはすなわち法律業務を意味する。 その一方、警視庁は、依頼者の退職に伴い交渉が必要となった場合に、同社が有償（報酬目的）で弁護士...</description>
-      <pubDate>Fri, 24 Oct 2025 10:17:00 +0900</pubDate>
-      <guid isPermaLink="false">bd8447e0a590365a3269e4e8586685ed4e3bf1bf</guid>
-      <category>企業法</category>
     </item>
     <item>
       <title>警視庁が退職代行「モームリ」を家宅捜索、弁護士法の規制について2025/10/23 労務法務, コンプライアンス, 危機管理, 弁護士法, サービス</title>
