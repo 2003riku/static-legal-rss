@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 07 Jan 2026 21:39:50 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 08 Jan 2026 10:17:15 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「特定行政書士」の業務範囲が拡大、無資格業務への罰則強化も… 1月1日から施行の「改正行政書士法」を解説</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>1月1日、行政書士の「使命」や「職責」を明確化しつつ、特定行政書士の業務拡大や無資格業務対策・罰則強化などを盛り込んだ、改正行政書士法が施行された。 これまで行政書士法は1条で行政書士の「目的」を定めていたところ、改正法は行政書士の「使命」を定めている。法的に使命が定義されたという点で、弁理士・税理士・司法書士と同様に、法律上その使命が明文化された専門職となった。 また、改正法1条は、国民の権利利益の実現や行政に関する手続きの円滑化に寄与する専門職としての位置付けを改めて示している。 あわせて新設された「職責」規定では「常に品位を保持し、業務に関する法令及び実務に精通して、公正かつ誠実にその業務を行わなければならない」とされている（1条の2）。背景にあるのは、行政手続きのデジタル化に対応する必要性だ。 そして今回の改正では、通常の行政書士より広い権限を持つ「特定行政書士」について、これまでよりも広い範囲で行政不服申立てに関する書面作成や手続き代理を担えるようにする規定が整備された（1条の4）。 具体的には、これまで特定行政書士が代理できるのは「その行政書士が作成した書類に関する不服申立...</description>
+      <pubDate>Thu, 08 Jan 2026 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">8d1a3569fca7921afb123c84ed3ee5a5e1eab0b9</guid>
+      <category>行政法</category>
+    </item>
     <item>
       <title>広陵高校、仙台育英…スポーツ名門校で起きた「いじめ事件」部活動に共通する“構造的な問題”とは</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -863,14 +871,6 @@
       <pubDate>Tue, 09 Dec 2025 10:17:00 +0900</pubDate>
       <guid isPermaLink="false">e3cbd6bbd4a29d11f1d37c6ce39b99b2fb0a5033</guid>
       <category>憲法</category>
-    </item>
-    <item>
-      <title>「残業キャンセル界隈」若者が増加？ 「職務放棄」との批判も…“定時退社の権利”どこまで通用するか【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>昨年の春に「お風呂キャンセル界隈」という単語が広まったことをきっかけに、「外出キャンセル界隈」「ご飯キャンセル界隈」など、いまや「○○キャンセル界隈」のフレーズはすっかり定着した。そして今年の後半から目につくようになったのが「残業キャンセル界隈」だ。 仕事が残っていても定時になったら帰り、それを申し訳なく思ったり悪びれたりしないのが、残業キャンセル界隈と称する若者たちの特徴だという。 Xでは「生産性を上げない限り残業が発生するならスケジュールがそもそもおかしい」と擁護する声もある一方で、「もうそれは『残業キャンセル界隈』ですらなくただの『職務放棄』なのよ」などと批判する声もある。 しかし、定時だからといって残業を断ると、人事評価が下がったり懲戒を受けたりするなどのペナルティが生じるのでは、との疑問を抱く人もいるのではないか？ 以下では「残業キャンセル」に関わる法律的な問題を解説する。 そもそも、「会社員が残業をキャンセルする権利」は法律で定められているのだろうか？ 日本の労働基準法では法定労働時間は1日8時間・週40時間とされており、これを超える労働（時間外労働）は、本来、原則的に禁止...</description>
-      <pubDate>Tue, 09 Dec 2025 09:58:00 +0900</pubDate>
-      <guid isPermaLink="false">9c9cfb7ff4de307690e4ee07a560b2b0386fea18</guid>
-      <category>労働法</category>
     </item>
     <item>
       <title>東京五輪をめぐる汚職事件でコンサル会社元代表の初公判、受託収賄とは2025/12/08 コンプライアンス, 危機管理, 行政対応, 刑事法, コンサルティング</title>
