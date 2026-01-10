@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 09 Jan 2026 21:39:31 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Jan 2026 10:15:47 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「秋篠宮」は姓ではない “家名”のようだが、公式文書には記載されず…誤解されがちな皇族の“お名前”事情</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「秋篠宮さま」の「秋篠宮」は姓ではない。この事実を正確に理解している日本人はどれくらいいるだろうか。 本連載では日本の「戸籍」とその歴史について、政治学者の遠藤正敬氏が解説。 第5回では、多くの人が誤解している「宮号（みやごう）」と「御称号（ごしょうごう）」の違いや、「家父長制の最後の砦」としての天皇家について取り上げる。 ※この記事は遠藤正敬氏の書籍『戸籍の日本史』（集英社インターナショナル）より一部抜粋・構成。 天皇家の一族には姓がない。このことを理解している日本人はどのくらいいるであろうか。その点で、世間で誤解されがちなのが「○○宮」という呼称である。 マスメディアでは、たとえば「秋篠宮家の二女佳子様」などと表現されることから、「秋篠宮」がその姓であると思いこむ向きも多い。 この「○○宮」という呼称には「三笠宮」といった宮号（みやごう）と、「浩宮」といった「御称号」の二通りある。ひとつは「宮号」である。すなわち宮家を創立した皇族男子に天皇が授け、その男子孫に世襲される称号である。宮号を賜った皇族の妃と子女も同じくこれを称する。 また宮家の当主が世襲する宮号は血統により宮家同士を識...</description>
+      <pubDate>Sat, 10 Jan 2026 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">ac420e5d3b2b20ac5a1baf2c9d11d5d15dd0cd34</guid>
+      <category>憲法</category>
+    </item>
     <item>
       <title>日本保守党を“元党員”が刑事告発「寄附金控除の要件満たさず集金」詐欺罪の成立など主張</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -847,14 +855,6 @@
       <pubDate>Thu, 11 Dec 2025 18:08:00 +0900</pubDate>
       <guid isPermaLink="false">dac779869c5c95bbed01e8066733e3d91ea9f9a9</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>「盗作」疑われた日本画家に高裁が“潔白”認める判決 処分下した公益財団法人に200万円の賠償命令</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>公益財団法⼈「日本美術院」に盗作を疑われ、同院の理事解任相当処分および展覧会への1年間の出品停止処分を受けた画家の梅原幸雄氏が、処分の無効確認と損害賠償等を求めていた裁判で、12月10日、東京高等裁判所で判決が言い渡された。 東京高裁（梅本圭一郎裁判長）は、原告の訴えを認め、日本美術院に対し、慰謝料等約200万円を支払うよう命じた一審判決を維持した。 判決後の会見で、梅原氏は「私は盗作をしておりません。私に対する処分が、違法かつ無効であったことが認められ、うれしく思います」と語った。 紛争の発端は、2023年3月、画家の國司華子氏が、梅原氏の作品と自身が制作した作品が酷似していると日本美術院に申し立てたことだった。 日本美術院は申し立てを受け、倫理委員会および理事会で審議を実施。同年4月27日、梅原氏に対して「理事解任相当処分」および「1年間の出品停止処分」を行うことを決め、開催していた公募展（院展）に出品されていた梅原氏の作品を撤去した。 さらに翌5月には、同院のホームページ上に「梅原氏本人は明瞭に否定されているものの、当院としては、結果的に他人の作品に類似していると判断したことを理...</description>
-      <pubDate>Thu, 11 Dec 2025 13:00:00 +0900</pubDate>
-      <guid isPermaLink="false">18b072ab07753142e4935498026343bc00fdb7ef</guid>
-      <category>刑事法</category>
     </item>
     <item>
       <title>要件の厳格化を経団連が提言、株主提案について2025/12/11 商事法務, 総会対応, 会社法</title>
