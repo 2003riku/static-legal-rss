@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 30 Mar 2026 10:58:13 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2026 22:10:47 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>保育園で「しね」と手紙→園児がPTSD発症 “加害児の親”に損害賠償請求できる？【弁護士解説】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>横浜市の認可保育所で、別の園児から容姿を中傷されたり、「しね」と書かれた手紙を渡されたりしたことが原因で、被害を受けた園児が心的外傷後ストレス障害（PTSD）を発症したと報じられた。 3月上旬、被害園児の保護者らは記者会見を開催。「園の適切な対応があれば防げた」として、市に対し「いじめ」と認定し、第三者委員会による調査を実施するよう書面で求めたという。書面によれば、被害は2024年夏ごろから始まり、25年3月には「しね、ばか、だいきらい」といった過激な言葉が並ぶ手紙が渡された。 保育所はこの事実を把握しながら保護者に伝えず、事態は家庭でパニックを起こした園児の告白によってようやく明るみに出た。現在も園児は集団生活が困難な状況にあるという。 こうした深刻な被害が生じた際、法的にはどのような解決が可能なのか。弁護士への取材をもとに、法的論点を整理する。 まず検討すべきは、不適切な言動を行った園児本人の不法行為責任だ。しかし、これについては法律上、極めて厳しい壁がある。 民法712条は、「未成年者は、他人に損害を加えた場合において、自己の行為の責任を弁識するに足りる知能を備えていなかったとき...</description>
+      <pubDate>Mon, 30 Mar 2026 10:57:00 +0900</pubDate>
+      <guid isPermaLink="false">6c5d0bd7ae376bf6e51e12e61652b73fcd456148</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>児童相談所の「労働環境改善」訴えた裁判が約4年を経て和解 千葉県が全職員の「休憩実態把握」などを約束</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -895,14 +903,6 @@
       <pubDate>Mon, 02 Mar 2026 00:00:00 +0900</pubDate>
       <guid isPermaLink="false">daee86d76657e65de257f87c006d643e5d7214b7</guid>
       <category>民事法</category>
-    </item>
-    <item>
-      <title>YouTube1.6億回再生「高市動画」なぜ“合法”？ 「カネのかからない選挙」実現するはずの「公職選挙法」が突かれた制度の“穴”とは【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>1月26日にYouTubeの自民党公式チャンネルに投稿された、高市早苗首相が出演する動画（タイトルは「【高市総裁メッセージ】日本列島を、強く豊かに。」）の再生回数は8日時点で1億回を超えており、同日、自民党は「党としても想定外であり、大変驚いている」などと見解を記したコメントを発表した。選挙後も再生回数は伸び続けており、2月25日時点で1億6000万回を突破している。 「選挙ドットコム」（イチニ株式会社）が2月13日に公表した、「衆院選」関連や各政党キーワードを含む政党・立候補者とそれ以外の「サードパーティ」が投稿したYouTube動画を対象にした調査によると、調査期間中の総視聴数では自民党が約2億2719万回で首位、次いで中道改革連合が約1億3859万回。 また個人名での集計では「高市早苗」に関連する動画が約4億4615万回視聴されていた。 同調査では、選挙期間中に視聴されたYouTube動画の8割がサードパーティによるものだったとも指摘されており、収益目的で事実に基づかない情報を発信する個人や業者に対する警戒の声も広まっている現状だ。 しかし、そもそも、一般に公職選挙法は「有料イン...</description>
-      <pubDate>Sun, 01 Mar 2026 10:38:00 +0900</pubDate>
-      <guid isPermaLink="false">1c933e4e84f70522752e50147f894fa65768b7e5</guid>
-      <category>企業法</category>
     </item>
     <item>
       <title>公取委が共同通信社に勧告、フリーランス法の規制について2026/02/26 契約法務, コンプライアンス, フリーランス法</title>
