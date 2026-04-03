@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 03 Apr 2026 10:39:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2026 21:53:34 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>パート主婦等、年収130万円超でも「扶養」外れず「働き控え」不要に…4月から社会保険の認定基準が緩和 急な残業増で収入が増えても対応可</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>社会保険の「扶養」の認定条件には130万円という「年収の壁」があることが多くの人を悩ませてきた。 4月1日からこの認定基準が緩和され、130万円という金額はそのままであるが、予期せぬタイミングで壁を越えて扶養認定が外れる事態を防ぎやすくなった。 従来、原則として、23歳以上の人の年収が130万円を超えると、直ちに家族の社会保険の扶養から外れ、国民健康保険などへの加入義務が発生するしくみになっていた（※）。この「年収の壁」のため、アルバイトやパートタイムで働く人は収入を調整する必要があり、いわゆる「働き控え」を引き起こす原因になっていることが問題視されてきた。 さらに、これまでは被扶養者認定における収入は「過去の実績収入や将来見込み」に基づき総合的に判断されていたが、この基準には曖昧さがあることから、130万円に近い収入を得ている労働者は「いつ扶養認定から外されるかわからない」という不安を抱えてきた。 たとえば、収入が130万円を少しでも超えて扶養が外れることを避けるため、バイト・パートのシフトを入れるのを控えたり残業を断ったりするケースが起こっていたのだ。 上記のような事態を改善するた...</description>
+      <pubDate>Fri, 03 Apr 2026 10:39:00 +0900</pubDate>
+      <guid isPermaLink="false">cbd54e2ba2a55ff928b49023772d279a3c64bfd6</guid>
+      <category>労働法</category>
+    </item>
     <item>
       <title>「餃子の王将」と「大阪王将」なぜ特許庁は“併存”認めた？ 本来はNGだが…“特例”から紐解く「商標の線引き」</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -903,14 +911,6 @@
       <pubDate>Wed, 04 Mar 2026 18:28:53 +0900</pubDate>
       <guid isPermaLink="false">0ed0f9e311c3cd9295de0ae655cb77b9ecfc1f9a</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>プロ野球選手への誹謗中傷466件、CS・日本シリーズ中に197アカウントから…選手会、加害者の「観戦禁止処分」も検討</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>日本プロ野球選手会（会長：近藤健介）は3月4日、2025年のクライマックスシリーズ（CS）および日本シリーズ期間中に実施したオンライン上の誹謗中傷モニタリングの結果を公表した。 英Signify Group社のAI誹謗中傷検出システム「Threat Matrix」を導入した本プロジェクトにより、CS進出全6球団の計79選手のアカウントに対し、466件の誹謗中傷投稿が確認されたという。 選手会によると、調査ではOSINT（公開情報分析）を用いて発信元アカウントの個人情報の特定にも成功したといい（特定件数は非公表）、今後は、加害者への試合観戦禁止処分や警察への通報を含む対応を検討する方針だ。 今回の対策プロジェクトは、2025年10月8日から11月2日までの期間を対象に実施された。 モニタリングの範囲はX（旧Twitter）、Instagram、Facebook、TikTokの主要4プラットフォームに及び、選手名やSNS上で使われる愛称に加え、日本プロ野球に関連する誹謗中傷表現を事前にリストアップ。 選手本人のアカウントや球団公式アカウントへの投稿・コメントだけでなく、選手やその家族から選...</description>
-      <pubDate>Wed, 04 Mar 2026 17:59:00 +0900</pubDate>
-      <guid isPermaLink="false">f0e8c6039b64b9098ceadf96716d4c578681d49a</guid>
-      <category>刑事法</category>
     </item>
     <item>
       <title>自動車学校・教習指導員の定年再雇用後の待遇格差に賠償命令 ー名古屋高裁2026/03/02 契約法務, 労務法務, 労働法全般, 自動車</title>
