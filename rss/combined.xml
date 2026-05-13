@@ -5,7 +5,7 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 13 May 2026 11:38:46 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 23:20:32 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -23,6 +23,14 @@
       <pubDate>Wed, 13 May 2026 10:19:00 +0900</pubDate>
       <guid isPermaLink="false">bdda21d84a2470c9e48e0e70ea4c258950e72536</guid>
       <category>刑事法</category>
+    </item>
+    <item>
+      <title>M&amp;A仲介はなぜ顧客本位を見失うのか？ルール厳格化が加速する時代のM&amp;A業界に問う、オーナーと譲受企業を守る『誠実な承継』の絶対条件とは〈PR〉</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>近年、経営者の高齢化による後継者不足を背景に、中小企業のM&amp;Aが活発化している。一方で、それに比例するようにトラブルも急増。特に「ルシアンホールディングス事件」などに代表される、買収直後に現預金を引き出して事業を放置する「資産収奪型（吸血型）M&amp;A」は社会問題となった。 トラブルを未然に防ぐチェック機能も担うM&amp;A仲介業界にとって、2026年は地に落ちた信用を取り戻すための大きな転換点となる。整備が不十分だったルールは厳格化、年度内には資格制度も導入の見込みで、信用を失墜させる企業は業界からの退場を余儀なくされる。 不信感が渦巻くM&amp;A仲介業界は、今後どこへ、どう向かうべきなのか――。業界が抱える構造的リスクと信頼回復への道筋について、独自の取り組みで健全化を目指すM&amp;Aロイヤルアドバイザリーの橋場涼代表に聞いた。 ――M&amp;A仲介業界で明るみになった一連の不祥事はメディアの追求もあり、2023年から昨年にかけ、社会問題化しました。なによりも信用が求められる業界でなぜ、あのような悪質なトラブルが発生したのでしょうか。 橋場代表：経営者の高齢化による後継者不足を背景に、税制や関連制度の創設...</description>
+      <pubDate>Wed, 13 May 2026 09:58:00 +0900</pubDate>
+      <guid isPermaLink="false">3aef37301e1d248f172d77054091b4408e7cbbaa</guid>
+      <category>企業法</category>
     </item>
     <item>
       <title>「介護保険制度の理念がなし崩しになる」認知症家族が緊急要望書 “特定地域”創設でサービスの質・格差に懸念</title>
@@ -887,14 +895,6 @@
       <pubDate>Sun, 12 Apr 2026 10:19:00 +0900</pubDate>
       <guid isPermaLink="false">a3b814b7d0ec329cc1d952a742966c00313292b3</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>「妻とは別れる」で30年間“婚姻を先延ばし”→関係が破たん 「一生を踏みにじった」と“10億円請求”する女性…裁判所の判断は？</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>離婚に伴う慰謝料は内縁関係でも認められますが、それが「不倫関係」であった場合、法的な保護は受けられるのでしょうか。 30年にわたり事実上の夫婦として暮らしながら、入籍が叶わぬまま絶縁を突きつけられた女性のケース。本記事では、こうした重婚的内縁関係の破綻において、裁判所がどのように判断したのか紹介します。 ※この記事は、飯野たから氏・神木正裕氏著、梅田幸子氏監修の書籍『男の離婚読本（第6版）』（自由国民社）より一部抜粋・構成。 離婚の慰謝料は、離婚原因を作った側か、またはその責任の重い側から支払われます。 これは内縁関係の男女間でも同様ですが、その男女が不倫関係にある場合には、公序良俗違反などにより関係そのものを無効とする考え方もあり、慰謝料請求できるかどうか争いのあるところです。 なお、内縁や同棲など結婚していない婚姻外男女関係事件の調停・審判でも、慰謝料・財産分与の取決めがなされる場合がありますが、その金額は一般的に、正式に結婚している夫婦の離婚と比較すると低めです。 ここでは、妻との離婚をエサに30年にもわたって重婚的内縁関係を続けた女性から起こされた慰謝料請求事件を紹介してみまし...</description>
-      <pubDate>Sun, 12 Apr 2026 09:58:00 +0900</pubDate>
-      <guid isPermaLink="false">afcf5953a0d49f8d1b7b759ed6bd08cc872e171a</guid>
-      <category>刑事法</category>
     </item>
     <item>
       <title>東京地裁が医師の過重労働に労災認定、労基法の宿日直許可とは2026/04/06 労務法務, コンプライアンス, 労働法全般, 医療・医薬品</title>
