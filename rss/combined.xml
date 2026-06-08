@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 08 Jun 2026 11:56:59 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:41:05 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>内部通報したら4日後に「懲戒」ほのめかされ…オリンパス子会社の社員が会社・役員に「1000万円」損害賠償請求</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「不正や不適切行為への懸念があれば声を上げること」——そう従業員に求めるグローバル行動規範を掲げる企業で、実際に声を上げた社員が、その4日後に懲戒処分の可能性を突きつけられた。 大手医療機器メーカー「オリンパス」の子会社、オリンパスマーケティング株式会社に勤務する従業員Aさんは6月4日、同社らに対し損害賠償1000万円を求める訴訟を提起した。 Aさんは現在、別件として降格・配置転換の無効を争う訴訟も係争中だ。今回の損害賠償請求は、その訴訟とは別に、通報行為への報復そのものを問うものとして新たに提起した。弁護士費用などの経済的な事情などから代理人は立てず、本人訴訟で臨むという。 翌5日の記者会見でAさんは、「内部通報を制度として社員に奨励しながら、実際は真逆の対応を取っており問題だ」と述べた。 問題の発端は、2023年4月のジョブ型人事制度の導入に伴う大規模な降格人事にある。ジョブ型とは、年功序列ではなくスキルなどに応じて業務や給与を決める雇用制度を指す。 Aさんによると、会社側は移行にあたり、社員向け説明会で人事等級は原則として引き継ぐと説明していた。旧制度の非管理職はP1〜3とS1〜...</description>
+      <pubDate>Mon, 08 Jun 2026 17:59:00 +0900</pubDate>
+      <guid isPermaLink="false">0e76000978adcda1d1d7e643df7212c5e2852677</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>夜間・休日診療の“特別料金”1万円が、救急車呼べば「タダ」…“生活保護受給者”の受診実態にみる“制度の矛盾”</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 11 May 2026 18:05:29 +0900</pubDate>
       <guid isPermaLink="false">b5a29b8e7b1d7caf922ccdccbb2b7a02357c7dd9</guid>
       <category>一般法律</category>
-    </item>
-    <item>
-      <title>売り上げが振るわないから「月給12万円カット」 3年間耐え続けた従業員が、退職後の提訴で未払い賃金「324万円」を回収できた理由</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>月給が「60万円」から「48万円」に20％ダウン・・・。 Aさんは、約3年間、減額された給料を受け取り続けていたが、解雇されたことを機に「減額前の給料を支払ってほしい」と提訴。 会社は「3年間も異議を述べなかったのであるから減額に同意していた」と主張したが、裁判所は「真に同意していたとはいえない」として、会社に対して約324万円の支払いを命じた。 以下、事件の詳細について、実際の裁判例をもとに紹介する。（弁護士・林 孝匡） Aさんは電子機器の販売などを行う会社の正社員で、製品マーケティングのマネージャーとして月給約60万円で働いていた。 Aさんの入社から約1年5か月後のことである。 ■ 説明会が開催される 「会社の売り上げが振るわない」として、社長が「給料を下げたい」とする説明会を開いた。給料減額の対象者は以下の3名であった。 Aさんは説明会で異議を述べなかった結果、月給が60万円から48万円へとダウンした。 ■ 約3年間、異議を述べない それから約3年間、Xさんは文句を言うことなく、減額された給料を受け取り続けていた。 ■ 解雇 その後、Aさんは「業務命令の無視」「何度も居眠りをする...</description>
-      <pubDate>Mon, 11 May 2026 10:18:00 +0900</pubDate>
-      <guid isPermaLink="false">408af21e116f7e295cff3945135ad283bff7fc57</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
