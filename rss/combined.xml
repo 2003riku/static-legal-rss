@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 09 Jun 2026 11:34:55 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 23:38:30 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「悪魔のような制度」自治医大・修学資金3766万円“一括返還”巡る訴訟 原告医師「僻地勤務“強制”ではなく“行きたくなる”制度を」</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>医師の人生を縛る契約は、法のもとで許されるのか――。 自治医科大学（栃木県下野市）を卒業した医師のA氏が、修学資金など計3766万円の一括返還を求められているのは違憲・違法だとして、同大学と愛知県を相手取って争っている訴訟の第6回口頭弁論が6月8日、東京地裁で開かれた。 この日、原告側は損害金として課される「年10%」の利率について、算定の根拠を示すよう被告側に開示を迫った。一方の被告側は、労働法上の争点などに反論。 代理人の伊藤建弁護士は会見で「端的にいえばあまり進みのない期日だった。ただ、だいぶ争点は煮詰まってきており、年度内の結審もありうる」と述べた。 自治医大は旧自治省（現総務省）の主導で、全国の都道府県が共同で設立した私立大学だ。入学者全員に修学資金が貸与され、卒業後、出身県が指定する僻地（へきち）等の公立病院に貸与期間の1.5倍（標準9年）勤務すれば、返還が全額免除される。 A氏は2015年に入学し、愛知県の職員兼研修医として勤務した。しかし、父の失職や自閉症の弟の介護、妻の妊娠による扶養負担増で経済的に困窮。 一般的な研修修了医師の場合、アルバイトで360万円程度が得られ...</description>
+      <pubDate>Tue, 09 Jun 2026 17:59:00 +0900</pubDate>
+      <guid isPermaLink="false">af96427210451ab00e683982186e4f64f7bb05ce</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>「立候補するな」“最年少”女性市長の産休に“賛否”…「批判は法的にナンセンス」元市議・議員秘書の弁護士が指摘するワケ</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Tue, 12 May 2026 18:08:00 +0900</pubDate>
       <guid isPermaLink="false">57744d4dffec50da5a8e3664157f780c6ef7e416</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>家業喪失と自己破産の末路…M&amp;A仲介トラブルの衝撃実態 淘汰の時代に選ばれる“誠実”な業者の条件【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>M＆A仲介業界が大きな転換点を迎えている。2024年前後にM&amp;Aに未来を託した経営者が、結果的に骨抜きにされる事案が報道等により複数発覚。業界急拡大の裏で、売り手、買い手双方のチェック機能も担うはずのM&amp;A仲介の杜撰（ずさん）な対応が厳しく批判された。 投資会社のルシアンホールディングス（ルシアン社）の事件では、多数の中小企業が買収され、その後、同社に資金だけを抜き取られ、放置・倒産に追い込まれた。その詐欺まがいの悪質な手口はメディアでも追求され、M&amp;A仲介業界に大きな影を落とした。 本来、M&amp;Aは事業承継問題の解決や、迅速な事業拡大を目的に、中堅・中小企業でも広く活用される経営戦略で、未来を切り開くもの。M&amp;A仲介は、売り手と買い手の間に立ち、円滑な融合を取り持ち、サポートする役割を担う。特に売り手側にとっては企業の命運がかかっており、だからこそそこには大きな責任が伴う。 M&amp;Aの失敗はあり得ても、そのプロセスで超えてはいけないラインは存在する。トラブルが社会問題化する中、未整備だったルールにメスが入り、M&amp;Aを後押ししてきた中小企業庁はガイドラインを厳格化。年度内には中小M&amp;A仲介...</description>
-      <pubDate>Tue, 12 May 2026 10:18:00 +0900</pubDate>
-      <guid isPermaLink="false">b4e005737cb81ebaba9f2662cdd82956f944fd39</guid>
-      <category>企業法</category>
     </item>
   </channel>
 </rss>
