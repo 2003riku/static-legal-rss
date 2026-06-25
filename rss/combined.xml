@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 24 Jun 2026 23:18:06 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 11:42:13 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>渋谷で“ポイ捨て” 過料2000円の新ルール、すでに218件徴収 区が罰則強化に踏み切ったワケ</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>6月1日から、ごみのポイ捨てをした人に対し巡回員が2000円の過料をその場で徴収する新たな取り組みが渋谷区で始まっている。 また、コンビニやテイクアウトできる飲食店がごみ箱を設置しない場合や、自動販売機にペットボトルや缶などの回収容器を設置しない場合には5万円の過料も科せられるようになった。 取り組みが始まってから早一か月が過ぎようとしているが、実際に過料が徴収されたケースはどれだけあるのだろうか。また、そもそもポイ捨てやごみ箱に関するルールを厳格にした理由は何だろうか。渋谷区に聞いた。 ポイ捨てをした人やごみ箱を設置しない飲食店に対する過料は、昨年12月に改正条例が成立し、今年6月1日から施行された「きれいなまち渋谷をみんなでつくる条例」に基づくものだ。 渋谷区の広報担当者によると、条例の施行後は1日当たり最大60名の巡回員が、24時間365日、区内全域を巡回して過料徴収を実施している。 そして実際に巡回員がポイ捨てを確認して過料を徴収した事例は、6月17日時点で218件あったという。 なお、単に罰則を強化するだけでなく、渋谷区はボランティアによる清掃活動への支援の拡充などもあわせて...</description>
+      <pubDate>Thu, 25 Jun 2026 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">1b3ae3aac16d3ca7c136297a0ef68898e3a320f2</guid>
+      <category>一般法律</category>
+    </item>
     <item>
       <title>「医者からも聞いてなかった」B型肝炎給付金制度“30万人が未救済”なのに“期限まで残り9か月”…延長求め弁護士が要望書</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Tue, 26 May 2026 18:07:00 +0900</pubDate>
       <guid isPermaLink="false">3f61a6e432349c93c07c563d0736758e1c46f568</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>妊娠中でも「夜間勤務」免除されず…看護師4人に1人が流産経験 日本医労連が女性ケアワーカーの深刻な“労働実態”伝える</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>医療・介護・福祉に携わる女性ケアワーカーの労働状況について日本医療労働組合連合会（日本医労連）は5月25日、都内で会見を開き調査結果を公表。妊娠経験のある看護師の4人に1人が流産しているなど、深刻な実態を伝えた。 背景には妊娠中でも深夜業務を行わざるを得ないなど人員不足があるとして、国民の健康と命を支える現場に「崩壊が起きつつある」と改めて警鐘を鳴らした。（ライター・榎園哲哉） 調査は、全労連女性部が昨年4月から7月にかけて実施した「女性労働者の労働実態及びジェンダー平等・健康実態調査」と「妊娠・出産・育児に関する実態調査」の二つで、それぞれ3217人、892人が回答した。同調査は1992年から5年ごとに実施されており、今回で8回目。 日本医労連の佐々木悦子委員長は会見の冒頭、「母性保護制度（※）が活用できない、健康を害しながら休むこともできずに働かざるをえない、多忙で賃金も低く辞めたいと思いながら働いている、そうした職員の割合がほかの産業と比較しても多いということが明らかになった」と、厳しい実状を語った。 ※時間外労働・休日労働・深夜業制限等の妊産婦を保護するための各種制度 調査結果...</description>
-      <pubDate>Tue, 26 May 2026 17:59:00 +0900</pubDate>
-      <guid isPermaLink="false">84ead66ee41a863ac84048a2f064d142ddcdf1f8</guid>
-      <category>労働法</category>
     </item>
   </channel>
 </rss>
