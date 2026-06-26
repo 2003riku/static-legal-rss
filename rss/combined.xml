@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 26 Jun 2026 11:44:36 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 23:14:42 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「働いても食べていけない」最低賃金2000円求め労組が会見…時給1820円でも“生活に余裕が生まれない”ワケ</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>2026年度の最低賃金額を決める「目安審議」が、6月26日から始まる。 中央最低賃金審議会が各都道府県の地方審議会に示す引き上げの目安を決める手続きで、今年の改定額を左右する。 政府はこれまで、最低賃金について「2020年代に全国加重平均1500円を達成する」との目標を掲げていたが、時期を見直し、「2030年代前半」に先送りすると報じられている。 審議入りの前日となる6月25日、全国労働組合総連合（全労連）と国民春闘共闘委員会が都内で会見。最低賃金を「いますぐ全国一律1700円以上」に引き上げ、将来的に2000円を目指すよう求める意見書を、中央最低賃金審議会に提出したと明らかにした。 会見では、全労連の黒澤幸一事務局長が要求の全体像を説明し、最低賃金近傍で働く郵便事業の集配員と地方の労働組合幹部が現場の実態を証言した。 黒澤事務局長は会見の冒頭、日本を「賃金が上がらない国」と表現した。 2025年度の地域別最低賃金は全国加重平均で1121円と、前年度比で66円・6.3%増と過去最高の引き上げ幅を記録した。 だが、黒澤事務局長は「それでも実質賃金はプラスに転じていない。働く労働者や国民の...</description>
+      <pubDate>Fri, 26 Jun 2026 17:59:00 +0900</pubDate>
+      <guid isPermaLink="false">b08cdc8ab3272fee4d79c1ceba14cd9f74b5a40e</guid>
+      <category>労働法</category>
+    </item>
     <item>
       <title>俳優・村上虹郎“書類送検”、「逮捕」と何が違う？ 元交際相手の顔殴り全治1か月の重症負わせたか</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Fri, 29 May 2026 09:58:00 +0900</pubDate>
       <guid isPermaLink="false">d3f8f9426a0738856a8787475d110000f94fdb04</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>「長時間労働からの脱却に反する」「規制緩和は必要ない」裁量労働制見直し、政府のとりまとめに連合が反発</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>5月27日、日本成長戦略会議の労働市場改革分科会（分科会長：上野賢一郎厚労相）が、労働供給力の強化に向けた改革の方向性をとりまとめた。 リスキリング（学び直し）の推進や円滑な労働移動の促進など幅広い施策を盛り込む一方、裁量労働制の対象見直しにも言及。 これに対し、日本労働組合総連合会（連合）は同日、「規制緩和を示唆する内容が盛り込まれたことは極めて遺憾」とする事務局長談話を発表した。 とりまとめの背景には、生産年齢人口の急減がある。とりまとめによると、2040年までに生産年齢人口はさらに減少が加速する見通しで、「労働力供給制約はよりその厳しさを増していく」とされる。2010年代以降の実質GDP成長率は年平均0.9%と持ち直し傾向にあるものの、持続的な成長には労働供給力の強化が不可欠だと指摘している。 こうした危機感を踏まえ、4月22日の第4回日本成長戦略会議では、高市早苗首相が上野厚労相に対し、裁量労働制について「濫用防止措置を前提に制度対象の在り方について、見直しの検討を進めてください」と指示していた。 裁量労働制とは、実際の労働時間にかかわらず、労使間であらかじめ定めた時間（みなし...</description>
-      <pubDate>Thu, 28 May 2026 17:58:00 +0900</pubDate>
-      <guid isPermaLink="false">02886974623e9d0c9d5dd52f886df609668024b6</guid>
-      <category>労働法</category>
     </item>
   </channel>
 </rss>
