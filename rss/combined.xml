@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 01 Jul 2026 11:51:18 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 23:21:29 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「新規化学物質」の届出・確認、7月1日から“電子申請”が原則義務化に 改正労働安全衛生規則が施行</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>7月1日から、労働安全衛生規則に基づく「新規化学物質」に関する各種届出・確認申請について、原則として電子申請が義務化される。 厚労省は、近年のDXの推進をふまえた改正と説明している。対象となるのは、新規化学物質の製造・輸入に関する届出・確認の申請手続きだ。 新規化学物質とは「日本国内においてこれまでに製造・輸入が行われていない化学物質」のこと。こうした新規化学物質は健康影響に関する情報が十分に蓄積されていない場合も多いことから、労働者が取り扱う前に、有害性の確認や行政への届出が求められている。 2024年4月、労働安全衛生規則の一部を改正する省令が公布され、今回はその一部が施行されるもの。電子申請の義務化の対象となる手続きは、以下の4つだ。 電子申請の受付は以前から開始されていたが、本日以降、これらの手続きは原則として電子申請による手続きが義務付けられる。 厚労省は電子申請のメリットとして、24時間いつでも手続きが可能であることや、窓口への持参・郵送が不要でパソコン上で手続きが完結すること、電子署名や電子証明書が不要であることなどを挙げている。 また、電子申請が著しく困難な場合には、従...</description>
+      <pubDate>Wed, 01 Jul 2026 17:59:00 +0900</pubDate>
+      <guid isPermaLink="false">5efd873ef34337c0a49d3c59279f9c082f81222c</guid>
+      <category>労働法</category>
+    </item>
     <item>
       <title>今日からパスポート手数料「7000円値下げ」、ただし出国税は“3倍”に…「旅券法」改正の“狙い”とは</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Tue, 02 Jun 2026 09:57:00 +0900</pubDate>
       <guid isPermaLink="false">2a015e54d3f00a32ce3ed4bdc5c9b2f1503b558b</guid>
       <category>一般法律</category>
-    </item>
-    <item>
-      <title>職場のハラスメント「満足いく解決」は1割、4人に1人が「相談できず我慢」 全労連がアンケート調査</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>職場のハラスメント被害について「満足のいく解決」に至ったのは、わずか1割――。全国労働組合総連合（全労連）は5月29日、働く797人を対象に初めて実施したWEBアンケートの結果を公表した。直近3年間に今の職場でハラスメントを受けた人は2割を超え、被害者の約4分の1が「相談せず我慢した」と答えている。 会見で全労連は、企業の相談窓口が広がる一方で泣き寝入りが後を絶たない実態を指摘した。ハラスメントを法律で定義して罰則付きで禁止する「包括的ハラスメント禁止法」の制定と、ILO（国際労働機関）条約の批准を国に求めると訴えた。 アンケートは2025年12月から2026年3月にかけ、全国の公務・民間で働く人を対象にWEB上で行われ、41都道府県・22産業から797人が回答。 直近3年間に今の職場でハラスメントを「受けたことがある」は21.8%。見聞きした人を含めると60%を超えた。内容はパワーハラスメントが85.2%と突出し、セクシュアルハラスメント（27.2%）、カスタマーハラスメント（18.3%）が続いている。 調査結果の分析を担当した九後健治（くご・けんじ）副議長は「労働者が1日のうちで一...</description>
-      <pubDate>Mon, 01 Jun 2026 17:58:00 +0900</pubDate>
-      <guid isPermaLink="false">18d52081d5445d72da4c6cb3bcc9dec5b9bb5177</guid>
-      <category>企業法</category>
     </item>
   </channel>
 </rss>
