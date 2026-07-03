@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 03 Jul 2026 11:16:24 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 22:54:36 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>最低賃金で1年働いて“年収184万円”「生活できない」…全国一律1700円への大幅引き上げ求め複数労組が会見</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>政府は従来、最低賃金について「2020年代に全国加重平均1500円を達成する」との目標を掲げてきた。だが達成時期を見直し、「2030年代前半」へ先送りすると報じられている。 複数の労組からなる「最低賃金全国一律大幅引き上げ実現！共同アクション」が7月2日、都内で会見。「目標が後退すれば年間の引き上げは44円程度にとどまる」と指摘した。 最低賃金で1年間ほぼフルタイムで働いても、年収（最低額の1023円で月150時間働いた場合）は184万1400円。さらに税金や社会保険料が引かれる。 会見に出席した下町ユニオンの石井美登里氏は「物価高騰を受け、卵2個を子ども3人に分ける、という家庭が存在する。子どもにひとり1個の卵を食べさせられるように、最低賃金を大幅に引き上げてほしい」と訴えた。 最低賃金付近で働く人の実態は、統計にも表れている。 全労連が各地で実施してきた最低生計費試算調査によれば、健康で文化的な生活には時給1800円台から1900円台が必要で、都市部と地方に大きな差はないという。ところが2025年度（令和7年度）の地域別最低賃金は、全国加重平均で1121円。最低額の宮崎、高知、沖縄...</description>
+      <pubDate>Fri, 03 Jul 2026 17:59:00 +0900</pubDate>
+      <guid isPermaLink="false">a4ee50249f4b7e84542325c0fb1b6f34bdd4dbd2</guid>
+      <category>労働法</category>
+    </item>
     <item>
       <title>N国党・立花孝志氏ら書類送検、都知事選ポスターで“性的誹謗中傷”容疑…「SNS盲信する人たちを犬笛で扇動」告訴人ら会見</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Wed, 03 Jun 2026 18:15:50 +0900</pubDate>
       <guid isPermaLink="false">dfb777f506598832812a5d90ed2955833aca1068</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>給与が突然ゼロ、全社員に“箝口令”も…社長命令で“代表取締役”になった証券会社員が「未払い分1年超」支払い求め提訴</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>クラウドファンディング「オルタナバンク」を運営するSAMURAI証券株式会社（東京都千代田区）で勤務していた男性が、未払い賃金の支払いと労働契約上の地位確認などを求め、同社を相手取り東京地裁に提訴した。提訴は2026年6月1日付。 代理人の佐々木亮（ささき・りょう）弁護士と杉尾綾（すぎお・あや）弁護士は、原告男性本人とともに、翌2日、会見を開いた。 男性は会社の指示で関連会社の代表取締役に就任した後も同じ業務を続けていたが、その役職を外された途端に賃金が止まり、最終的には雇用関係そのものを否定されたと訴えている。 訴状などによると、男性は2021年8月、SAMURAI証券と期間の定めのない労働契約を結んで入社した。担当はマーケティングや採用などで、賃金は基本給53万円に管理職手当30万円を加えた月83万円。同社は資本金9900万円、従業員約20名の金融商品取引業者である。 入社から間もない同年10月ごろ、男性は同社社長から、新たに設立する関連会社「新日本アセットマネジメント」の代表取締役に就任するよう指示を受けたという。原告側は、男性が断れる状況ではなく、業務自体はそれまでと変わらず続...</description>
-      <pubDate>Wed, 03 Jun 2026 17:59:00 +0900</pubDate>
-      <guid isPermaLink="false">33ef6e1dbf5949b4da35031bc4c3fee82911cd26</guid>
-      <category>民事法</category>
     </item>
   </channel>
 </rss>
