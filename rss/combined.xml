@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jul 2026 11:03:28 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 22:54:54 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>大型家電店に“排せつ物”とSNS騒然…「跡が床にありました」「空気清浄機がフル稼働」 “漏らす”行為は犯罪になる？【弁護士解説】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>7月上旬、最近オープンした大型家電店のフロアで排せつ物が見つかったとする投稿がSNS上で相次いだ。 本件の真偽はいまだ定かではないが、仮に家電量販店や百貨店などの店内で排せつしてしまった場合、犯罪が成立したり、損害賠償を請求されたりする可能性はあるのだろうか。 「2階でうんこ漏らしたバカいてたまげる 」 「恐らく （トイレに）並んでて間に合わなかった人の漏らした跡が床にありました」 該当の店舗のフロア内に排せつ物が落ちていたとする情報は、SNS上で複数のアカウントから投稿されている。また、3日だけでなく4日にも排せつ物が見つかったと報告する投稿が複数見られた。 ただし、本件について店舗側の公式発表は行われておらず、警察などの公的機関からも情報は出ていない。現時点ではSNS上の投稿以外に本件を裏付ける情報は確認されていない状況だ。 SNS上の投稿を見る限りでは、「エスカレーター付近に汚物が散らばっていた」「店員が清掃していた」などの状況がうかがえる。 一方で、具体的にどのフロアに排せつ物が落ちていたかについては、2階ではなく1階や3階とする投稿もあるほか、複数のフロアで続けて見つかったと...</description>
+      <pubDate>Wed, 08 Jul 2026 12:05:13 +0900</pubDate>
+      <guid isPermaLink="false">922b476005040fdd73ef77eea310c38668d5f551</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>“熱中症”危険感じたら“勝手に”仕事中断OK？ 死傷者が9年で約3.6倍に急増…酷暑の職場で労働者が“身を守る”方法とは</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 08 Jun 2026 10:19:00 +0900</pubDate>
       <guid isPermaLink="false">ece0777c0a8d34dfc48a778adc972a0eee99775d</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>上司にしつこく誘われ“飲み会”参加、帰りに事故死で労災下りず…地裁・高裁「敗訴」の妻が最高裁で「逆転勝訴」したワケ</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「会社の飲み会に参加したあとの事故」は、労災になるのか？ この問題は、働く人にとって決して他人事ではない。労災が下りるためには、事故が「業務上」発生したことが必要だが、飲み会は「自由参加」とされていることが多い。しかし、表向きはそうであっても、上司から強く誘われれば、実際には断りにくいことがある。 今回紹介するのは、従業員が歓送迎会に参加したあと、車で事故に遭い亡くなった事件である。 妻が労災を求めたが、労働基準監督署は労災と認めず、地裁・高裁も遺族側の請求を退けた。しかし、最高裁で逆転勝訴。労災にあたると判断された。 以下、事件の詳細について、実際の裁判例をもとに紹介する。（弁護士・林 孝匡） Aさんは、金型にクロムメッキを施す事業などを営む会社（従業員7名）の工場で、営業企画などの業務を担当していた。 ■ 部長の強引な誘い 12月のある日、部長が突然「明日、子会社の研修生の歓送迎会をやろう」と言い出した。Aさん以外の従業員は全員「参加する」と答えたが、Aさんは仕事が忙しく、この誘いを断った。 しかし、部長は粘った。歓送迎会当日も、再びAさんに対して参加を打診した。Aさんは部長に対し...</description>
-      <pubDate>Mon, 08 Jun 2026 09:58:00 +0900</pubDate>
-      <guid isPermaLink="false">7523b300dd6d41f2fb633211df5325f3a69158ba</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
