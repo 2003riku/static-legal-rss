@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jul 2026 22:54:54 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 11:16:05 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>美輪明宏さん、数億円規模の遺産は献身的に活動支えた“息子”へ？ 愛の伝道師の「終活」から見える“相続トラブル回避”のポイント</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>歌手で俳優の美輪明宏さん（享年91）が老衰のため6月20日に亡くなったことが明らかにされた。 葬儀は近親者のみで執り行われたというが、ここ一年は、高齢のため仕事をセーブし、静養を続けていたと伝えられている。最期は、家人に「ありがとう」と伝え、眠るように旅立っていったという。 美輪さんは、1935年、長崎県生まれ。10歳の時、長崎で被爆。その後、上京し、丸山明宏名義でシャンソン歌手としてデビュー。代表曲のひとつに「ヨイトマケの唄」（1965年）がある。その後、舞台にも出演し、三島由紀夫や寺山修司など多くの文化人とも交流を重ねた“禁断の美少年”。自身のセクシュアリティについても早くから公言し、差別や偏見に向き合った。 一方、『国分太一・美輪明宏・江原啓之のオーラの泉』（テレビ朝日）や、朝日新聞『be』の連載「悩みのるつぼ」などで、悩める人々に自身の経験やスピリチュアルな見地から“愛の伝道師”としてアドバイスを送る存在となっていた。 そんな美輪さんは「終活」も見事なものであったようだ。（ライター・中原慶一） 美輪さんは、2019年9月、体調を崩し、軽い脳梗塞と診断された。当時すでに80代半ば...</description>
+      <pubDate>Thu, 09 Jul 2026 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">6d59cfeba1568413bd8b6b09b6e342918aadeae8</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>大型家電店に“排せつ物”とSNS騒然…「跡が床にありました」「空気清浄機がフル稼働」 “漏らす”行為は犯罪になる？【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 08 Jun 2026 17:59:00 +0900</pubDate>
       <guid isPermaLink="false">0e76000978adcda1d1d7e643df7212c5e2852677</guid>
       <category>民事法</category>
-    </item>
-    <item>
-      <title>夜間・休日診療の“特別料金”1万円が、救急車呼べば「タダ」…“生活保護受給者”の受診実態にみる“制度の矛盾”</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>SNSやニュースなどでしばしば、「選定療養費」（特別料金）というものが話題になります。これは、夜間・休日に大病院の救急外来に受診した場合などに、診察代や薬代とは別に発生する費用です。金額は1回あたりだいたい7000円～1万円前後です。 この制度の目的は、緊急性の低い軽症患者による安易な「コンビニ受診」を抑制し、疲弊する勤務医の負担を軽減することにあります。これには、医療制度を維持するうえで一定の合理性が認められます。 しかし、その反面、この制度には「穴」があり、それが医療現場に思わぬ結果をもたらしかねないことは、あまり知られていないと思われます。（行政書士・三木ひとみ） 生活保護の医療扶助は、指定医療機関において原則として現物給付、すなわち患者の窓口負担なしで行われます。そのため、一般的には「生活保護を受けていれば、大病院の特別料金も国が全額払ってくれるのだろう」と誤解されがちです。 しかし、無料になるのはあくまでも診察料や薬代などの医療費に限られます。 厚生労働大臣が定める告示（「生活保護法第52条第2項の規定による診療方針及び診療報酬（昭和34年（1959年）厚生省告示第125号）...</description>
-      <pubDate>Mon, 08 Jun 2026 10:19:00 +0900</pubDate>
-      <guid isPermaLink="false">ece0777c0a8d34dfc48a778adc972a0eee99775d</guid>
-      <category>労働法</category>
     </item>
   </channel>
 </rss>
