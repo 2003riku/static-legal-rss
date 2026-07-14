@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 14 Jul 2026 10:53:52 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 22:21:24 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>今日から「改正ドローン規制法」が施行 皇居・自衛隊基地など重要施設の周辺“1000メートル”が飛行禁止に、罰則も強化</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>7月14日から「ドローン規制法」の改正法が施行される。 今回の改正により、重要施設の周辺空域における規制範囲が1000メートルまで拡大される。加えて、従来は「レッドゾーン」（対象施設の敷地・区域）に限られていた直罰（※）が「イエローゾーン」（周辺地域）まで拡大するなど、規制は大幅に強化される。 ※違法行為に対し、事前に行政指導や行政処分が行われることなく、即時に適用される罰則 改正の背景には、法制定以降の市販ドローンの飛躍的な性能向上や、テロの脅威の高まりなどがある。 ドローン規制法の正式名称は「重要施設の周辺地域の上空における小型無人機等の飛行の禁止に関する法律」（「小型無人機等飛行禁止法」）。 その名の通り、国の重要施設や外国公館などの周辺地域における、ドローンをはじめとした「小型無人機等」の飛行を禁止する法律だ。 なお、100グラム以上のドローンやラジコン機などの飛行については「航空法」でも規制されているが、ドローン規制法では100グラム未満であっても規制対象となる。 対象となる施設は国会議事堂や皇居など「国の重要施設等」、大使館や外国要人の所在する施設、防衛関係施設（自衛隊と在...</description>
+      <pubDate>Tue, 14 Jul 2026 17:59:00 +0900</pubDate>
+      <guid isPermaLink="false">ddf70a9ba17291d0608be38c2eb3954bd2f78435</guid>
+      <category>憲法</category>
+    </item>
     <item>
       <title>女子高生がバイクから転落死⇒無免許運転の16歳少年「ひき逃げ」で逮捕…ひいたのは後続車両なのに？ 最長“15年の拘禁刑”の可能性もあるワケ【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 15 Jun 2026 09:57:00 +0900</pubDate>
       <guid isPermaLink="false">b4b03910af1e178a49fe71b1c36a4b74811e17ec</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>「入院なんてせんぞ！」精神科で暴れる80代男性 認知症対応、ネットでは“穏やかに”と推奨も…現場の医師が「生ぬるい」と語る実態</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>精神科を訪れるのはメンタルを患った人々だ。なんらかの理由で、精神のコントロールが難しくなり、日常生活を営むのもつらくなり、そして医師の世話になる。 しかし、訪れるのはメンタルを病んだ人だけではない。自分のことがわからなくなってしまった重度の認知症の人が、家族の希望で訪れ、症状次第では強制入院というケースもあるという。 それは、そこまで家族が追い詰められている裏返しでもある――。 ※この記事は、関東X県の精神科救急病院に勤務する現役精神科医・駒木爽氏の書籍『精神科医おどおど日記』（三五館シンシャ）より一部抜粋・構成しています。 「先生、最近Netflix契約してQOLバカ上がりです」 そう気さくに話しかけてきたのは外跳ねボブの看護師・Yさんだ。私は空いた時間になるべく医療スタッフと雑談する。そうしておくと、いざ困りごとがある際、向こうから話しかけやすいと思うからだ。そのせいで雑用も頼まれやすく、病棟に顔を出すたびに仕事が増えているのだが･･････。 心の砂漠にいつもオアシスを与えてくれるYさんが、Netflixの記憶喪失ものの恋愛ドラマを勧めてくれた。自らも何年か暮らした北国を舞台にし...</description>
-      <pubDate>Sun, 14 Jun 2026 10:16:00 +0900</pubDate>
-      <guid isPermaLink="false">1584ece6149e2c9506e0353346d41ac4a6f42ffc</guid>
-      <category>民事法</category>
     </item>
   </channel>
 </rss>
