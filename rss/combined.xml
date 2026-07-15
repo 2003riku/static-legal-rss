@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 15 Jul 2026 10:50:48 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 22:25:43 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「植松の考えは真っ当だ」相模原障害者殺傷事件から10年、“賛同”の声に当事者が感じた“もう一つの恐怖”</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「『植松の考え方は真っ当だ』『理解できる』——。そんな“賛同”の声が、あの当時は数え切れないほどあった」 精神障害の当事者・Aさんは、10年前の社会の空気をそう振り返る。19人の命を奪った男だけでなく、その思想に同調する見ず知らずの人々の存在に、Aさんは強い恐怖を覚えたという。 2016年7月26日、神奈川県相模原市の障害者施設「津久井やまゆり園」で、入所者19人が殺害された。事件から10年を前に、精神障害者個人及び団体で構成される「全国『精神病』者集団」らが7月14日午後、都内で会見を開き、当事者たちが声を上げた。 会見の参加者らが「事件を報道するうえで、必ず取り上げてほしい」と訴えたのは、事件後に浮上し、そして“忘れられつつある”という措置入院の見直し問題だった。 事件を起こした植松聖死刑囚（殺人罪などで死刑判決が確定）が措置入院後12日で退院していたことが大きく報じられ、政府は再発防止策として制度の見直しへ動いた。だが同団体は、障害者を一か所に集めて隔離する施設政策こそが事件の背景にあり、措置入院の強化もその延長線上にあると主張。「措置入院強化では問題の解決にならない」と訴えてき...</description>
+      <pubDate>Wed, 15 Jul 2026 17:59:00 +0900</pubDate>
+      <guid isPermaLink="false">bfe9fa338b4db873468ce58a2b65ac90a7816ee2</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>消防隊員2人死亡の道頓堀火災「たばこポイ捨て」男性が“重過失失火”容疑で書類送検…なぜ「放火罪」ではない？</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Tue, 16 Jun 2026 09:58:00 +0900</pubDate>
       <guid isPermaLink="false">323ce6919f364af21cbccd17a6a1e033dfea918f</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>「政治家が自分の縄張りを守りたいだけ」弁護士らの“衆院選無効”訴訟が“棄却”判決…敗訴を重ねても「議員定数是正」を訴え続ける“理由”とは</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>今年2月8日に投開票が行われた衆議院議員総選挙について、議員定数配分や選挙区割りが憲法に違反し無効であるとして弁護士らのグループが選挙の無効を求めた訴訟で、東京高裁は6月12日、原告の請求を棄却する判決を言い渡した。 原告の「三竿グループ」は、1962年に越山康弁護士（故人）らが始めた「定数是正訴訟」の活動を引き継ぎ、衆議院議員選挙のつど、選挙無効訴訟を提起している。 いわゆる「手弁当」での活動であり、勝訴しても「一文の得」にもならない訴訟。しかも、これまで裁判所は、国会の裁量を広く認め、請求を棄却し続けている。 それでも、最高裁が時に判決理由のなかで「違憲状態」などの厳しい言葉を用いて国会に是正を促し、実際に制度の改正につながってきたという実績・歴史がある。 原告の三竿径彦弁護士は判決後の記者会見で「憲法の基本原理である個人の尊重、国民主権へのリスペクトが足りない」と裁判所の判断を批判し、最高裁へ上告する方針を明らかにした。 判決は、小選挙区選挙について、定数配分にアダムズ方式を採用し、選挙区間の人口較差（こうさ）を2倍未満とするよう是正する仕組み（本件区割制度）は「合理性を有する」...</description>
-      <pubDate>Mon, 15 Jun 2026 18:24:00 +0900</pubDate>
-      <guid isPermaLink="false">8e65604588fb17429398dcfdac333ab389353e46</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
