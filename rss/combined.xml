@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 22 Jul 2026 11:00:51 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 22:32:20 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「呼気中アルコール0.5mg」で即、“危険運転致死罪”成立…「数値基準」法改正で新設 ドリフト・爆走も厳罰化“新たな境界線”</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>7月21日から、危険運転致死傷罪と道路交通法の改正が施行され、「酒酔い運転」に関する体内のアルコール量の数値基準がはじめて設けられた。 また、危険運転致死傷罪には「高速度運転」についても数値基準が設けられたほか、車のドリフト走行やバイクのウィリー走行も危険運転として処罰の対象に含まれるようになった。 全国で繰り返される危険運転に対し、これまでグレーゾーンであったものにも明確に基準を設けることで、より厳正に処罰するための改正だ。 危険運転致死傷罪とは、危険・悪質な運転の結果として人を死傷させた場合に科される処罰規定。当初は刑法の中に含まれていたが、2014年に自動車運転死傷処罰法（※）として独立した。 ※正式名称は「自動車の運転により人を死傷させる行為等の処罰に関する法律」 「危険運転」には「飲酒運転」や「高速度運転」など複数の類型が含まれているが、法定刑はどの類型においても変わらず、人を死亡させた場合には1年以上20年以下の拘禁刑、負傷させた場合には15年以下の拘禁刑。 従来も飲酒運転は危険運転致死傷罪が適用される対象であったが、その成立要件は「アルコールの影響により正常な運転が困難な...</description>
+      <pubDate>Wed, 22 Jul 2026 18:10:00 +0900</pubDate>
+      <guid isPermaLink="false">26561edba5146aff0082d2c0f98c9386df39375b</guid>
+      <category>一般法律</category>
+    </item>
     <item>
       <title>「ブレーキ異音」劣悪バイク“炎上”…排気量250cc以下「軽二輪」にも「車検義務化」の声も、“現実的に不可能”なワケ</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 22 Jun 2026 17:59:00 +0900</pubDate>
       <guid isPermaLink="false">3ecc096c5ee0e0f360fc97cd408ca7f84cfc8033</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>「刑務所アート展」23日から 受刑者ら制作の絵画・俳句・書など通して“塀の中”と対話</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>東京都府中市の府中市美術館にて、今月23日（火）から28日（日）まで「府中刑務所アート展 2026」が開催される。 主催はこれまでも「刑務所アート展」を手掛けてきた一般社団法人Prison Arts Connections（PAC）。今年は、府中刑務所との共催による初めての地域連携展示となる。入場無料。 刑務所で服役中の受刑者をはじめ、刑務所と関わる人々から広くアート作品を募集し、展示する「刑務所アート展」。2022年からこれまで3回開催され、全国40か所近くの刑務所から集まった約450作品を延べ3000人近くが鑑賞してきた。 本展の位置づけについて、PACの共同代表理事で、本展のディレクターも務める鈴木悠平氏は、「よく聞かれることですが、加害者の更生支援や再犯防止といった単一の社会的な目標のために展覧会を企画しているわけではありません」として、こう話す。 「作品を投稿する作家、運営、そして来場者、それぞれが刑務所や犯罪、被害の回復や加害者の処遇について考えたり、想像力を向けたりする、対話の姿勢そのものを大切にしています。 もちろん、結果としてアートを通じたつながりや共感が、誰かの回復...</description>
-      <pubDate>Mon, 22 Jun 2026 10:36:00 +0900</pubDate>
-      <guid isPermaLink="false">0cca3a126cee2036ddb3512560cec7680baf7965</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
