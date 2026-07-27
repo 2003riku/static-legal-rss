@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 27 Jul 2026 11:14:49 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 27 Jul 2026 23:21:20 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>保育園で経営者が園児に「塩」舐めさせ、怒鳴り散らし…不適切保育・不当労働行為訴え保育士らが会見</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>保育園「天才キッズクラブ」を運営する株式会社TKC（本社・東京都稲城市）で働く保育士らは24日、都内で会見し、創業者で代表取締役の田中孝太郎氏が、自身の気に入った沖縄産の塩を保護者の承諾なく園児に舐めさせたり、頭に振りかけたりする行為を繰り返していたと訴えた。 矛先は園児だけではない。同社の保育士らが結成した労働組合によると、園児の目の前で職員を大声で怒鳴りつけるなどのハラスメントもあったといい、代表の言動によって適応障害と診断され休職した職員もいるとした。組合は東京都労働委員会に、不当労働行為の救済を申し立てている。 会見に出席したのは、労働組合ユニオンカントの鈴木剛執行委員長と、TKCの現職保育士ら。子どもや保護者との関係に配慮し、撮影は首から下に限る条件が付けられた。 TKCは神奈川県を中心に認可保育園と企業主導型保育園を14か所展開し、従業員約350人を雇用する。 ある保育士は、園児に対して不適切だと考える行動を2点挙げた。1点目は、代表が園児の目の前で職員を大声で怒鳴る行為だ。 「代表の足元には3歳の園児が座っており、その場で別の職員が泣きながら止めに入りました」 2点目が、...</description>
+      <pubDate>Mon, 27 Jul 2026 18:42:44 +0900</pubDate>
+      <guid isPermaLink="false">c40f40491f78722fe1647e97c748bcb348505703</guid>
+      <category>企業法</category>
+    </item>
     <item>
       <title>賃貸のエアコンから“異臭”⇒管理会社・大家「自分でなんとかして」…修理費を払ったら後で家主に請求できる？【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Fri, 26 Jun 2026 10:39:00 +0900</pubDate>
       <guid isPermaLink="false">073bf1826fffdb8f81289ded002f73793dddd8a0</guid>
       <category>一般法律</category>
-    </item>
-    <item>
-      <title>映画館各社が2000円→2200円に“一斉値上げ”…「カルテル」にならない？ 独禁法の境界線となる「合意」の有無とは【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>今年4月から6月にかけて、「イオンシネマ」や「109シネマズ」、「TOHOシネマズ」などの大手映画館チェーンが相次いで鑑賞料金の値上げを発表した。 2019年にも複数の映画館チェーンが同時期に値上げを実施しており、こうした動きに対して映画ファンからは「まるで示し合わせたかのような値上げだ」といった不満の声も上がっている。 一方、6月16日には、ロッテやグリコなど大手製菓会社6社が市販用アイスクリームの卸売価格をめぐってカルテルを結んだ疑いがあるとして、公正取引委員会が立ち入り検査を実施した。企業間で価格に関する合意があった場合、独占禁止法上の問題となり得るためだ。 それでは、複数の映画館チェーンがほぼ同じ時期に鑑賞料金を引き上げることは、アイスクリームの場合と同様に、独占禁止法が禁じる「カルテル」にあたる可能性はないのだろうか。 まず、値上げの経緯を時系列で確認してみよう。 2026年4月17日、イオンシネマは映画鑑賞料金を改定すると発表。6月19日から、一般料金を1800円から2000円に引き上げている。 続いて5月28日には、109シネマズが6月26日からの料金改定を発表。6劇場で...</description>
-      <pubDate>Fri, 26 Jun 2026 10:19:00 +0900</pubDate>
-      <guid isPermaLink="false">8524d88fc50fe11dc9bdd08f21f0c0643d62d42f</guid>
-      <category>企業法</category>
     </item>
   </channel>
 </rss>
