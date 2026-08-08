@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 07 Aug 2026 21:51:42 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2026 10:08:16 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「夏休みは有給消化でまかなえ」は違法？ 労働条件の“不利益変更”等にあたるケースも【弁護士解説】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「夏休みは、7月から9月の間に有休を3日取ることになっています。夏季休暇の制度はありません」 最近、都内のとあるIT系企業に転職したAさんは、採用時に「夏休み」についてこのような説明を受けた。金融系サービス業の上場企業に勤務する元同僚に相談したところ、「うちもそうだよ」との説明を受けた。 上場か非上場かにかかわらず、夏季休暇の制度をおかず、「夏休み」を有給休暇でまかなうしくみをとっている会社は少なからず存在する。また、全ての企業に対し法律上、労働者に有給休暇を年5日取得させることが義務付けられたことに伴い、夏季に有給休暇を取得するよう労働者に指示する会社もある。 このような扱いには、法的観点から問題はないのか。労働法に詳しい松井剛弁護士に聞いた。 そもそも、夏季休暇の制度を設けないことに、法的な問題はないのか。松井弁護士は、それが妥当か否かは別として、法律上、夏季休暇の付与は使用者側に義務付けられてはいないと説明する。 松井弁護士：「夏季休暇は、所定休日とは別に、夏季という時期に有給または無給の休暇を認めるものであり、制度を設けるか否か、付与条件をどうするかは、各企業が任意に定めること...</description>
+      <pubDate>Sat, 08 Aug 2026 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">b95af3ffb85d7aabd287e309f668fcfdccdb6d59</guid>
+      <category>企業法</category>
+    </item>
     <item>
       <title>「おじさんは来るなと？」松のや“ママ応援企画”に批判殺到→謝罪…キャンペーンは「男女差別」だったのか【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Thu, 09 Jul 2026 09:59:00 +0900</pubDate>
       <guid isPermaLink="false">6d59cfeba1568413bd8b6b09b6e342918aadeae8</guid>
       <category>民事法</category>
-    </item>
-    <item>
-      <title>大型家電店に“排せつ物”とSNS騒然…「跡が床にありました」「空気清浄機がフル稼働」 “漏らす”行為は犯罪になる？【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>7月上旬、最近オープンした大型家電店のフロアで排せつ物が見つかったとする投稿がSNS上で相次いだ。 本件の真偽はいまだ定かではないが、仮に家電量販店や百貨店などの店内で排せつしてしまった場合、犯罪が成立したり、損害賠償を請求されたりする可能性はあるのだろうか。 「2階でうんこ漏らしたバカいてたまげる 」 「恐らく （トイレに）並んでて間に合わなかった人の漏らした跡が床にありました」 該当の店舗のフロア内に排せつ物が落ちていたとする情報は、SNS上で複数のアカウントから投稿されている。また、3日だけでなく4日にも排せつ物が見つかったと報告する投稿が複数見られた。 ただし、本件について店舗側の公式発表は行われておらず、警察などの公的機関からも情報は出ていない。現時点ではSNS上の投稿以外に本件を裏付ける情報は確認されていない状況だ。 SNS上の投稿を見る限りでは、「エスカレーター付近に汚物が散らばっていた」「店員が清掃していた」などの状況がうかがえる。 一方で、具体的にどのフロアに排せつ物が落ちていたかについては、2階ではなく1階や3階とする投稿もあるほか、複数のフロアで続けて見つかったと...</description>
-      <pubDate>Wed, 08 Jul 2026 12:05:13 +0900</pubDate>
-      <guid isPermaLink="false">922b476005040fdd73ef77eea310c38668d5f551</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
