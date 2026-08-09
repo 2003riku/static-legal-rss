@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 08 Aug 2026 21:38:40 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Aug 2026 10:12:30 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>妊産婦自死「4年で210人」“心のケア”普及も受入れ体制は…「現場のボランティア」頼みの限界</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>妊娠・出産のさなかに女性が自らの命を絶つ例は、警察が把握しただけでも、2022〜2025年の4年間で210人に上った。 日本産婦人科医会（石渡勇会長）の記者懇談会では、自殺対策に取り組む民間団体による妊産婦の自殺の分析と、同医会による全国の分娩取扱施設を対象としたメンタルヘルスケアの調査結果が報告された。 心の不調を見つける仕組みは急速に普及し、一定の成果を上げた一方で、不調を把握した後に専門的な医療へつなぐ体制と、産後1か月健診を終えた後も支援を続ける仕組みには、なお空白が残ることが明らかになった。（ライター・松田隆） 警察庁は2022年1月から、自殺した女性が妊娠中または産後1年以内であると把握した場合、その状況を自殺統計原票に記録している。 一般社団法人・いのち支える自殺対策推進センター（JSCP）が同原票データを分析したところ、2022年65人、2023年53人、2024年44人、2025年48人で、4年間の合計は210人であった。 ただし、統計に計上されるのは、あくまで警察庁が妊娠中または産後1年以内であることを把握できた場合に限られる。実際の自殺者数は、この数字より多い可能...</description>
+      <pubDate>Sun, 09 Aug 2026 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">89c13e19c022b4566cae70be08381be7199fb74e</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>「撃たれても撃っちゃイカン」警視庁OBが明かす拳銃使用の葛藤…河内長野「2発で射殺」なぜ起きた？</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Thu, 09 Jul 2026 18:57:40 +0900</pubDate>
       <guid isPermaLink="false">5260519bf19b9242ec891a73862a7867c918fc3b</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>「やりがいはあるが、未来は明るくない」介護職員ら訴え…他産業と賃金格差“月11万円”、人手不足深刻 厚労省へ“介護報酬の大幅増”など要請</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「16時間半の夜勤明けで、そのままこの会見に臨んでいます。介護の仕事にやりがいを感じていますが、正直このままでは未来は明るくないなと思ってしまいます」 都内の特別養護老人ホームで働く介護福祉士の上野太一さんは、8日、都内で開かれた記者会見で、介護現場の窮状を報告した。 全労連介護・ヘルパーネットはこの日、介護現場で働く975人から集めた要望をまとめ、厚生労働省に対して「介護報酬」の大幅な引き上げを求める要請書を提出した。 背景には、同ネットの調査で全産業の一般労働者平均と比べて月額約11万円低いとされる賃金水準や、深刻化する人手不足がある。 同ネットは、全労連（全国労働組合総連合）に加盟する介護労働者で構成される組織である。この日、厚生労働省に提出されたのは、同ネットが今年1月から収集を開始した「一言署名」だ。約半年間で975人分の切実な声が寄せられた。 全労連の土井直樹常任幹事によれば、集まった声の約8割が「賃金の引上げ」と「人手不足の解消」を求めるものだったと報告した。 介護労働者の賃金は、政府統計では全産業平均と月額約8万円の差があるとされているが、同ネットが2025年度に実施し...</description>
-      <pubDate>Thu, 09 Jul 2026 18:19:00 +0900</pubDate>
-      <guid isPermaLink="false">3ccc34e5f033c573ffe464773a3aaa6e621d3748</guid>
-      <category>労働法</category>
     </item>
   </channel>
 </rss>
