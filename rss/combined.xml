@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 10 Aug 2026 21:57:25 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 10:13:07 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「無謀な山岳遭難」でも救助費は“タダ”…税金投入に批判殺到も、“全額自己負担”させるのが難しいワケ【弁護士解説】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>8月11日は、国民の祝日である「山の日」だ。本格的な登山シーズンを迎え、レジャーとして多く人が山を訪れる。一方で、例年、山岳遭難事故は後を絶たない。 特に近年、悪天候にもかかわらず山行を決行したり、十分な装備なしに山行したりする無謀な登山者の遭難が深刻な問題として報じられている。もし、そのような登山者が遭難した場合、救助費用の負担は法制度上どうなっているのか。 まず、前提として、夏山登山における遭難の実態を確認しておこう。警察庁発表の2025年（令和7年）の統計によれば、昨夏（7月〜8月）の遭難状況は次の通り。 なお、通年のデータでは遭難者の約半数が60歳以上を占めており、高齢層における登山リスクの管理が重要な課題となっている。 山で遭難した場合、救助を依頼することになる。そうした時、費用負担はどうなるのか。 対応は主に、警察の山岳警備隊、消防の山岳救助隊、そして民間の山岳遭難対策協議会や山小屋関係者が連携してあたることになる。それぞれの費用負担と金額の相場は以下の通りだ。 公的機関の費用の原則: 警察や消防による救助活動は、現行法（警察官職務執行法や消防法）に費用徴収の規定がないため...</description>
+      <pubDate>Tue, 11 Aug 2026 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">d86d6baa9bbd6a6202e7d1dbff9e8dc77beddc1d</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>アスベスト吹き付け作業に14年従事し“健康被害”も、厚労省は「給付金」不支給…代理人ら“理由”求めるも「開示せず」</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Sat, 11 Jul 2026 09:59:00 +0900</pubDate>
       <guid isPermaLink="false">4946ee9372a6926316c868dd731cd6f2a56e8fa9</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>「医者を馬鹿にしている」眼科医が“2569円の支払い”求めた裁判で勝訴…コンタクト作った患者は“一生、再診扱い”との査定を東京地裁が違法認定</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>患者が“中学生のとき、部活のために一度だけコンタクトレンズを作った”——ただそれだけで、その患者が数年後にまったく別の不調で眼科を訪れても、目の状態を測る基本検査の費用が“タダ同然”になる。 患者の立場からすれば「お得」かも知れないが、眼科医にとっては「タダ働き」を強いられることを意味する。 東京都のこひなた眼科（文京区）の藤巻拓郎院長は、そんな査定の取り消しを求め、国の関連団体を相手にわずか2569円の不払いをめぐって3年近く争ってきた。 東京地裁は7月2日、社会保険診療報酬支払基金による査定を違法と判断し、支払いを命じる判決を言い渡した。 藤巻院長は7月9日、こひなた眼科の藤巻栄子事務長とともに都内で会見。「このような運用が続けば、まともに眼科でコンタクトレンズを処方してもらえなくなる。（基金の対応は）法令を無視し、医者も点数表も馬鹿にしている」と述べた。 眼科では、初めての症状で受診すると「初診料」（現在は約2900円）が課され、目の屈折度数を測る基本検査も行われる。 そして、同じ症状で受診を継続すれば「再診料」に切り替わる。再診料は約740円。藤巻事務長は「ラーメン一杯より安い...</description>
-      <pubDate>Fri, 10 Jul 2026 17:59:00 +0900</pubDate>
-      <guid isPermaLink="false">d7b3997e3e173498e6c61defe9c18fccf531966e</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
