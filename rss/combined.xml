@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 11 Aug 2026 21:52:53 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 10:20:40 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>“31億円搾取”のプルデンシャル生命、35万円「最低報酬」導入しても“不正”はなくならない？ 元営業マンら指摘「歩合制」の弊害</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>過去30年以上にわたり100名を超える営業社員が顧客から総額約31億円をだまし取っていたなどの不正が判明し問題となっている大手外資系生命保険会社・プルデンシャル生命が、35万円程度の「最低報酬」を設けるなどの方針を決めたことが報じられた。 同社の営業マンの完全歩合制が、不正の温床となっていたとされることから、修正を加えた形である。他にも、顧客との面談を原則として録音する運用が今秋にもスタートするという。 果たして、不正は一掃されるのか。生命保険業界で、異なる報酬体系の下、一線の営業マンとして実績を挙げた2人に話を聞いた。いずれも、生命保険業界で優秀な営業マンの証とされるMDRT（※）成績資格会員の経歴など、客観的に確認できる実績を有しながら、現在は生保業界を離れまったく別の仕事をしている。 ※「Million Dollar Round Table」の略称。生命保険業界では、卓越した生命保険および金融サービスの専門家の国際的組織と位置付けられている。 まず、従前のプルデンシャル生命と同じ「完全歩合制」をとるX生命で約4年間にわたり営業マンとして働いた経歴をもつA氏（40代男性）に話を聞い...</description>
+      <pubDate>Wed, 12 Aug 2026 09:59:00 +0900</pubDate>
+      <guid isPermaLink="false">1a3d8a16ab26846861548d2485e522886337e8fa</guid>
+      <category>国際法</category>
+    </item>
     <item>
       <title>川口春奈と板倉滉の「授かり婚」で注目…2024年民法改正で変わった「婚姻200日以内」に生まれた子の“法的地位”とは</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Sun, 12 Jul 2026 09:59:00 +0900</pubDate>
       <guid isPermaLink="false">f5c218065d1fd8f1f720faceea00cb11640e7c6d</guid>
       <category>一般法律</category>
-    </item>
-    <item>
-      <title>SNSで批判集中、コスプレイヤー主催クラファン中止→“支援金”巡り運営とトラブルに… 身に覚えのない入金、どう対処すべき？</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>近年、インターネットバンキングの利用普及に伴い、個人の口座に誤って金銭が振り込まれるトラブルが、たびたび話題となっている。 2022年に、山口県阿武町が新型コロナウイルス臨時特別給付金4630万円を、誤って1世帯に振り込んだ事件は、大きな社会的関心を集めた。2024年11月には、東京都千代田区が定額減税補足給付金を支給済み世帯に重複支給していたことも発覚している。 こうしたトラブルは行政と個人間だけでなく、給与や報酬の二重振込など民間レベルでも発生している。今年5月には、クラウドファンディングプラットフォーム「forgood」が、中止となったプロジェクトの支援金を誤って主催者の女性に送金するという事態が発生。返金手続きの交渉過程で、女性が企業とのやり取りをSNS上に公開したため、大きな騒動へと発展した。 ある日突然、自分の口座に身に覚えのない入金があった場合、どのように対処するのが適切なのか。また、誤って使ってしまった場合、どのような法的責任を問われるのだろうか。（ライター・倉本菜生） 今年1月頃、X（旧Twitter）上でコスプレイヤーとして知られるAさん（女性）が、自身に対する誹謗...</description>
-      <pubDate>Sat, 11 Jul 2026 10:19:00 +0900</pubDate>
-      <guid isPermaLink="false">f59bb5bf58243ad6f7eae567ca3fb2813934a46a</guid>
-      <category>企業法</category>
     </item>
   </channel>
 </rss>
