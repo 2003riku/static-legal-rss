@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Aug 2026 21:38:52 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 09:56:10 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>四千頭身・都築が書類送検「実刑は考えにくい」弁護士指摘も…キー局関係者が明かす“地上波復帰は厳しい”ワケ</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>お笑いトリオ「四千頭身」の都築拓紀（29）が8月18日、東京都迷惑防止条例違反と暴行の疑いで警視庁原宿署から書類送検された。都築は6月下旬、都内の音楽イベントに客として参加し、会場で面識のない20代女性の顔を触ったうえ、スカートの上から下半身を触った疑いが持たれている。 7月に女性が警察へ相談したことで事件が発覚。都築は酒を飲んでいて細部は覚えていないとしながらも、「とても反省している」などと話し、容疑を認めているという。 都築が所属するワタナベエンターテインメントは書類送検と同じ日、被害女性や関係者に謝罪した上で、都築を当面の間、謹慎処分とすると発表した。四千頭身はさしあたり、後藤拓実（29）、石橋遼大（29）の2人で活動を続けていくという。霜降り明星、EXIT、ハナコなどとともに2010年代後半から注目された「お笑い第七世代」の人気トリオに突如起きた今回の事件は、今後、どんな展開を見せるのか。（ライター・中原慶一） 刑事事件などの対応も多い雨宮知希弁護士は、都築に対する量刑の見通しについて、「あくまで一般論で、最終的な処分は検察官の判断によるものですので、結論を断定できるものではあ...</description>
+      <pubDate>Wed, 26 Aug 2026 09:19:00 +0900</pubDate>
+      <guid isPermaLink="false">cb6c03284af39f801309f021bfa980d3525f6ebd</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>組合やめたら一人だけ“無茶振り勤務”、年末年始の有給も取らせてもらえず…都営バス運転手が人権侵害とパワハラで東京都を提訴</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Tue, 28 Jul 2026 10:39:00 +0900</pubDate>
       <guid isPermaLink="false">cd9f3dfbba1a682102f0f62688946f94d47e91ea</guid>
       <category>一般法律</category>
-    </item>
-    <item>
-      <title>優先席「譲る」7割回答も…実際に座れたのは“片手で数える”ほど 「世の中こんなに冷たかった？」妊婦が感じた戸惑い</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>東京都内に住む妊娠7か月のAさん（30代）は、そんな戸惑いを覚えるようになったと話す。都内の会社に正社員として勤務し、産休に入るのは予定日の6週間前から。それまでは毎日、満員電車で通勤している。 妊娠してからというもの、一般の席で譲らせるのは申し訳ないという思いから、優先席エリアに向かうようにしているが、いざ自分が利用対象者になってみると、席を譲られる機会がほとんどない。カバンには、一般的なデザインのマタニティマークをつけているが、スマホに熱中して気づかない人、Aさんが近づいた瞬間に寝たふりをする人——。これまで優先席を譲られた回数は、片手で数えられるほどだという。 SNSでは「妊婦は満員電車に乗るな」という過激な意見も見かけたが、仕事が続く限り電車を使わざるを得ない妊婦は少なくない。 そもそも、日本の公共交通機関における優先席は、あくまでも乗客の任意協力に委ねられた「マナー」であり、席を譲る法的義務はなく、譲らなかったとしても罰則もない。この点が、善意に依存する制度の限界と課題を浮き彫りにしている。 Aさんの体験は特異な例ではない。内閣府が2020年10月に実施した世論調査では、優先...</description>
-      <pubDate>Tue, 28 Jul 2026 10:19:00 +0900</pubDate>
-      <guid isPermaLink="false">b05181522080a15c6e7662da5bc49ad0b0100602</guid>
-      <category>憲法</category>
     </item>
   </channel>
 </rss>
