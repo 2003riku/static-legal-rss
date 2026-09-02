@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 02 Sep 2026 00:57:33 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 11:18:38 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「認知症の祖母のため」正社員辞め“パート掛け持ち”も…「介護離職」年間10万人超 “公的制度”あっても使えない現場の実態</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>総務省の「就業構造基本調査」（2022年）によると、過去5年間に介護・看護を理由に前職を離職した人は47万4000人にのぼる。このうち、調査前1年間に離職した人は10万6000人となっている。 5年ごとに実施される同調査において、この「調査前1年間の離職者数」は2007年調査（14.5万人）、2012年調査（10.1万人）、2017年調査（9.9万人）と減少傾向が続いていたが、今回は5年前より約7000人増加し、増加に転じた。高齢化が進むにつれて、その数はさらに膨らむとみられている。 高齢者人口の増加に伴い、働き盛りの世代が突然、仕事と介護の板挟みに置かれるケースは珍しくない。親が倒れた、認知症の症状が出てきた——そのとき、会社員はどうするのか。 筆者自身、現在0歳児育児をしながら夫の母親の介護が始まった。通院の付き添いに食事作りや身の回りの世話、役所関係の手続きなど、やることが多すぎて仕事との両立に頭を抱えている。私の場合はフリーランスなので仕事をする時間帯をある程度調整できるが、これが会社員となるとさらに厳しくなる。 会社員として働きながら介護した経験をもつ2名にインタビューし、そ...</description>
+      <pubDate>Wed, 02 Sep 2026 09:58:00 +0900</pubDate>
+      <guid isPermaLink="false">0fd9f2f4371aa31de5cf44799901d4af99dcaa19</guid>
+      <category>一般法律</category>
+    </item>
     <item>
       <title>「自死しかねない攻撃」N国党ポスターで性的デマ拡散、被害女性が現・前参院議員ら5人に“1375万円賠償請求”の理由</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 03 Aug 2026 10:19:00 +0900</pubDate>
       <guid isPermaLink="false">5f510e43aa1a02a00d9c2ded6b28c2534a4e2b20</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>「うるさい」「邪魔」アドトラックの知られざる苦労…接触事故なら“一発で”クビに？ 現役ドライバーが語る実態とは</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>人が多く集まる大きな駅の周辺などを歩いていると、側面に眩しい広告を掲げたトラックが中毒性のある音楽を流して走っている姿をよく見る。アドトラックだ。 突然現れてはどこへともなく去っていく、その大きな走る看板に「何事か」と目を奪われたことがある人も少なくないはずだ。 一方、その運転の難しさや、運転しているドライバーがどんな1日を過ごしているかなどは、あまり知られていない。 「うるさい」「邪魔」といった批判もあるアドトラック。その裏側では、ドライバーたちはどんな苦労を抱え、どのような規制やルールの下でハンドルを握っているのだろうか。 ドライバーの経験がある2名に、現場の実態を聞いた。（本文：橋本愛喜） アドトラックに使われる車両の種類は様々だが、一般的かつ最も大きなサイズなのが、4トン車の「スーパーロング」だ。 サイズは、全長12m、車幅2.4m、車高3.68mと、中型トラックの条件ギリギリであり、大型トラックとほぼ変わらない。 非常に大きい4トン車であることから、別名「お化け4トン」「バケヨン」とも呼ばれている。アドトラックを運転する人たちから聞かれるのは、このバケヨンを街中で運転する難し...</description>
-      <pubDate>Mon, 03 Aug 2026 09:59:00 +0900</pubDate>
-      <guid isPermaLink="false">e15bf76bcb4554865ad04c4340f4e9807a595e96</guid>
-      <category>行政法</category>
     </item>
   </channel>
 </rss>
