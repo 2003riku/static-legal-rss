@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 04 Sep 2026 00:40:34 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 11:20:39 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>50年前“撮り鉄”小学生がSL衝突死…「ルールを守れ」だけでは防げない&quot;注意力の限界&quot;</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>2023年6月、JR宇都宮線の蒲須坂－片岡間で、線路内に立ち入って撮影しようとした20代の男性2人により、臨時の寝台特急「カシオペア」が緊急停止した。2人は鉄道営業法違反で略式起訴され、大田原簡易裁判所は科料9000円の略式命令を出している。 近年、この種の報道が出るたび、「撮り鉄」という語に批判が集中する。だが鉄道を趣味とする人の大部分は、ルールを守って撮影を楽しんでいる。ごく一部の心ない人のこうした違法行為が、撮り鉄全体の評価を引き下げるという構図が、この問題の厄介なところだ。 では、こういったことは最近の話なのかと言うと、実はそうではない。ちょうど50年前にも、SLを写真に収めようと線路に立ち入った小学校5年生の少年が、被写体の機関車と接触して亡くなる事故が起きている。（島崎敢（近畿大学教授・安全心理学）） この日、国鉄東海道線の京都－大阪間開通100周年を記念して、記念臨時列車「京阪100年号」が運転された。牽引したのは、梅小路蒸気機関車館（現・京都鉄道博物館）で動態保存されていた蒸気機関車C57形1号機（以下、C57 1）である。下りが京都11時10分発、上りが大阪16時10...</description>
+      <pubDate>Fri, 04 Sep 2026 10:06:06 +0900</pubDate>
+      <guid isPermaLink="false">8da699abbdfefbb9adaf94cdaf913867cb4957cb</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>「24時間テレビ」マラソンに“寄付着服”批判プラカード掲げ乱入の男…“公道”でも業務妨害罪が成立するワケ【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Wed, 05 Aug 2026 10:19:00 +0900</pubDate>
       <guid isPermaLink="false">9c3f0291f21a3a7583b528a0f1ebc31ea6c68a73</guid>
       <category>一般法律</category>
-    </item>
-    <item>
-      <title>角栓ニュルッ、歯茎グラグラ…“不快な広告”苦情が急増 「マジでやめて」の声も“法規制”難しいワケ【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>毛穴からニュルッと出る角栓、グラグラと歯が抜けそうな歯茎、水虫にかかってボロボロになった足の爪、ブヨブヨにたるんだ目元――。 スマホの画面をスクロールするたびに目に飛び込んでくる、過度に強調された身体の悩みや、生理的な嫌悪感を煽る写真やイラスト、GIFアニメ。これら「気持ち悪い」「汚い」と感じさせるインターネット広告に対し、「生理的に無理すぎる」「マジでやめてくんねーかな」「本気で消えろ」など、SNS上でも拒絶反応を示す声が散見される。 こうした不満を裏付けるように、日本広告審査機構（JARO）が先月下旬に発表した2025年度の広告苦情受付状況によれば、同年度に寄せられた苦情は1万2589件に達し、設立以来の過去最多を記録した。これは、外出自粛によりネット利用が急増したコロナ禍の2020年度をも上回る数字である。 特筆すべきは、インターネット広告に関する苦情の激増だ。初めて全体の6割を占めるに至り、その内容は単なる「嘘・大げさ」といった表示への疑義だけでなく、表現そのものに対する「不快感」へとシフトしている。こうした不快な広告は、法律で規制できないのか。 JAROの報告によれば、202...</description>
-      <pubDate>Wed, 05 Aug 2026 09:59:00 +0900</pubDate>
-      <guid isPermaLink="false">2043fe65f2823c0305b2ec2f3f9761f1f544ee97</guid>
-      <category>行政法</category>
     </item>
   </channel>
 </rss>
