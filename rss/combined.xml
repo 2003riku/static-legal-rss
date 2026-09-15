@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 15 Sep 2026 11:49:05 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 01:06:26 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「“ブログ発信”理由に昇給差別」国を訴えた元裁判官が主張も、被告は“人事評価書”出さず…「格差の合理性」立証のゆくえ【第7回口頭弁論】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>元裁判官の竹内浩史氏（2025年3月31日に依願退官）が、国家公務員が勤務地（居住地ではない）に応じて受け取る「地域手当」の制度が憲法に違反することなどを理由として国を訴えた訴訟の第7回口頭弁論が、14日、名古屋地裁で開かれた。竹内元判事は本訴訟を2024年8月に提起した。 竹内氏は、弁護士として16年間活動した後、2003年に裁判官に任官。「近鉄・オリックス球団合併事件」の主任裁判官を務めるなど敏腕で知られ、2023年には、国の生活保護費減額の違法性が争われた「いのちのとりで裁判」で、減額を違法とする原告勝訴判決を行ったことでも注目された。 一方で、「日本裁判官ネットワーク」の中心メンバーとして活動し、ブログで積極的に情報発信するなど、異色の裁判官としても知られた。提訴後の2025年3月、津地方裁判所民事部の部総括判事を最後に依願退官し、現在は弁護士として活動している。 本訴訟の争点は大きく二つある。一つは、勤務地によって給与が変動する「地域手当」制度が、裁判官の報酬減額を禁じた憲法80条2項に違反するか否か。もう一つは、竹内氏が受けた「昇給・昇格差別」が違法な人事権の濫用にあたるか...</description>
+      <pubDate>Tue, 15 Sep 2026 18:46:00 +0900</pubDate>
+      <guid isPermaLink="false">b455285a3436a563e21c353f092dcec27f115d53</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>高2男子死亡で少年4人逮捕…なぜ容疑は「殺人」でなく「一緒にいた中学生への傷害」なのか【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 17 Aug 2026 10:19:00 +0900</pubDate>
       <guid isPermaLink="false">103db89b351eec7068c92e2e4b65cac6b50943ea</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>猛暑に“エアコン拒否”する高齢者も…訪問介護ヘルパーの76％が“熱中症疑い” 過酷現場のワケ</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>うだるような暑さのなか、事業所を出発する私に同僚のヘルパーから声がかかります。 深刻化する地球温暖化の中、「酷暑日」という新しい言葉も生まれ、連日のように熱中症警戒アラートが発令される夏。建設現場などでは暑さ対策や作業ルールの見直しが進められています。 しかし、介護が必要な方の自宅を訪問する私たちヘルパーは今日も「熱中症との闘い」を余儀なくされている実態があります。（ホームヘルパー・藤原るか） 都心部で働く訪問介護ヘルパーの主な移動手段は自転車です。 日差しが容赦なく降り注ぐなか、今年4月に道路交通法が厳格化し自転車も左側通行が徹底されたことで、陰のある場所を選んで走ることも難しくなりました。お日様が真上に来るお昼前後は、電線のわずかな影さえ伝って走りたくなるほどの暑さです。 前日から冷凍庫で凍らせておいたペットボトルを4～5本クーラーボックスに詰め込み、体を冷やしながら次の訪問先へと急ぐ毎日が続きます。夕方にもなればクラクラとするめまいや吐き気といった熱中症の初期症状に襲われることも珍しくありません。 当事者・事業者・研究者などで構成される「ケア社会をつくる会」が昨年実施したアンケー...</description>
-      <pubDate>Mon, 17 Aug 2026 09:59:00 +0900</pubDate>
-      <guid isPermaLink="false">bfb7e0595a84912a2c51826be7acc773b094cfc7</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
