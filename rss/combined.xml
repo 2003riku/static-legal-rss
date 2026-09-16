@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 16 Sep 2026 01:06:26 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 11:43:43 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「190m高層ビル」で歴史的景観が破壊？ “明治神宮外苑”の再開発訴訟が結審…判決の鍵握る「2つの争点」とは</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>明治神宮外苑の再開発事業をめぐり、周辺住民らが東京都による事業認可は違法だとして取り消しを求めている訴訟が9月15日、東京地裁で結審した。大多数の原告との関係で弁論が終結し、判決は2027年1月28日に言い渡される予定である。 音楽家の故・坂本龍一氏ら著名人が反対の声を上げ、超党派の議員連盟も結成されるなど、社会的な関心を集めるこの再開発計画。本訴訟ではどのような点が争われているのか。これまでの訴訟の経緯と主な争点を整理する。 本件訴訟は、ロッシェル・カップ氏をはじめとする160名以上の住民らが原告となり、東京都を被告として、2023年2月17日付の「神宮外苑地区第一種市街地再開発事業」の施行認可処分の取り消しを求めたものである。 事業者は三井不動産株式会社、明治神宮、独立行政法人日本スポーツ振興センター（JSC）、伊藤忠商事株式会社の4者。計画では、神宮球場と秩父宮ラグビー場の場所を入れ替えて建て替え、高さ190m、185mを含む複数の高層ビルを建設する。これにより、多数の樹木が伐採されることなどから、計画の発表当初より周辺住民などから強い反対の声が上がっていた。 原告らは、事業認可...</description>
+      <pubDate>Wed, 16 Sep 2026 10:17:14 +0900</pubDate>
+      <guid isPermaLink="false">9c4cda15380fedb81cba58a43bb14ff8f8afe60a</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>「“ブログ発信”理由に昇給差別」国を訴えた元裁判官が主張も、被告は“人事評価書”出さず…「格差の合理性」立証のゆくえ【第7回口頭弁論】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 17 Aug 2026 10:39:00 +0900</pubDate>
       <guid isPermaLink="false">f8c701deb7ae243423c4eb58648cd3e0709932e7</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>生活保護世帯に「エアコン購入に7万3000円」無償で補助…自治体が“独自の取り組み” 財源はどこから？</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>今年の夏も連日、息が詰まるような暑さが続いています。もはや、エアコンは事実上、すべての国民にとって、生命を維持するための最低限のインフラとなっています。生活保護受給者など、エアコンを購入する資力に乏しい人々についても例外ではありません。 しかし現状において、生活保護制度の運用のあり方は、上記のような実態に即したものとはいえません。厚生労働省の生活保護制度の運用マニュアルにおいては、今なお、エアコンを長年使って自然に故障した場合の経年劣化による買い替え費用は、公費から支給されないことになっています。 全国の自治体に問い合わせても、ほとんどの窓口からは、「国から発出された通達に明記されている通り」という杓子定規な回答が返ってきます。それでも、現場の担当職員が、通達の原則は維持しつつも、裁量の範囲内で臨機応変かつ柔軟に対応し、エアコンの買い替え費用が支給されるようにしているケースも多くみられます。 ただし、仮にエアコンの購入費用の受給が認められたとしても、金額に上限があるため、事実上、省エネ性能の劣る機種（つまり、電気代が余計にかかる機種）しか購入できないという問題があります。（行政書士・三...</description>
-      <pubDate>Mon, 17 Aug 2026 10:19:00 +0900</pubDate>
-      <guid isPermaLink="false">103db89b351eec7068c92e2e4b65cac6b50943ea</guid>
-      <category>労働法</category>
     </item>
   </channel>
 </rss>
