@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 28 Sep 2026 11:56:05 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 04:08:15 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>パート主婦「106万円未満」でも手取り減…10月から“週20時間”で社保加入へ 将来は「11人以上の企業」まで対象拡大</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>10月1日から、パートやアルバイトなど短時間労働者の社会保険（健康保険・厚生年金保険）の加入要件が変わる。 これまで、一定の条件を満たす短時間労働者が勤務先の健康保険・厚生年金に加入するには、月額賃金8万8000円以上という要件があった。年収に換算すると約106万円になることから、「106万円の壁」と呼ばれてきた。 この賃金要件が、10月から撤廃される。これにより、年収106万円未満の短時間労働者でも、ほかの条件を満たせば勤務先の社会保険に加入することになる。 これまで、厚生年金保険の被保険者数が51人以上の企業などで働く短時間労働者が勤務先の社会保険に加入するには、次の5つの条件をすべて満たす必要があった。 10月からは、このうち「月額賃金8万8000円以上」という条件がなくなる。これにより従来の賃金要件を満たさない人であっても、10月からは、ほかの条件を満たせば社会保険の加入対象となる。 新たに社会保険へ加入すると、厚生年金への加入によって将来受け取る年金額が増えるほか、健康保険の傷病手当金などの保障を受けられるようになる。一方、健康保険・厚生年金の保険料が給与から差し引かれるため...</description>
+      <pubDate>Mon, 28 Sep 2026 17:48:00 +0900</pubDate>
+      <guid isPermaLink="false">77773ec2f64ff305b4f25e02062d38cf17d76e04</guid>
+      <category>企業法</category>
+    </item>
     <item>
       <title>労基署の指導ルール変更、残業「月45時間超」でも“おとがめなし”？ 長時間労働を強要されたら…身を守る「3つの自衛策」【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Thu, 27 Aug 2026 17:59:00 +0900</pubDate>
       <guid isPermaLink="false">4e6f3e999e83113eb14b7a5c8bdf5f6d4c912a05</guid>
       <category>企業法</category>
-    </item>
-    <item>
-      <title>KDDI地図サイトで個人宅の住所・電話番号が「丸見え」…移動販売業者やコミケ参加者多数、弁護士は“法違反の懸念”指摘</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>7月10日、改正個人情報保護法が国会で成立した（17日公布）。改正法案の審議で注目されたのは、AI開発などの統計作成を目的とする場合、企業が、個人本人の同意なく、氏名、住所などからなる個人情報さらには病歴や犯罪被害歴等の「要配慮個人情報」をも含む個人データを第三者に提供することなどが可能になるという内容だ。 これを受け、「そんなことを認めて、自分のプライバシー情報が、意思に反した形で企業やAIに利用されることにならないのか？」という不安の声が上がっている。 法律の立場は、「統計」とは、大量の情報から得られる物事の傾向や性質の情報のことで、個人との紐づけはされないことが前提なので問題はないというものだ。逆にいえば、企業がこの前提を守り、意図的かそうでないかを問わず、目的外利用をしないという性善説に依存しているともいえる。 だが、一般企業にそのような信頼を寄せてよいのかは疑問である。顧客から多数の個人情報を取得している大企業においてさえ、ずさんな取り扱いによって、消費者に不利益を与える現状が放置されている実態があるからだ。（本文：友利昴） 改正個人情報保護法案の国会審議の最中、KDDIで大...</description>
-      <pubDate>Thu, 27 Aug 2026 10:31:00 +0900</pubDate>
-      <guid isPermaLink="false">0b038d09a227b83d455c85a9b09d98e3fd629962</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
