@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 07 Oct 2026 12:38:25 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 03:19:47 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「育休届？ビリビリに破いてやる」「俺の時代は育休なんてなかった」老舗ブライダル企業で役員らがハラスメント、男性社員が提訴</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「育休届？そんなもん俺に出したらビリビリに破いてやる。社員は働かないと！」——。老舗ブライダル企業で働く男性フォトグラファーのAさんは、育児休業を申し出た後、接待ゴルフ中に会社の役員からこう言われたという。 Aさんは10月7日、社長らの一連の発言は育休取得を妨げる「パタニティハラスメント」（パタハラ、男性の育児参加を理由とする嫌がらせ）にあたるとして、勤務先の茂木商事（東京都新宿区）に220万円の損害賠償を求め、東京地裁に提訴した。同日には都内で会見も開いている。 会社側は発言の事実を認める一方で、「ハラスメントには当たらない」と主張している。 1903年創業の茂木商事は、ウエディングコスチューム事業を主力として「innocently（イノセントリー）」（新宿、横浜、大宮、新潟、仙台など17店舗）を展開している。社員数は約220名。Aさんは2018年に入社し、現在は事業開発室で撮影部門のリーダーを務めている。 訴状によると、Aさんは2023年4月に妻の妊娠を会社に報告し、約1年間の育休を計画した。同年5月中旬の打ち合わせでは、代表取締役社長と直属の上司から「え、1年も育休とるの？その間...</description>
+      <pubDate>Wed, 07 Oct 2026 17:57:00 +0900</pubDate>
+      <guid isPermaLink="false">0ef5dddc867ead77904cc5778fd0003c918633fd</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>しゃぶ葉「配膳ロボ」から“国産牛”横取りが物議…食べ放題でも“店への窃盗罪”が成立し得るワケ【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Sat, 05 Sep 2026 09:58:00 +0900</pubDate>
       <guid isPermaLink="false">cfa36fed0867aaa9f2ae5d68eec33a9150e48080</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>養育費取り決め後も「6割不払い」ひとり親貧困率45％…改正民法の新制度でどう救済？【9月5日、司法書士による無料相談会】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「養育費の支払いが止まっている」。離婚した元パートナーからの養育費をめぐり、悲痛な声が司法書士に寄せられている。 こども家庭庁の調査では、養育費を「現在も受給している」母子世帯はわずか28.1％（父子世帯で8.7％）。ひとり親世帯の貧困率が44.7％に達する背景には、こうした養育費の不払い問題が横たわる。 この状況を改善するため、今年4月1日に改正民法が施行され、養育費の取り決めがなくても請求できる「法定養育費」などの新制度が導入された。しかし、制度は十分に知られておらず、当事者の不安は解消されていない。 全国青年司法書士協議会（全青司）は5日、電話による「子どものための養育費相談会」を全国で実施し、こうした悩みに応える。（ライター・榎園哲哉） 離婚後も、父母双方が子どもの養育について責任を負うことは、子の健やかな成長にとって不可欠とされる。養育費は、子どもが経済的に安定した生活を送り、教育の機会を得るための重要な権利だ。 しかし、厚生労働省の「令和7年国民生活基礎調査」によると、子どもの貧困率（17歳以下）は11.0％で、子どもの9人に1人が貧困状態におかれている。特に、母子家庭など...</description>
-      <pubDate>Fri, 04 Sep 2026 18:18:00 +0900</pubDate>
-      <guid isPermaLink="false">13ca2d30386fa45b5d2b4d326bae2739a12fb3e1</guid>
-      <category>民事法</category>
     </item>
   </channel>
 </rss>
