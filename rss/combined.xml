@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 13 Oct 2026 13:52:08 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 03:48:13 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「休めば職場が回らない」連日深夜残業で過労死した49歳夫…政府の裁量労働制“拡大”方針に遺族が「順番が逆」と訴える理由</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「あの日の朝の『行ってきます』という夫の声を、今でも忘れることはできません」――。2010年に夫を過労死で亡くした小池江利さん（大阪過労死を考える家族の会）は、集会の壇上でこう語った。 10月9日、日本労働弁護団は都内で裁量労働制の拡大に反対する集会を開催。過労死遺族や労働団体の関係者ら約270人が参加した。 小池さんの夫は、社会福祉法人が運営する介護施設で事務管理室長を務めていた。施設の業務に加え、週1〜2回の宿直勤務もこなしていたという。法人が事業を広げる一方、職員が辞めても補充はなく、介護保険の請求業務まで夫が担うようになった。 亡くなる数年前から帰宅は連日深夜に及び、休日出勤も常態化していた。 「夫は昼休みになると『車で寝てくる』と言って、通勤用の自分の車で仮眠することが何度もあったそうです。睡眠不足が慢性化していました」（小池さん） 体を心配する小池さんに、夫は「自分が休めば施設が立ち行かなくなる」と話していたが、2010年10月6日、残業中に倒れ、くも膜下出血で意識が戻らないまま、同13日に49歳で亡くなった。 労働基準監督署は小池さんの夫の死を労災と認定。小池さんは201...</description>
+      <pubDate>Tue, 13 Oct 2026 17:38:00 +0900</pubDate>
+      <guid isPermaLink="false">9c2a60ba48204141a889ae085289e18939b4816c</guid>
+      <category>労働法</category>
+    </item>
     <item>
       <title>「年収が日本人平均以上」永住審査の基準改定、手数料も1万円⇒20万円へ…国会審議を経ない“新ガイドライン”の問題点【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Thu, 10 Sep 2026 09:18:00 +0900</pubDate>
       <guid isPermaLink="false">bbf61d69ebd35111fc5515165c5b0d06560945d5</guid>
       <category>知的財産法</category>
-    </item>
-    <item>
-      <title>くら寿司“全品10％オフ”適用漏れ、レシート持参で返金へ…「クレカ・電子マネー決済」の対応は？【30日まで受付】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>6日と7日に実施された、大手回転寿司チェーン「くら寿司」の全品10％割引キャンペーンをめぐり、SNS上で「割引が適用されなかった」とする声が相次いでいた。 利用者からは、「10％割引を利用するために来店したものの、会計時に割引されていなかった」「店員に申し出たところ、申告が必要だと説明された」といった声が投稿されていた。 一方、「会計時に店員から割引用のバーコードを提示された」とする声もあり、店舗によって対応に違いがあったのではないかとの指摘も出ていた。 弁護士JPニュース編集部がくら寿司株式会社（本社：大阪府堺市）の広報部に問い合わせたところ、「HPにアップいたしましたリリースの内容を回答とします」との回答があった。 くら寿司は9日、「9月6日・7日の10％割引の適用漏れに関するお詫びと返金対応のお知らせ」とのリリースを公式サイトで発表。 同リリースによると、今回の10％割引は、コラボキャンペーンの中止に伴い、6日と7日の2日間、来店したすべての利用者を対象として実施。 当初は、対象期間中に来店したすべての利用者に一律で10％割引を適用する運用だったという。しかし、一部店舗で案内が十...</description>
-      <pubDate>Wed, 09 Sep 2026 19:38:32 +0900</pubDate>
-      <guid isPermaLink="false">fa01518a190509259aa4a8e3e213b06d5e3bac40</guid>
-      <category>企業法</category>
     </item>
   </channel>
 </rss>
