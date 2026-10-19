@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 19 Oct 2026 11:41:54 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 03:08:59 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>米の「ICC制裁」職員900人超に影響、うち“日本人約10人”…赤根所長の元教え子ら「政府は守るべき」17万人署名提出</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>米国政府による国際刑事裁判所（ICC、赤根智子所長）への制裁決定を受け、3団体（JIRoL、ヒューマンライツ・ナウ、ヒューマン・ライツ・ウォッチ）が10月16日、共同で記者会見を開催。3団体は口をそろえ、ICCを支える主要国である日本が前面に立ち、制裁からICCを守るための具体的なアクションを起こすよう求めた。（ライター・花沢香里奈） ICCは、2002年に設立された常設の国際刑事法廷である。国を対象とする国際司法裁判所（ICJ）とは異なり、集団殺害犯罪、人道に対する犯罪、戦争犯罪、侵略犯罪といった重大犯罪について、個人の刑事責任を追及する点に特徴がある。 今回の事態に至るまで、米国とICCの対立は続いてきた。2025年2月、米・トランプ大統領はICCに対する制裁を可能にする大統領令を発出。これに基づき、今年8月には日本人の赤根智子ICC所長らに対する「個人への制裁」が始まった。そして10月9日、米国政府はICCの組織そのものを制裁対象に指定した。 ICCはガザ地区での重大犯罪を理由に、イスラエルのネタニヤフ首相らへ逮捕状を発付しているが、トランプ政権は同国に対する捜査に強く反発してお...</description>
+      <pubDate>Mon, 19 Oct 2026 17:38:00 +0900</pubDate>
+      <guid isPermaLink="false">d0ab00e16cff61ef938758c2f527fc47df7280a7</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>「土下座の強要」「長時間の罵声」に耐える必要なし…10月から法改正、労働者がカスハラから身を守る“対応策”【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Wed, 16 Sep 2026 18:57:33 +0900</pubDate>
       <guid isPermaLink="false">e55db241af7f0ed8e5ccd6dfaa3e0a14e79872b5</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>「盗品の売買手助け」メルカリに批判殺到も…くら寿司“ちいかわ不正流出”で罪に問えぬ理由【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>回転寿司チェーン「くら寿司」と大人気キャラクター「ちいかわ」のコラボキャンペーンが、従業員による景品の不正な持ち出し・流出を理由に中止に追い込まれた。 キャンペーン開始前からフリマアプリ「メルカリ」に景品が出品されていたことから、SNSでは「盗品と知りながら売買を手助けした」として、メルカリに「盗品等有償処分あっせん罪」が成立するのではないかという指摘もなされた。 盗品が疑われる商品に売買の場を提供したフリマアプリ運営会社が、何らかの罪に問われる可能性はあるのだろうか。 今回の騒動の発端は、くら寿司のキャンペーン景品である「ちいかわ」グッズが、キャンペーン開始前からメルカリに多数出品されていたことだ。 くら寿司店頭で8月21日に始まった「ビッくらポン！」の景品について、「何皿食べてもオリジナルフィギュアだけが出ない」という不満の声が上がる一方で、メルカリ上では同一人物による全種類セットなどが出品されていた。 さらに9月4日開始予定だった「オリジナル湯呑み」の配布キャンペーンでも、前日から“コンプリートセット”が出品される事態となった。疑ったユーザーが出品者にコメントすると、「父親がくら...</description>
-      <pubDate>Wed, 16 Sep 2026 17:58:00 +0900</pubDate>
-      <guid isPermaLink="false">8b51f9f26437a9e38b027029445ad907e14a09e0</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
