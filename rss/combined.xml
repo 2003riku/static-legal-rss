@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 23 Oct 2026 01:28:48 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 11:50:57 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>証券会社で“インサイダー情報”が「誰でも見放題」…社員が見かねて“内部通報”したら1週間後に部署ごと「銀行に乗っ取られた」ワケ</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「欲望を売買する仕事」の最前線で、男は何を見たのか――。『証券マンひりひり日記』（三五館シンシャ）は、N証券に25年勤務した日野山大氏が、証券業界の華々しい裏側に潜む暗部と、自らの波乱に満ちたサラリーマン人生をありのままに明かした手記だ。 正義感を貫き不正を黙認できず、内部通報や公益通報を重ねた結果、左遷され、最終的には会社を去ることとなった日野山氏。その「ひりひり」とした葛藤の記録が生々しくつづられている。 今回は、若手社員にとって憧れの部署・M&amp;A（投資銀行）部門に配属された日野山氏が、杜撰な情報管理を目の当たりにし、内部告発したエピソードを紹介する。 日野山氏の告発によって不正は明らかにされ、正常な管理が行われることになった。しかし、告発が結局社内の「支配権争い」に利用されていたということを知り…。 ※この記事は日野山大氏の書籍『証券マンひりひり日記』（三五館シンシャ）より一部を抜粋・構成したものです。 N証券は1998年から外資のC銀行グループと約10年にわたり提携関係を結んでいた。しかし、2008年のリーマン・ショックを契機に提携を解消することとなり、N証券は財閥系のM銀行を...</description>
+      <pubDate>Fri, 23 Oct 2026 09:57:00 +0900</pubDate>
+      <guid isPermaLink="false">f149bebe586bf30edc6b8a2388ee0619477b2f32</guid>
+      <category>一般法律</category>
+    </item>
     <item>
       <title>「学校の名誉のため」いじめ隠蔽…“重大事態”1404件で過去最多、大津事件から15年「現場が変わらない」遺族代理弁護士が指摘するワケ</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Fri, 18 Sep 2026 17:48:00 +0900</pubDate>
       <guid isPermaLink="false">bb438fa7be98a241fe0add206213f1fd3dbe753c</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>病院のロキソニン湿布38円が“市販価格”の1800円に…「ないと仕事にならない」国の“配慮”も患者の99％が対象外</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「配慮の必要がない患者など、どこにもいません。この薬があるからこそ働ける」——。34歳で関節リウマチを発症し、30年間治療を続けながら建設現場で働く東京土建一般労働組合の渡辺義久氏は、そう訴える。 痛みを抑えるステロイド剤の副作用で骨粗しょう症になり、その腰痛をロキソニン湿布などでしのぎながらタイル工事の仕事を続けてきた。 その湿布や痛み止めなどのOTC類似薬（医療機関で処方されるが市販薬とよく似た成分の薬）が一部保険外療養となり、来年3月から“値上がり”する。 渡辺氏ら患者や医師でつくる団体は9月17日、都内で集会を開き、制度の中止を求める11万筆の署名を厚労省に提出した。 渡辺氏が使うロキソニンテープ（湿布）は、病院で処方されれば7枚入り1袋が3割負担で38円ほど。ところが同じ成分の市販薬は、ドラッグストアで7枚約1800円する。その差は50倍近い。リウマチの自己注射なども含め、年間の医療費は40万～50万円にのぼるという。 同じように痛みと向き合いながら働く人は多い。集会に参加した介護福祉士の70代女性は、脊柱管狭窄症と変形性関節症を抱え、週3日ほどロキソニンを飲みながら養護施設...</description>
-      <pubDate>Fri, 18 Sep 2026 17:33:28 +0900</pubDate>
-      <guid isPermaLink="false">3f4c91e6afe1d677df17336759a2c377a68d40c4</guid>
-      <category>労働法</category>
     </item>
   </channel>
 </rss>
