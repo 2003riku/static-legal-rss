@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 26 Oct 2026 11:37:24 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 03:06:00 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>診断書出したのに「無断欠勤」扱いされ解雇…パワハラで適応障害の男性に“労災”認定、カギは“申請前”の主治医意見書</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>適応障害と診断され、診断書を出して休んでいた男性のもとに、会社から1通の書面が届いた。「出勤要請及び解雇通知書」。休業は「無断欠勤」とされ、出社しなければ「退職の意思を示したものと看做（みな）します」と記されていたという。診断を伝えた際、人事担当者からは「辞めたほうがいいんじゃないの」と言われていた。 サービス業の会社でフロント業務に就いていたこの男性について、相模原労働基準監督署長は10月9日付で、パワーハラスメントなどによる適応障害を労災と認め、休業補償給付などの支給を決定した。23日午後、男性の代理人弁護士らが都内で会見を開き、明らかにした。 弁護団によれば、決め手となったのは、労災申請前に準備した主治医の意見書だった。通例となっている労働局の医師による検討を省き、上記意見書のみを根拠に判断が行われたという。男性は弁護団を通じ、「本当に辛い毎日でした。同じような思いをしている方はたくさんいると思います。勇気を出して一歩を踏み出してほしいです」とのコメントを寄せた。 弁護団によると、男性は2023年6月に正社員として雇用され、8月に研修を経て店舗に配属された。9月には先輩社員から「...</description>
+      <pubDate>Mon, 26 Oct 2026 17:38:00 +0900</pubDate>
+      <guid isPermaLink="false">33598aac0132ec080561729dc398a279aba402ee</guid>
+      <category>労働法</category>
+    </item>
     <item>
       <title>生活保護業務に“AI”導入、調査が「1日→20分」に…それでも“不正検知”を任せてはいけない理由</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Mon, 21 Sep 2026 10:18:00 +0900</pubDate>
       <guid isPermaLink="false">12f8d1da17645fd58e02679d6482211b7eb04911</guid>
       <category>民事法</category>
-    </item>
-    <item>
-      <title>「3度死んで2度蘇った」受刑者の足が溶け…遺体を蹴り続けた医務課長を襲った「直立死」の謎【刑務所の怪談】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>怪談師・怪談作家として全国を歩き、実際に収監を経験した人々や刑務官を取材しながら“塀の中の実話怪談”を蒐集してきた正木信太郎氏。 その正木氏が聞き集めたエピソードをまとめたのが、書籍『刑務所怪談 刑務所で起きた身の毛がよだつ30の怪異』（彩図社）だ。 舞台となる施設や体験者の人物像はプライバシーに配慮してぼかされているが、語られる出来事の根幹は、確かな取材に基づいた事実だという。 第3回で正木氏が書き留めるのは、ある元刑務官が語った、いまは使われていない刑務所の医療病棟にまつわる怪異である。 深夜、誰もいないはずの廊下に、革靴の音が響く――。だが、受刑者に革靴は許されていないという。 ※この記事は正木信太郎氏の書籍『刑務所怪談』（彩図社）より一部抜粋・構成。 ある刑務所には、病を抱えた受刑者を収容する医療病棟が設けられていた。 今は使われていないその棟に、足音の噂が残っている。 深夜、誰もいないはずの廊下に、革靴の踵（かかと）がリノリウム（※）の床を打つ音が響く。硬く、乾いた、迷いのない音だ。 ※亜麻仁油など天然素材を使用した建材。床や天板などに用いられる。 巡回中の刑務官が振り返って...</description>
-      <pubDate>Mon, 21 Sep 2026 09:58:00 +0900</pubDate>
-      <guid isPermaLink="false">3729d539404a7863c7ca7f6140b41d675b3a2d9e</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
