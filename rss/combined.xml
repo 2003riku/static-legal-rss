@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 27 Oct 2026 03:06:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 12:11:53 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>マンション11階から飛び降り、通行人女性“巻き添え死”…遺族が「殺人罪」主張 “殺意”認定の分かれ目とは【弁護士解説】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>今年7月に名古屋市中区の繁華街で発生した、マンションの11階から飛び降りた男性に巻き込まれ、歩道を歩いていた女性が死亡した事件で、被疑者の男性は重過失致死罪で送検された。 一方、被害者の父親は「未必の故意」による殺人罪の適用を求め、オンラインでの署名活動を開始した。10月26日時点で約4万8000人の署名が集まるなど、大きな反響を呼んでいる。 被疑者は一時意識不明の重体となったが回復し、逮捕・送検後、現在は事件当時の精神状態や刑事責任能力を調べるため鑑定留置されている。 本件のようなケースで、殺人罪の成否を分けるポイントはどこにあるのか。刑事弁護の専門家である岡本裕明弁護士（弁護士法人ダーウィン法律事務所代表）に聞いた。 法的に見て、マンションからの飛び降り自殺をはかる行為は殺人罪に問われ得るのだろうか。 岡本弁護士はまず、殺人罪が成立するには、その行為が同罪の「実行行為」にあたると評価できなければならないと説明する。 岡本弁護士：「実行行為は、特定の犯罪を構成する人間の行為を意味する概念です。 刑罰を科す対象は人間の行為です。何か悪いことを考えていただけでは犯罪にはなりません。そこで...</description>
+      <pubDate>Tue, 27 Oct 2026 09:58:00 +0900</pubDate>
+      <guid isPermaLink="false">f4cce93cbed08b093028c0961791828187dfc5fb</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>診断書出したのに「無断欠勤」扱いされ解雇…パワハラで適応障害の男性に“労災”認定、カギは“申請前”の主治医意見書</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Tue, 22 Sep 2026 07:08:00 +0900</pubDate>
       <guid isPermaLink="false">393a328e9ad742934c4749afb1a70eb85a553b40</guid>
       <category>憲法</category>
-    </item>
-    <item>
-      <title>「全盛期は年収2億円」トレンディ俳優・布施博の事務所が破産、“資産ゼロ”本人の「返済義務」は？【弁護士解説】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>俳優の布施博（68）が代表取締役を務める芸能プロダクション「有限会社 馬力屋」が、東京地裁立川支部から破産手続き開始決定を受けたと、「週刊女性プライム」が報じた。 かつてトレンディドラマで一世を風靡し、情報バラエティー番組「伊東家の食卓」などにも出演していた人気俳優に何があったのか。そして会社の破産は本人の今後にどう影響を及ぼすのか。（ライター・中原慶一） 布施といえば、ドラマ「抱きしめたい！」（1988年＝フジテレビ系）、「ずっとあなたが好きだった」（1992年＝TBS系）、「スウィート・ホーム」（1994年＝TBS）などに出演し、バブル時代を象徴する“トレンディ俳優”のひとりだった。前出の記事では、“全盛期には年収が2億円を下らず、3億円以上の豪邸を購入し、2年で借金も返済できた”と、その稼ぎっぷりを伝えている。 1992年に女優の古村比呂と結婚し、3人の子どもに恵まれたが、2009年に離婚。その後、2010年代後半、布施が50代後半に差し掛かった頃から、その人生に暗雲が垂れ込める。 「認知症の実母を自宅で介護しており、仕事にも支障が出ていることを2016年にテレビ番組で初めて明か...</description>
-      <pubDate>Mon, 21 Sep 2026 10:18:00 +0900</pubDate>
-      <guid isPermaLink="false">12f8d1da17645fd58e02679d6482211b7eb04911</guid>
-      <category>民事法</category>
     </item>
   </channel>
 </rss>
