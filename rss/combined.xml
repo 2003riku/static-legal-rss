@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 28 Oct 2026 12:24:25 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 02:49:35 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>医師が「働ける」と診断も休職させられ無給放置→“自然退職”扱い…35万社導入“予約システム運営会社”を20代社員が提訴</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>「なぜ働き続けたいと願っているだけなのに、ここまで追い詰められなければならないのか」——。主治医から「就労可能」との見解を得ていたにもかかわらず、会社から無給の休職を命じられ、3か月後に「自然退職」とされた20代の男性は、記者会見でそう声を絞り出した。 35万社以上が導入する、国内最大級のオンライン予約システム「RESERVA」の開発・運営元である、株式会社コントロールテクノロジー（東京都港区）で働くHさんは、休職命令と退職扱いは無効だとして27日、同社を相手取り、労働契約上の地位確認などを求める訴訟を東京地裁に提起し、同日、記者会見を行った。 原告側は賃金として2026年5月から判決確定まで毎月32万5370円、パワーハラスメントなどへの慰謝料を含む損害賠償として209万円、減額された賞与の未払い分として12万円などを支払うよう求めている。 また、Hさんが加入する労働組合「ITワーカーズ・ユニオン​（首都圏青年ユニオンIT労働者分会）」は26日、東京都労働委員会に不当労働行為の救済を申し立てた。 訴状によると、Hさんは2023年4月に入社。予約システムに新機能を追加する際の要件定義な...</description>
+      <pubDate>Wed, 28 Oct 2026 17:38:00 +0900</pubDate>
+      <guid isPermaLink="false">8c68b121ff1a415780609229fd6097e9197aa072</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>年金が14年間で“実質1割減”、月10万円未満が過半数…「働かなければ生活できない」受給者ら訴え</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Wed, 23 Sep 2026 10:39:00 +0900</pubDate>
       <guid isPermaLink="false">fdba9759bf780c9c25518c4ebf96969c3b25d488</guid>
       <category>企業法</category>
-    </item>
-    <item>
-      <title>「なんでお前が知ってる」“死んだ受刑者”のクセを完璧に再現、“隠したメモ”の場所までピタリ当てた“50代の新入り男”の正体【刑務所の怪談】</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>怪談師・怪談作家として全国を歩き、実際に収監を経験した人々や刑務官を取材しながら“塀の中の実話怪談”を蒐集してきた正木信太郎氏。 その正木氏が聞き集めたエピソードをまとめたのが、書籍『刑務所怪談 刑務所で起きた身の毛がよだつ30の怪異』（彩図社）だ。 舞台となる施設や体験者の人物像はプライバシーに配慮してぼかされているが、語られる出来事の根幹は、確かな取材に基づいた事実だという。 第5回で正木氏が書き留めるのは、重い罪を犯した長期受刑者が集まる“LB級刑務所”の、ある雑居房で起きた出来事だ。 老人ばかりの房で、病死した河合に代わり、50代の新人が移送されてきた。古株たちは退屈しのぎに、新人を死んだ河合の“身代わり”に仕立て始めるが、やがて新人は、面識すらないはずの河合そっくりに変わっていきーー。 ※この記事は正木信太郎氏の書籍『刑務所怪談』（彩図社）より一部抜粋・構成。 LB級と呼ばれる特殊な区分がある。Lはロング、すなわち長期受刑者。Bは犯罪傾向が進んでいる者、いわゆる裏社会の人間や再犯者を指す記号だ。LB級刑務所とは、重い罪を犯し、果てしない時間を塀の中で過ごす男たちが吹き溜まる場...</description>
-      <pubDate>Wed, 23 Sep 2026 10:18:00 +0900</pubDate>
-      <guid isPermaLink="false">7d432fca4f5cd0c13382ec8b96e5fb60d1b9fdae</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
