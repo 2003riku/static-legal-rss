@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 13 Nov 2026 13:28:31 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 04:06:16 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Microsoft 365障害で“納期遅延”…「メールが見られなかった」で許されるか？ “法的責任”を問われる境界線【弁護士解説】</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>取引先からの返信期限が今日に迫っているのに、メールソフトの「Outlook」が使えない——。 2026年11月13日未明（日本時間）以降、米Microsoftのクラウドサービス「Microsoft 365」で世界的な障害が発生し、「Outlook」でメールにアクセスできない、「Microsoft Teams」で連絡が取れないといった影響が広がった。 もし、この障害のせいで重要な契約の期限に間に合わなかったり、納品が遅れたりした場合、法的な責任は誰が負うのだろうか。「メールが見られなかった」という言い分は、取引先に対して通用するのだろうか。 ビジネスの根幹を揺るがしかねないこの問題について、企業法務の対応が多い荒川香遥弁護士（弁護士法人ダーウィン法律事務所代表）に聞いた。 まず、現在起きている障害の概要を、公表されている情報から整理する。 Microsoftによると、今回の障害はアメリカ時間の11月12日に発生した。日本時間13日未明から、企業向けクラウドサービス「Microsoft 365」のメールサービス「Exchange Online」などで接続できない状態が続いている。 これによ...</description>
+      <pubDate>Fri, 13 Nov 2026 13:47:00 +0900</pubDate>
+      <guid isPermaLink="false">db4daa637715c26a1df041bb0150dbdc7b17b061</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>「ダルメシアン」が84歳女性に全治5か月の重傷 警察が複数回“指導”も…飼い主に「5年以下の拘禁刑」の可能性【弁護士解説】</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Wed, 07 Oct 2026 09:58:00 +0900</pubDate>
       <guid isPermaLink="false">f1db2203577d61b9bc030e2f7dae1b80e6f30538</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>「Nスペでデタラメはやらない」はずが…NHK戦後80年ドラマで祖父を“史実と真逆”に描かれ提訴、元駐仏大使が「死後50年の名誉」争う理由</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「NHKアニメもドラマもやるが、Nスペでデタラメはやらない」——。原告代理人の梓澤（あずさわ）和幸弁護士は会見でそう語った。報道・教養番組として知られるNHKスペシャルのドラマで、祖父を“史実と真逆”の人物として描かれた。そう訴えているのが、元駐フランス大使の飯村豊さんだ。 飯村さんの祖父は日米開戦前に「日本必敗」を予測した総力戦研究所の所長・飯村穣（じょう）。飯村さんは記者を前に、祖父への思いを次のように語った。 「毎晩、祖父の横に寝かされて、寝物語に戦争の話を聞いた。それが私の人格の一部になっている」 亡くなった祖父や父が、テレビドラマで実像とかけ離れた人物として描かれたら。しかも相手から“80年以上前の話”“死後50年も経っている”と反論されたら——。遺族の思いは、どこまで法律で守られるのか。 10月5日、東京地裁でNHKなどを相手取った名誉毀損訴訟の第4回口頭弁論が開かれ、原告の飯村さんは、弁護団とともに都内で会見した。 問題の番組は、2025年8月16日・17日に放送されたNHKスペシャル「シミュレーション〜昭和16年夏の敗戦〜」。石井裕也監督が脚本・演出を手がけ、所長は「板...</description>
-      <pubDate>Tue, 06 Oct 2026 17:38:00 +0900</pubDate>
-      <guid isPermaLink="false">391e5e031534badaf73620f6731cef4f9c190e6e</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
