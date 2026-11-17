@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 17 Nov 2026 14:59:41 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 05:23:00 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>「亡くなるの待っているよう」原告8人中2人が判決前に死亡 新潟水俣病“全員認定”の地裁判決に県と市が控訴、環境大臣も訴訟参加</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>まだ何年も争い続けるつもりなのでしょうか―。 新潟水俣病の患者認定を求めた8人全員について、認定を命じた新潟地裁の判決。この判決を不服として、新潟県と新潟市が控訴した裁判の第1回口頭弁論が17日、東京高裁で開かれた。 新潟水俣病は1965年の公式確認から60年以上がたった今も、患者の認定をめぐる争いが続く。原告8人のうち2人はすでに亡くなり、地裁判決を聞くことはなかった。 時間的猶予が失われていく中、原告からは「まだ何年も争い続けるつもりなのでしょうか。早く認めてほしい」「亡くなるの待っているよう」と声が上がり、原告側の弁護団は「これ以上、裁判を長引かせないでほしい」と訴える。 新潟水俣病は旧昭和電工の工場から阿賀野川に排出されたメチル水銀が原因で発生した。汚染された魚を食べた住民らに、手足のしびれなどの健康被害が生じている。 原告8人は新潟県や新潟市に水俣病の認定を申請したものの、認められなかった。2019年2月に5人が新潟地裁に提訴し、その後3人が加わった。認定申請の棄却処分を取り消し、患者と認定するよう求めた。 提訴から7年がたった今年3月12日、新潟地裁は8人全員について新潟県...</description>
+      <pubDate>Tue, 17 Nov 2026 18:05:00 +0900</pubDate>
+      <guid isPermaLink="false">814fc3f38d4c14d442adf4e6d6b2574ab6e9038b</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>「長男が7キロ痩せた」給食ない“長期休み”に食事減らすひとり親家庭の困窮 背景に“養育費不払い7割”も…NPO調査で判明</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Sat, 10 Oct 2026 10:18:00 +0900</pubDate>
       <guid isPermaLink="false">1f82e9846f6df6f772f4fd3ea6dc44a447f97078</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>「印鑑だけ押しといて」証券会社で保険の「無資格販売」横行…労組へ通報→会社へ“筒抜け”で「冷遇」されたワケ</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「欲望を売買する仕事」の最前線で、男は何を見たのか――。『証券マンひりひり日記』（三五館シンシャ）は、N証券に25年勤務した日野山大氏が、証券業界の華々しい裏側に潜む暗部と、自らの波乱に満ちたサラリーマン人生をありのままに明かした手記だ。 正義感を貫き不正を黙認できず、内部通報や公益通報を重ねた結果、左遷され、最終的には会社を去ることとなった著者。その「ひりひり」とした葛藤の記録が生々しくつづられている。 今回は、著者が社内で公然と行われている不正を見過ごすことができず内部告発した結果、その身になにが起こったのかが、克明に描かれている。（第2回／連載全5回） ※この記事は日野山大氏の書籍『証券マンひりひり日記』（三五館シンシャ）より一部を抜粋・構成したものです。 東京の蒲田支店に勤務していた時のことである。私は房総半島のN子夫人を担当していた。毎月「初日営業」には直接訪問していたが、Y支店長はそれを効率化の対象にしようとした。 「毎月わざわざ房総くんだりまで行って何時間使うつもりだ。その往復時間で新規にどれだけアプローチできる！？ わざわざ顔出さなくても逃げるわけじゃない。時間の無駄だ...</description>
-      <pubDate>Sat, 10 Oct 2026 09:58:00 +0900</pubDate>
-      <guid isPermaLink="false">60a8a5d655ce50089437928205d06717546df200</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
