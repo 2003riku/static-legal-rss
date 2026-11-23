@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Nov 2026 03:59:15 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 14:03:26 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>内部通報者への報復解雇・懲戒処分に「3000万円以下の罰金」、“犯人捜し”も明確に禁止する改正法が12月1日施行</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>12月1日から改正公益通報者保護法が施行される。 同法は2004年に制定され、2006年に施行。また2020年の改正（2022年施行）では従業員301人以上の事業者に内部通報の体制整備が義務づけられた。 ――しかし、2022年以降も内部通報者に対する「追い出し部屋」への配置転換といった報復人事が後を絶たず、通報をためらう人が少なくなかった。 制度は整えられても、通報者を十分に守れていなかった。つまり法律が十分に機能しているとは到底言い難い状況が、長く続いていたのだ。 今回の改正で何が変わり、企業や労働者は何に備えるべきなのか。（ライター：岩田いく実） 「犯人捜し」も「報復」も止められなかった現行法 これまでの公益通報者保護法には、通報者への報復に対する直接の罰則がなかった。 内部通報を理由に不当な処分を受けた人は民事訴訟で争わざるを得ないケースもあり、しかも通報と処分の因果関係は通報者自身が立証する必要があった。通報者にとって重い負担となり得る仕組みだったのだ。 兵庫県では2024年3月、知事らに関する告発文書が出回り、県は作成者を特定して懲戒処分とした。告発した元県民局長は同年7月に...</description>
+      <pubDate>Mon, 23 Nov 2026 10:17:00 +0900</pubDate>
+      <guid isPermaLink="false">aa5e661cff1a4da939af15a3e4fe63501e23ffb8</guid>
+      <category>民事法</category>
+    </item>
     <item>
       <title>生活保護受給の小説家が“断筆宣言”「全額取り上げられるのと同じ」 印税が入っても保護費から引かれ1円も残らず…「勤労控除」制度の課題</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Fri, 16 Oct 2026 18:18:00 +0900</pubDate>
       <guid isPermaLink="false">1069d452aa9a88cfe2320c2729b7a37a13d51e0c</guid>
       <category>労働法</category>
-    </item>
-    <item>
-      <title>精巣がんで23歳受刑者が死亡…初診が「精神科医」、“適切な医療”受けられず 国が不備認め遺族と和解</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「今回の裁判は、息子の遺志を継いで起こしました」――。服役中に精巣がんが見つかり、その後23歳で亡くなった男性（以下「Aさん」）の母親は、会見でそう語った。 Aさんの死亡をめぐり、刑事施設で適切な医療を受けられなかったとして、遺族が国に損害賠償を求めた国家賠償請求訴訟の控訴審（東京高裁）で15日、和解が成立。 国は、Aさんに対する刑務所内での医療に「社会一般の保健衛生及び医療の水準に照らし適切なものではない点があった」ことを認め、Aさんの母親らに解決金350万円を支払うこととされた。 Aさんの母親と代理人弁護士らは同日、都内で記者会見を開いた。 体の異変を訴えても、すぐには医師に診てもらえない――。弁護団は、刑務所の中では外の社会なら当たり前の受診にさえ高い壁があると訴えている。 訴状などによると、Aさんは2019年10月ごろ、さいたま拘置支所に収容されていたときに精巣付近のしこりに気づいた。 この症状についてAさんが初めて医師の診察を受けたのは、2020年1月7日だった。精神科を専門とする医師が陰嚢（いんのう）水腫を疑い、非常勤の外科医に評価を依頼した。外科医は同月9日、陰嚢に針を刺...</description>
-      <pubDate>Fri, 16 Oct 2026 17:58:00 +0900</pubDate>
-      <guid isPermaLink="false">2745f364aa777399a4f180bd6d8078f6ffa0a2c2</guid>
-      <category>刑事法</category>
     </item>
   </channel>
 </rss>
