@@ -5,9 +5,17 @@
     <link>https://2003riku.github.io/static-legal-rss/</link>
     <description>複数の法律関連サイトから取得した最新ニュースを統合配信</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 25 Nov 2026 06:53:07 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 15:23:25 +0900</lastBuildDate>
     <generator>Static Legal RSS Tool</generator>
     <atom:link href="https://2003riku.github.io/static-legal-rss/rss/combined.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>生成AIで“自然な日本語”の詐欺サイト増加、約1億7000万円被害で逮捕者も…デジタル世代をも欺く手口への対処法</title>
+      <link>https://2003riku.github.io/static-legal-rss/</link>
+      <description>生成AIを活用して偽の電子ギフトカード買い取りサイトを2020年ごろから作成し、利用権をだまし取ったとして、11月中旬、東京都の40代の自称ミュージシャンが詐欺の疑いで京都府警に逮捕された。 報道によれば、だまし取ったギフトカードの額面は約1億7000万円にのぼったとみられる。一方、そのコード番号をフリマサイトなどで売却して得た金額は約1億4000万円だった。また、買い取り代金を支払っていなかったケースが大半を占めるという。 偽サイトを使って物品の買い取りや販売をうたい、金銭をだまし取る詐欺行為は、近年目に見えて増えている。生成AIを利用して偽のサイトを自動作成し、短期間で金品や個人情報をだまし取ってはサイトを閉鎖するという、いわゆるヒットエンドラン型の手口だ。 かつての詐欺メールや詐欺サイトは、「不自然な日本語の言い回し」が見分ける手掛かりになることも多かった。しかし、生成AIの普及・発達によって、そうした違和感ある表現は以前より見つけにくくなっている。 皮肉なことに、日本語を自然に表現できるようになった生成AIが、今度は詐欺サイトを巧妙化させるために悪用されているのだ。 では、偽サ...</description>
+      <pubDate>Wed, 25 Nov 2026 10:39:55 +0900</pubDate>
+      <guid isPermaLink="false">ec9a1b302d516cb5a64da7f52dc4c7cd4e79a6be</guid>
+      <category>刑事法</category>
+    </item>
     <item>
       <title>寝顔を撮られ「変態」と2000人にSNS拡散…兵庫の中2男子がいじめ自死、遺族は市と700万円和解も「怒り残る」 加害生徒3人との裁判続く</title>
       <link>https://2003riku.github.io/static-legal-rss/</link>
@@ -799,14 +807,6 @@
       <pubDate>Sat, 17 Oct 2026 10:38:00 +0900</pubDate>
       <guid isPermaLink="false">4cbd5564b0139826c46c45d83e8490eaf00902f6</guid>
       <category>刑事法</category>
-    </item>
-    <item>
-      <title>ドラゴンボール声優“無断生成AI”に「時間が経つにつれ怒り」…実演家団体が初の“指針”策定、違反業者に「売上相当額」のペナルティも</title>
-      <link>https://2003riku.github.io/static-legal-rss/</link>
-      <description>「実演家・声優の知らないところで、セリフが切り取られ、言ってもいない言葉、歌ってもいない歌が勝手に作られ、ネット上に上げられ、収益化が図られる。どう考えても納得がいかない」 人気アニメ『ドラゴンボール』シリーズでブロリー役を務める声優の島田敏さんは、自身の声が無断で生成AIに利用された経験を、こう振り返った。いま、声優の声を無断で学習・生成したコンテンツがSNSにあふれているが、AIによる声の利用を直接規範する法律は国内にまだない。 こうした中、協同組合日本俳優連合（日俳連）は10月15日、都内で会見を開き、無法地帯となっている現状に一石を投じる「音声に関する生成AI利用ガイドライン」を発表した。 ガイドラインは、実演家の（1）事前同意、（2）適正な対価、（3）データのコントロール、の3つを柱とする。一般社団法人日本芸能マネージメント事業者協会（マネ協）と一般社団法人日本声優事業社協議会（声事協）も賛同を表明しており、業界全体で無断利用に立ち向かう姿勢を示した。（ライター・杉本穂高） 島田さんが自身の声の無断利用を知ったのは、歌手・Adoさんの楽曲「うっせぇわ」をブロリーの声で“歌わせ...</description>
-      <pubDate>Sat, 17 Oct 2026 10:18:00 +0900</pubDate>
-      <guid isPermaLink="false">9deae10262654def1172810cfec97594f094e838</guid>
-      <category>一般法律</category>
     </item>
   </channel>
 </rss>
